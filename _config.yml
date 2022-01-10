@@ -40,11 +40,11 @@ github:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-#   name: your_full_name
+  name: Spica.H.Zhou
   email: spica.h.zhou@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
+#    - https://twitter.com/username      # change to your twitter homepage
     - https://github.com/username       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
@@ -83,7 +83,7 @@ theme_mode:   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: C:\Users\huany\Pictures\Camera Roll\IMG_20220110_174452.png
 
 # boolean type, the global switch for ToC in posts.
 toc: true
