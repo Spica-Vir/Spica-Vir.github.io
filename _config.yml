@@ -80,10 +80,10 @@ theme_mode:   # [light|dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn:
+img_cdn: https://cdn.jsdelivr.net/gh/spica-vir/spica-vir.github.io/images
 
 # the avatar on sidebar, support local or CORS resources
-avatar: C:\Users\huany\Pictures\Camera Roll\IMG_20220110_174452.png
+avatar: avatar.png
 
 # boolean type, the global switch for ToC in posts.
 toc: true
