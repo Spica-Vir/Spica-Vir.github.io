@@ -1,16 +1,16 @@
 ---
 title: About Me
+author:
+  name: Spica.Vir
+  link: https://github.com/Spica_Vir
 icon: fas fa-info-circle
-order: 4
-author: 
-	name: Spica.Vir
-	link: https://github.com/Spica-Vir
 date: 2022-01-10 23:06:40 +0000
 tags: [About Me]
 image: 
-	src: /images/210110-about_me.jpg
-	width: 800
-	height: 450
+  src: /images/210110-about_me.jpg
+  width: 800
+  height: 450
+order: 4
 ---
 
 This website is set up and maintained by [**Spica.Vir**](https://github.com/Spica-Vir), currently a PhD student in [Imperial College London](http://www.imperial.ac.uk/). Due to reasons too hard to explain, Mr Spica currently prefers to keep his real identity confidential. Anyway, if those who knows well about Mr Spica happen to visit is website, I believe it is not difficult to guess who on earth this Mr Spica is. 
