@@ -5,9 +5,9 @@ author:
   link: https://github.com/Spica_Vir
 icon: fas fa-info-circle
 date: 2022-01-10 23:06:40 +0000
-tags: [About Me]
+tags: [About]
 image: 
-  src: /images/210110-about_me.jpg
+  src: /210110-about_me.jpg
   width: 800
   height: 450
 order: 4
