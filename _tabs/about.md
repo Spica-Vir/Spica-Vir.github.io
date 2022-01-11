@@ -19,7 +19,7 @@ My current research interest is multi-scale modeling of molecular crystals, whic
 
 At the another end of the physical scale, the universe is always attractive to me. I owned a used 90mm Maksutov-Cassegrain telescope with a mini-Dob mount. It took me quite a few thoughts to fully computerize it. Besides, I also enjoy history, to be specific, English hisotry since the House of Tudor (sine 1485 A.D), pre-Qin Chinese history (先秦史，before 221 B.C.), the Southern dynasties of China (南朝史, 420 A.D. \~ 589 A.D.). Besides, London subterranean railways and cycling (I got a B'twin hybrid bike) are other hobbies of mine. 
 
-I hope you find information posted here helpful. However, since some setting are really rare for routine uses, I cannot guarantee that all the information is well-maintained. If you find any issues / get a better idea / meet any problem, I am willing to have a discussion via [email](spica.h.zhou@gmail.com). 
+I hope you find information posted here helpful. However, since some setting are really rare for routine uses, I cannot guarantee that all the information is well-maintained. If you find any issues / get a better idea / meet any problem, I am willing to have a discussion via email. 
 
 To summarize, I prefer to quote two of my favourite poems, though they have no connection to this page - I don't care, and the contents are completely up to me :-)
 
