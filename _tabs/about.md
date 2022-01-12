@@ -23,13 +23,13 @@ To summarize, I prefer to quote two of my favorite poems, though they have no co
 > 海上明月共潮生  
 > 潋滟随波千万里  
 > 何处春江不月明  
-> --------
+> ------
 > 张若虚 《春江花月夜》
 > 
 > And in the trembling blue-green of the sky  
 > A moon, worn as if it had been a shell  
 > Washed by time's waters as they rose and fell  
 > About the stars and broke in days and years  
-> --------
+> ------
 > W.B.Yeats, *Adam's Curse*
 

@@ -23,8 +23,8 @@ title: Spica. Vir          # the main title
 tagline: Research, techniques and interests   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Tehcnical documentations & mixed notes 
-  From Spica. Vir, a PhD student in London, UK
+  Tehcnical & mixed notes 
+  By Spica. Vir, a PhD student in London, UK
    - Computational Chemistry, Computational condensed matter physics
    - Astronomy, History, Ancient Chinese Literature, London subterranean railways, Cycling 
 
@@ -40,7 +40,7 @@ github:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Spica.H.Zhou
+  name: Spica.Vir
   email: spica.h.zhou@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
