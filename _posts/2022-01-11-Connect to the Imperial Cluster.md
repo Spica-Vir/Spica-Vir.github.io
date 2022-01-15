@@ -2,10 +2,10 @@
 title: Connect to the Imperial Cluster
 date: 2022-01-11 20:07:53 +0000
 categories: [Technique, Parallel Computing]
-tags: [cluster, windows]
+tags: [cluster, Imperial RCS]
 ---
 
-This page is to show how to set up the connection to Imperial cluster for the research computing services (RCS). Tested on Windows 10 Home 21H2, Jan. 07 - 21.
+This page is to show how to set up the connection to Imperial cluster for the research computing services (RCS) and its usage. Tested on Jan. 07 - 21.
 
 **N.B. MAKE SURE YOU HAVE BEEN AUTHORIZED TO DO SO.** Please note this page is not an official guidance. The author disclaims all responsibility for any trouble induced by the improper use of the information provided. For further details and technical supports, please visit the [Imperial RCS website](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/). 
 
