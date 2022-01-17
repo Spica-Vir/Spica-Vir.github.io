@@ -20,7 +20,7 @@ An SSH key pair is needed every time the user logs in. Use the command below to 
 Then follow the instructions to generate the key pair. After generating that key pair, log into your SAFE account and add the generated key pair, saved in `~/.ssh/id_rsa.pub` by default, to the corresponding Login account. After the system approves the request, connect to ARCHER2 via: 
 
 ``` console
-> login_account@login.archer2.ac.uk
+> ssh login_account@login.archer2.ac.uk
 ```
 
 Enter the passwords for ARCHER2 account and for SSH public key in sequence. 
