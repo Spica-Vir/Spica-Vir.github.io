@@ -2,7 +2,7 @@
 title: ARCHER2 & Useage
 date: 2022-01-14 22:00:08 +0000
 categories: [Technique, Parallel Computing]
-tags: [cluster, ARCHER2]
+tags: [cluster, ARCHER2, CRYSTAL]
 math: true
 ---
 
@@ -50,8 +50,12 @@ Note:
 A good example for the job submission file is provided in [this webpage](https://docs.archer2.ac.uk/other-software/crystal/#running-parallel-crystal-jobs). It is pasted here for reference, with the modification suggested in the same page. 
 
 Note: 
-1. Since `MPPcrystal` is specified, in the SCF block of .d12 file, `MPP` command should be specified to activate the massive parallelization mode. Otherwise, substitute `MPPcrystal` with `Pcrystal`. For the comparison between `MPPcrystal` and `Pcrystal`, please see: <http://tutorials.crystalsolutions.eu/tutorial.html?td=tuto_HPC&tf=tuto_hpc#pvsmpp>  
-2. Should be careful with the proper number of cores when `MPPcrystal` is activated. It follows the equation below:  
+1. To launch different calculations, substitute the `MPPcrystal` keyword in the script below with corresponding keywords:  
+    * `MPPcrystal` crystal (.d12) calculation in the massive parallel edition  
+    * `Pcrystal` crystal (.d12) calculation in a simple parallel edition  
+    * `Pproperties` parallel properties (.d3) calculation  
+2. Should be careful with the proper number of cores when `MPPcrystal` is activated. It follows the equation below: 
+
 $$ n_{procs} \geq n_{tasks} = n_{r} + n_{c} \times WEIGHT $$  
 
 $n_{r}$ and $n_{c}$ are the number of k points with real or complex Fock matrices. $WEIGHT$ is the overloading of the diagonalization of the complex matrices. Its typical value is 1.5 ~ 2.5. **(?)**

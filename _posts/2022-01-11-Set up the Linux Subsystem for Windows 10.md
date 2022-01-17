@@ -1,5 +1,5 @@
 ---
-title: Set up Linux Subsystem on Windows 10
+title: Set up the Linux Subsystem on Windows 10
 date: 2022-01-11 12:36:54 +0000
 categories: [Technique, OS]
 tags: [wsl, windows]
