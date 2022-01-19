@@ -106,3 +106,6 @@ Solution
 ``` console
 > ssh username@login.cx2.hpc.ic.ac.uk
 ```
+
+Fixed
+: Tested on Jan. 13 -21. The old cx1 and cx2 addresses are merged to cx3 `cx3.hpc.ic.ac.uk`. Job types unchanged. Jobs submitted via VPN are still discriminated by cx1 and cx2. 

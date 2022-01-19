@@ -30,7 +30,7 @@ A main drawback of CRYSTAL package is the lack of matching geometry edit & visua
 
 Known issues  
 : - fort.25 (f25) file for DOSS/COOP/COHP: The Fermi level is not aligned to zero as routinely adopted. The calculated Fermi energy should be added to the values of the energy axis.  
-: - PHONBANDS.DAT file for phonon band calculation: A bug with the print option of CRYSTAL17. Data on reciprocal points next to the high-symmetric points might go missing - use the fort.25 file instead.  
+: - PHONBANDS.DAT file for phonon band calculation: A bug with the print option of CRYSTAL17 source code. Data on reciprocal points next to the high-symmetric points might go missing - use the fort.25 file instead.  
 : - [MOLDRAW](https://www.moldraw.unito.it/_sgg/f10000.htm) (visualizing the optimization steps and lattice vibrations) and [TOPOND](https://www.crystal.unito.it/topond/topond.php) (topological analysis of electron density) have been integrated to [CRYSPLOT](http://crysplot.crystalsolutions.eu/).  
 
 [**Jmol**](http://jmol.sourceforge.net/) - Non-periodic system visualizer. The lattice boundaries can be visualized, but the atoms cannot be replicated along periodic directions. Used to visualize the molecular or crystalline orbitals (.molden file).
