@@ -141,6 +141,7 @@ Issue identified Jan. 9-21
 ## Compile VASP
 1. Copy the file `arch/makefile.include.linux_gfortran` to the current directory, and rename it as `makefile.include`. 
 2. Modify the file as follows. Check the directories in variables `LIBDIR`, `OBJECTS`, and `INCS`:  
+
 ``` 
 # Precompiler options
 CPP_OPTIONS= -DMPI -DHOST=\"IFC91_ompi\" -DIFC \
