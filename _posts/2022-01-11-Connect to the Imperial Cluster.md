@@ -108,4 +108,4 @@ Solution
 ```
 
 Fixed
-: Tested on Jan. 13 -21. The old cx1 and cx2 addresses are merged to cx3 `cx3.hpc.ic.ac.uk`. Job types unchanged. Jobs submitted via VPN are still discriminated by cx1 and cx2. 
+: Jan. 19 -21. For both campus and VPN connections, the old cx1 and cx2 addresses are merged to cx3: `cx3.hpc.ic.ac.uk`. Job types unchanged.  

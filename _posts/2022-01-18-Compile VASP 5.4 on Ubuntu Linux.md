@@ -57,7 +57,7 @@ See below: By GNU/Get patches
 1. Unzip the VASP package and enter the folder.  
 2. Copy the file `arch/makefile.include.linux_intel` to the current directory, and rename it as `makefile.include`.  
 3. Open `makefile.include`, find the line with `OFLAG` and substitute it with the line below:  
-``` bash
+``` 
 OFLAG      = -O2 -xhost
 ```
 
@@ -140,7 +140,7 @@ Issue identified Jan. 9-21
 
 ## Compile VASP
 1. Copy the file `arch/makefile.include.linux_gfortran` to the current directory, and rename it as `makefile.include`. 
-2. Modify the file as follows. Check the directories in variables `LIBDIR`, `OBJECTS`, and `INCS`:  
+2. Modify the file as follows. Check the directories in variables `LIBDIR`, `OBJECTS`, and `INCS`：
 
 ``` 
 # Precompiler options
