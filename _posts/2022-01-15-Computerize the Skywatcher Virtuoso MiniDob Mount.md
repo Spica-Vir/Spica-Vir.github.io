@@ -13,9 +13,9 @@ The [Skywatcher Virtuoso miniDob mount](https://www.skywatcherusa.com/products/s
 
 Available connectors or ports for extensions are listed below:
 
+* A dovetail slot for common telescopes;  
 * A **3/8"** thread for common camera tripods locates at the bottom of the AZ clutch;  
-* A standard dovetail slot;  
-* An extension arm with **1/4"** thread for common cameras;  
+* An L-shape adaptor and an attached adaptor with **1/4"** threads for common cameras;  
 * A RJ11/12 serial port for communication;  
 * A 12V 2A 5.5\*3mm DC port for external power supply;  
 * A snap cable port for Canon cameras.  
@@ -45,17 +45,64 @@ flowchart LR
 ## Setup the connection
 To utilize the computerization, the official solution is adopted to avoid unnecessary troubles. In fact, non-official WiFi/Bluetooth solutions are not noticeably competitive in costs. For the official solution, two critical parts are required: 
 
-1. [SynScan WiFi adaptor](http://skywatcher.com/product/synscan-wi-fi-adapter/), plugged into the RJ11/12 serial port for wireless communication;  
-2. [SynScan App](https://www.skywatcher.com/download/software/synscan-app/), installed on your computer or cellphone (Android only) for connection to the mount.   
+* [SynScan WiFi adaptor](http://skywatcher.com/product/synscan-wi-fi-adapter/), plugged into the RJ11/12 serial port for wireless communication;  
+*  [SynScan App](https://www.skywatcher.com/download/software/synscan-app/), installed on your computer or cellphone (Android only) for connection to the mount.   
 
-After setting up the connection, your laptop or cellphone can already function as a hand controller for GOTO via SynScan App. For cellphone users, that is the end of story due to the limited choice of applications. For personal computer (PC) users, it is possible to track and control the current field of view (FoV) in the realistic sky via [Stellarium](https://stellarium.org/). 
+Step 1. Plug the WiFi adaptor into the RJ11/12 serial port and turn on the switch. 
+
+![Connect to SynScan WiFi](/220115-1.png){: w="400" h="156"}
+
+Step 2. Search available WiFi connection and connect your device to the WiFi spot named as 'SynScan_WiFi_*'. By doing this the connected device will lose the Internet connection.
+
+![Setup the connection to App](/220115-2.png){: w="400" h="228"}
+
+![Set the location](/220115-3.png){: w="400" h="328"}
+
+Step 3. Launch the Synscan App, click on the 'Connect' button on the top of the window, select the available port and setup the connection. For PC users, probably no location sensor is available, so setting the latitude, longitude, and altitude manually is required. The panel can be found in 'Settings/Location/'. 
+
+After setting up the connection, the laptop or cellphone can already function as a hand controller for GOTO via SynScan App. For cellphone users, that is the end of story due to the limited choice of applications. For personal computer (PC) users, it is possible to track and control the current field of view (FoV) in the realistic sky via [Stellarium](https://stellarium.org/). 
 
 ## Live tracking on personal computers
 It is possible to achieve the live tracking of the telescope FoV on personal computers. Two software should be installed: 
 
 1. [ASCOM](https://www.ascom-standards.org/), the platform bridge between the SynScan driver and the virtual planetarium software;  
-2. [Stellarium](https://stellarium.org/), a virtual planetarium supporting ASCOM.  
+2. [ASCOM driver for SynScan APP](http://www.skywatcher.com/download/software/ascom-driver/), to connect SynScan APP to ASCOM device hub;
+3. [Stellarium](https://stellarium.org/), a virtual planetarium supporting ASCOM.  
 
+![Setup ASCOM](/220115-4.png){: w="600" h="341"}
+
+Step 1. Make sure the driver has been correctly installed. Open 'ASCOM Device Hub', click 'Tools' and select 'Setup'. 
+
+Step 2. From the pop-out window, select the 'Telescope Setup' tab. 
+
+Step 3. Click on the 'Choose' button. From the pull-down menu, select 'SynScan App Driver' and click OK. For properties, the default settings are okay. 
+
+Step 4. Go back to the initial panel, click on the button 'Connect Telescope' and wait for the software to setup the connection. 
+
+Step 5. After the connection to ASCOM successfully set, launch Stellarium. Click 'Configuration window' on the left and go ['Plug-ins/Telescope Control'](http://stellarium.sourceforge.net/wiki/index.php/Telescope_Control_plug-in). Tick 'Load at startup' and restart Stellarium.
+
+Step 6. Following the same path as the previous step, click 'configure'. From the pop-out window select 'add a new telescope'.
+
+![Create a telescope object](/220115-5.png){: w="500" h="456"}
+
+![Setup the ASCOM telescope](/220115-6.png){: w="500" h="390"}
+
+Step 7. In the 'Telescope controlled by' panel, select the 'ASCOM' option. Provide a proper name of the telescope in the 'Telescope properties' panel. Choose 'SynScan App Driver' from the pull-down menu of 'Choose ASCOM Telescope'. Click 'OK'.
+
+![Connect to the telescope](/220115-7.png){: w="400" h="360"}
+
+Step 8. Return to the 'config' panel. Select the telescope just created from the list and click 'Connect'.
+
+![The live FoV](/220115-8.png){: w="600" h="336"}
+
+Step 9. Return to the home screen. There will be a circle with name of the newly created telescope showing its live FoV. 
+
+## Usage & keybindings of Stellarium telescope control plug-in
+The circle indicating the current aim will automatically track movements of the mount. The following keybindings are used to control the telescope via Stellarium. 
+
+* `Ctrl + [x]` Automatically aim the telescope \[x\] to the selected celestial body. \[x\] is the ID number of the telescope. Check the first column of telescopes list (Figure 7). For example, to control 'Skywatcher Mak 90', press `Ctrl 1`.  
+
+* `Ctrl + [x]` Aim the telescope \[x\] to the center of the screen.  
 
 # Other options
 ## Hand controller

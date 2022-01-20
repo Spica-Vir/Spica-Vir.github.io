@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-![](/210110-about_me.jpg){: w="800" h="400"}
+![](/220110-about_me.jpg){: w="800" h="400"}
 
 # About this blog
 This website is set up and maintained by [**Spica.Vir**](https://github.com/Spica-Vir). Its original idea comes from an almost catastrophic rollback from Windows 11 to Windows 10 at the beginning of 2022. The [jekyll](https://jekyllrb.com/) theme, ["Chirpy"](https://github.com/cotes2020/jekyll-theme-chirpy), is applied to generate this website. 
