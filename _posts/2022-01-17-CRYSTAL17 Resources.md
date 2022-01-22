@@ -35,6 +35,8 @@ Known issues
 
 [**Jmol**](http://jmol.sourceforge.net/) - Non-periodic system visualizer. The lattice boundaries can be visualized, but the atoms cannot be replicated along periodic directions. Used to visualize the molecular or crystalline orbitals (.molden file).
 
+[**J-ICE**](http://j-ice.sourceforge.net/) - *Not tested* A web-based, crystallographic version of [Jmol](http://jmol.sourceforge.net/). 
+
 [**DL Visualize (DLV)**](http://www.cse.clrc.ac.uk/cmg/DLV/) **Not maintained anymore**. Developed in Daresbury laboratory. Its website has been unavailable since late 2021, so regarded as not maintained even though there are rumors that there is a plan to re-write codes of DLV. 
 
 [**FINDSYM**](https://stokes.byu.edu/iso/findsym.php) - Identify the space group from a CIF structure file and provide fractional coordinates of all the nonequivalent atomic sites. 
