@@ -6,7 +6,7 @@ tags: [cluster, ARCHER2, CRYSTAL]
 math: true
 ---
 
-This page is to briefly summarize the connection and usage of the UK national supercomputing service, ARCHER2. Tested on Jan. 07 - 21. 
+This page is to briefly summarize the connection and usage of the UK national supercomputing service, ARCHER2. 
 
 **N.B. MAKE SURE YOU HAVE BEEN AUTHORIZED TO DO SO.** Please note this page is not an official guidance. The author disclaims all responsibility for any trouble induced by the improper use of the information provided. For further details and technical supports, please visit user documentations of [ARCHER2](https://docs.archer2.ac.uk/) and [EPCC SAFE](https://epcced.github.io/safe-docs/safe-for-users/#package-group). 
 

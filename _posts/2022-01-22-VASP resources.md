@@ -12,14 +12,14 @@ In this post are listed some useful learning resources of the (probably) most po
 
 [**VASP forum**](https://www.vasp.at/forum/) - The official forum for VASP users. For most of times, VASP developers are very active in this forum - their replies can be found under many posts. 
 
-The old website of VASP, <cms.mpi.univie.ac.at> has been unfortunately abandoned since late 2020. Old forum posts are believed to be safely transferred to the new forum, yet the their original links are no longer valid. Besides, the retired [online manual](https://cms.mpi.univie.ac.at/vasp/vasp/vasp.html) is not available. The contents of the [PDF manual](http://cms.mpi.univie.ac.at/vasp/vasp.pdf) are the same as its online counterpart, so they are out-of-date as well. The only reliable manual for the current version of VASP is [VASP Wiki](https://www.vasp.at/wiki/index.php/The_VASP_Manual). 
+The old website of VASP, <http://cms.mpi.univie.ac.at>, has been unfortunately abandoned since late 2020. Old forum posts are believed to be safely transferred to the new forum, yet the their original links are no longer valid. Besides, the retired [online manual](https://cms.mpi.univie.ac.at/vasp/vasp/vasp.html) is not available. The contents of the [PDF manual](http://cms.mpi.univie.ac.at/vasp/vasp.pdf) are the same as its online counterpart, so they are out-of-date as well. The only reliable manual for the current version of VASP is [VASP Wiki](https://www.vasp.at/wiki/index.php/The_VASP_Manual). 
 
 [**List of resources**](https://www.vasp.at/resources/) - The officially recommended tool kits for VASP simulations, which, I think, is better than any other recommendation. 
 
 # Other learning resources
 [**Learn VASP The Hard Way (LVASPTHW)**](https://www.bigbrosci.com/) - *中文* 非常详细的初级到中高级教程，美中不足的就是稍显罗嗦。 
 
-[**侯柱峰VASP手册**] - *中文* 入门级手册
+**侯柱峰VASP手册** - *中文* 入门级手册
 
 涵盖了VASP编译，SCF，几何结构优化的参数测试方法、选择技巧，以及电学、磁学、界面性质计算的建模与计算方法。需要注意手册只有2004和2005两个版本，部分方法（如几何结构优化的方法）已经过时，需要结合[VASP Wiki](https://www.vasp.at/wiki/index.php/The_VASP_Manual)批判学习。
 
@@ -39,11 +39,11 @@ Known Issue
 : The old 3.4.x versions, except 3.4.0, get problems when visualizing the charge density file (CHGCAR). Not a problem for now since the latest version is 3.5.7. 
 
 # Pre-processing & Computation
-[**vdW-DF**] - Including `vdw_kernel.bindat` and `vdw_kernel.bindat.big_endian`binary files. 
+**vdW-DF** - Including `vdw_kernel.bindat` and `vdw_kernel.bindat.big_endian`binary files. 
 
 The latter one is for big endian devices. Both are available for licensed users from the [download portal](https://www.vasp.at/vasp-portal/login/?next=/vasp-portal/). Unofficial copies might be available. It might be possible to automatically generate a new one by VASP during calculations, but the time consumption skyrockets, probably for days. Place it in the job folder and edit `INCAR` as [instructed](https://www.vasp.at/wiki/index.php/VdW-DF_functional_of_Langreth_and_Lundqvist_et_al.).
 
-[**constr_cell_relax.F**] - Perform geometry optimizations along the specified direction(s) only. 
+**constr_cell_relax.F** - Perform geometry optimizations along the specified direction(s) only. 
 
 The script is stored in `src/` and is disabled. Refer to the comments in the script for instructions to activate this function. Here an example is provided: 
 

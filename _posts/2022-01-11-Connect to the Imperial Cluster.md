@@ -5,7 +5,7 @@ categories: [Technique, Parallel Computing]
 tags: [cluster, Imperial RCS]
 ---
 
-This page is to show how to set up the connection to Imperial cluster for the research computing services (RCS) and its usage. Tested on Jan. 07 - 21.
+This page is to show how to set up the connection to Imperial cluster for the research computing services (RCS) and its usage. 
 
 **N.B. MAKE SURE YOU HAVE BEEN AUTHORIZED TO DO SO.** Please note this page is not an official guidance. The author disclaims all responsibility for any trouble induced by the improper use of the information provided. For further details and technical supports, please visit the [Imperial RCS website](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/). 
 
