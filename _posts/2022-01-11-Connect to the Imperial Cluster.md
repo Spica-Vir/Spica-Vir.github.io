@@ -2,7 +2,7 @@
 title: Connect to the Imperial Cluster
 date: 2022-01-11 20:07:53 +0000
 categories: [Technique, Parallel Computing]
-tags: [cluster, Imperial RCS]
+tags: [cluster, Imperial RCS, regular inspection]
 ---
 
 This page is to show how to set up the connection to Imperial cluster for the research computing services (RCS) and its usage. 

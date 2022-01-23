@@ -2,7 +2,7 @@
 title: CRYSTAL17 Resources
 date: 2022-01-17 17:23:43 +0000
 categories: [Research, DFT]
-tags: [software, CRYSTAL]
+tags: [software, CRYSTAL, regular inspection]
 ---
 
 Some useful resources for [CRYSTAL17](https://www.crystal.unito.it/index.php) learning and usage are listed in this page. All resources listed here are available online free of charge. Those currently not well-maintained ones are marked. Special thanks to my supervisors, N.M.H & G.M, and my colleague F.B. for kindly providing their suggestions. 

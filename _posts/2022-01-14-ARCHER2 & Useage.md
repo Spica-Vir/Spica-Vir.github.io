@@ -2,7 +2,7 @@
 title: ARCHER2 & Useage
 date: 2022-01-14 22:00:08 +0000
 categories: [Technique, Parallel Computing]
-tags: [cluster, ARCHER2, CRYSTAL]
+tags: [cluster, ARCHER2, CRYSTAL, regular inspection]
 math: true
 ---
 
