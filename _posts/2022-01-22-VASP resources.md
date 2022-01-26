@@ -2,7 +2,7 @@
 title: VASP resources
 date: 2022-01-22 11:05:20 +0000
 categories: [Research, DFT]
-tags: [software, CRYSTAL]
+tags: [software, VASP]
 ---
 
 In this post are listed some useful learning resources of the (probably) most popular planar wave basis set ab initio simulation package, VASP. Due to its popularity, there are tones of resources available online. Here only a minor port of them are listed, which, as I found, particularly useful. This post is just a list of resources I collected during my 'VASP era' (19-21), so regular updates might be unavailable since I do not work on VASP any more. Resources checked Jan. 22-2022. 
@@ -47,7 +47,7 @@ The latter one is for big endian devices. Both are available for licensed users 
 
 The script is stored in `src/` and is disabled. Refer to the comments in the script for instructions to activate this function. Here an example is provided: 
 
-``` Fortran
+```FORTRAN
 SUBROUTINE CONSTR_CELL_RELAX(FCELL)
 USE PREC
 REAL(Q) FCELL(3,3), SAVE(3)

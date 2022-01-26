@@ -2,7 +2,7 @@
 title: Set up the Linux Subsystem on Windows 10
 date: 2022-01-11 12:36:54 +0000
 categories: [Technique, OS]
-tags: [wsl, windows]
+tags: [linux, windows]
 ---
 
 This post is to show how to install and set up a proper Windows subsystem for Linux (WSL). Tested on Windows 10 Home 21H2, Jan. 07 - 21.

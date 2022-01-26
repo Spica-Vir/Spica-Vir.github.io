@@ -2,7 +2,7 @@
 title: Compile VASP 5.4.1 on Ubuntu/Debain Linux
 date: 2022-01-18 17:07:32 +0000
 categories: [Technique, Parallel Computing]
-tags: [software, VASP]
+tags: [software, VASP, linux]
 ---
 
 This post is to briefly introduce available methods to compile VASP 5.4 on Ubuntu or Debain OSs. Tested on Debian WSL2, Windows 10 21H2, Jan. 9-21. VASP edition 5.4.1.05Feb16. 
