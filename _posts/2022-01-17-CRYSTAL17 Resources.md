@@ -5,7 +5,7 @@ categories: [Research, DFT]
 tags: [software, CRYSTAL, regular inspection]
 ---
 
-Some useful resources for [CRYSTAL17](https://www.crystal.unito.it/index.php) learning and usage are listed in this page. All resources listed here are available online free of charge. Those currently not well-maintained ones are marked. Special thanks to my supervisors, N.M.H & G.M, and my colleague F.B. for kindly providing their suggestions. 
+Some useful resources for [CRYSTAL17](https://www.crystal.unito.it/index.php) learning and usage are listed in this page. All resources listed here are available online free of charge. Those currently not well-maintained ones are marked. Special thanks to my supervisors, N.M.H & G.M, and my colleague F.B. for kindly providing their suggestions. Contents of this page are regularly inspected. 
 
 Current public release: **CRYSTAL17 v1.0.2**
 

@@ -5,7 +5,7 @@ categories: [Technique, Parallel Computing]
 tags: [cluster, Imperial RCS, regular inspection, linux, windows]
 ---
 
-This page is to show how to set up the connection to Imperial cluster for the research computing services (RCS) and its usage. 
+This page is to show how to set up the connection to Imperial cluster for the research computing services (RCS) and its usage. Contents of this page are regularly inspected. 
 
 **N.B. MAKE SURE YOU HAVE BEEN AUTHORIZED TO DO SO.** Please note this page is not an official guidance. The author disclaims all responsibility for any trouble induced by the improper use of the information provided. For further details and technical supports, please visit the [Imperial RCS website](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/). 
 
@@ -58,10 +58,19 @@ Note: if using the sshgw channel, `scp` will download the file to the intermedia
 # Usage
 The [qsub](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/qsub.html) job scheduler is implemented on Imperial cluster. 
 
-* `availability` Check the availability resources  
-* `qsub filename.qsub` Submit the job 'filename'  
-* `qstat` Check the state of submitted jobs  
-* `qdel jobID` Kill the process with the ID number 'jobID'  
+* `availability` Check the availability resources;  
+* `qsub filename.qsub` Submit the job 'filename';  
+* `qstat` Check the state of submitted jobs;  
+* `qdel jobID` Kill the process with the ID number 'jobID'.  
+
+The `module` commands can be used to examine/load publicly accessible modules.
+
+- `module avail` List all the available modules;  
+- `module load mod_name` Load a specific module, 'mod_name';  
+- `module list` List all the loaded modules in the current environment;  
+- `module help mod_name` Check the instructions of the module 'mod_name'. 
+
+Note: There is a CRYSTAL14 module in the list. For users in NMH's group, the latest CRYSTAL edition is available, so do not use that module. 
 
 # CX1 vs. CX2
 

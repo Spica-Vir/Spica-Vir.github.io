@@ -30,6 +30,8 @@ The old website of VASP, <http://cms.mpi.univie.ac.at>, has been unfortunately a
 # Pseudopotentials
 The pseudopotential files (POTCAR) for VASP are maintained and regularly updated by VASP developers. Sadly they are only available for licensed users from the [download portal](https://www.vasp.at/vasp-portal/login/?next=/vasp-portal/). Some 'unofficial' resources might be available, but constructing pseudopotentials is a delicate thing, so check the instructions & editions carefully before using. 
 
+[**Standard solid-state pseudopotentials, SSSP**](https://www.materialscloud.org/discover/sssp/table/efficiency), A web gallery of open source pseudopotentials. 
+
 # Visualization
 The VASP format is widely supported by various mainstream visualization software. 
 
