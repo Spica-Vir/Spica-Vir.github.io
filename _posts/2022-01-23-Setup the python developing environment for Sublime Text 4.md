@@ -2,7 +2,7 @@
 title: Setup the python developing environment for Sublime Text 4
 date: 2022-01-23 21:31:10 +0000
 categories: [Technique, programming]
-tags: [software, Sublime Text 4, python, Anaconda3, windows]
+tags: [Sublime Text 4, python, Anaconda3, windows]
 ---
 In this page my setups of python3 developing environment with [Sublime Text 4](https://www.sublimetext.com/) text editor are briefly introduced. The following functions are achieved. Setup with Windows 10 21H2, Jan. 9-2022.  
 * Python interpreters managed by [Anaconda 3](https://www.anaconda.com/);  
@@ -25,7 +25,7 @@ Step 3: Create a new environment
 Step 1： Create the REPL commands  
 : In the folder 'SublimeREPL/config/py36ase', open the file 'Main.sublime-menu' and substitute the word 'Python' with the word 'py36ase', except the following lines: 
 
-```JSON
+``` json
 "syntax": "Packages/Python/Python.tmLanguage"
 
 "extend_env": {"PYTHONIOENCODING": "utf-8"}
@@ -33,7 +33,7 @@ Step 1： Create the REPL commands
 
 : In lines with `"cmd"`, substitute the environmental variable `"python"` with the path of python executable file. Here the 'py36ase' environment is used: 
 
-```JSON
+``` json
 "cmd": ["D:/Anaconda3/envs/py3.6ase/python.exe", "-i", "-u"],
 ```
 
@@ -44,13 +44,13 @@ Step 2: Edit the captions of commands
 
 : Change the path in `"file"` lines to the same folder: 
 
-```JSON
+``` json
 "file": "config/py3.6ase/Main.sublime-menu"
 ```
 
 : Change the `"caption"` line into any name, and choose the corresponding `"id"` line in the 'Main.sublime-menu' file. Save and close both files. 
 
-```JSON
+``` json
 "caption": "SublimeREPL: py3.6ase - IPython"
 
 "id": "repl_py3.6ase_ipython"
@@ -59,7 +59,7 @@ Step 2: Edit the captions of commands
 # Setting keybindings for REPL
 There is no default keybindings for SublimeREPL, but user defined keybindings can be added via 'Preferences/Key Bingdings'. The parameters required for defining key bindings are the same as defining their captions, except an extra keyword `"keys"`. Copy and past the contents in 'Default.sublime-commands' and insert a `"keys"` line on the top of each command.
 
-```JSON
+``` json
 {
     "keys": ["f5"],// Run the current script with Python 3.10
     "caption": "SublimeREPL: py3.6ase - RUN current file",
@@ -96,7 +96,7 @@ The code above indicates the settings of key bindings:
 # Syntax check and code completion
 Both features are integrated into the **Anaconda** package. After installing it via Package Control, several important properties should be specified by opening 'Preferences/Package Settings/Anaconda/Settings - User' and setting it as follows:  
 
-```JSON
+``` json
 {
 	"python_interpreter":"D:/Anaconda3/envs/py3.6ase/python.exe",
 	"suppress_word_completions":true,

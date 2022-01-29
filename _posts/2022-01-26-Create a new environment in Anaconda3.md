@@ -2,7 +2,7 @@
 title: Create a new environment in Anaconda3
 date: 2022-01-26 19:52:11 +0000
 categories: [Technique, programming]
-tags: [software, python, Anaconda3, windows, linux, Imperial RCS]
+tags: [python, Anaconda3, windows, linux, Imperial RCS]
 ---
 This post is to summarize the procedures to create an [Anaconda](https://www.anaconda.com/) python environment in Windows and Linux systems. Tested on Jan. 08-2022 with Windows 10 21H2, and on Jan. 29-2022 with Imperial cluster cx3. 
 
@@ -12,7 +12,7 @@ This post is to summarize the procedures to create an [Anaconda](https://www.ana
 # Load Anaconda3 on Imperial cluster
 The python environment loaded on the cluster is only used for testing proposes. Any demanding jobs are required to run on Anaconda environments. To load Anaconda3, use the command below: 
 
-```Console
+``` console
 > module load anaconda3/personal
 ```
 
@@ -20,13 +20,13 @@ Note: The access to the module 'anaconda3' is restricted. The personal edition i
 
 If it is the first time loading anaconda, the Linux shell should be initialized. Taking the commonly used bash as an example, anaconda will automatically modify the '.bashrc' file in the home directory if following commands are executed: 
 
-```Console
+``` console
 > conda init bash
 ```
 
 Then use the command below to activate `conda` commands. The `module` command and the `source` command should be executed every time the user logs in. 
 
-```Console
+``` console
 > source ~/.bashrc
 ```
 
@@ -35,15 +35,15 @@ Then use the command below to activate `conda` commands. The `module` command an
 - Create a new environment  
 The 'base' environment is the default environment of Anaconda python, corresponding to the interpreter in the install root. The following command is used to create a python 3.6 environment named as 'py36ase': 
 
-```Console
+``` console
 > conda create -n py36ase python=3.6
 ```
 
-The interpreter of the created environment is saved in the subfolder of install root: `env/py36ase`
+The interpreter of the created environment is saved in the subfolder of install root: 'env/py36ase'
 
-- List installed packages / environments
+- List installed packages/environments
 
-```Console
+``` console
 > conda list
 > conda env list
 > conda info -e
@@ -51,27 +51,27 @@ The interpreter of the created environment is saved in the subfolder of install 
 
 - Check available updates 
 
-```Console
+``` console
 > conda update conda
 ```
 
-- Enter / exist a specific environment 
+- Enter/exist a specific environment 
 
-```Console
+``` console
 > conda activate env_name
 > conda deactivate
 ```
 
 - Install/uninstall packages for a specific environment
 
-```Console
+``` console
 > conda install -n env_name package_name
 > conda remove -n env_name package_name
 ```
 
 - Completely remove an environment
 
-```Console
+``` console
 > conda remove -n env_name --all
 ```
 
@@ -79,6 +79,6 @@ The interpreter of the created environment is saved in the subfolder of install 
 Atomic simulation environment (ASE) not available  
 : ASE cannot be automatically located with the `conda install` command, though it is listed in [Anaconda3 packages repository](https://anaconda.org/rmg/ase). Use the command (provided in the link) to install it: 
 
-```Console
+``` console
 > conda install -c rmg ase
 ```

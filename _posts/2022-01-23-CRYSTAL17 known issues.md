@@ -2,7 +2,7 @@
 title: CRYSTAL17 known issues
 date: 2022-01-23 11:43:38 +0000
 categories: [Research, DFT]
-tags: [software, CRYSTAL, regular inspection]
+tags: [CRYSTAL, regular inspection]
 ---
 In this post are listed some known issues about the current official edition of CRYSTAL, [**CRYSTAL17 v1.0.2**](https://www.crystal.unito.it/index.php). Only problems with its source code are included, for other issues related to usages, please refer to other posts. Note, the majority of the issues are 'imperfections' rather than 'bugs'. Special thanks to N.M.H, a main developer, for inspecting the source codes. 
 
