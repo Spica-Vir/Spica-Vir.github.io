@@ -32,16 +32,16 @@ Then use the command below to activate `conda` commands. The `module` command an
 
 # Create & setup a python environment
 ## Command list
-- Create a new environment  
-The 'base' environment is the default environment of Anaconda python, corresponding to the interpreter in the install root. The following command is used to create a python 3.6 environment named as 'py36ase': 
+Create a new environment  
+: The 'base' environment is the default environment of Anaconda python, corresponding to the interpreter in the install root. The following command is used to create a python 3.6 environment named as 'py36ase': 
 
 ``` console
 > conda create -n py36ase python=3.6
 ```
 
-The interpreter of the created environment is saved in the subfolder of install root: 'env/py36ase'
+: The interpreter of the created environment is saved in the subfolder of install root: 'env/py36ase'
 
-- List installed packages/environments
+**List installed packages/environments**
 
 ``` console
 > conda list
@@ -49,27 +49,27 @@ The interpreter of the created environment is saved in the subfolder of install 
 > conda info -e
 ```
 
-- Check available updates 
+**Check available updates**
 
 ``` console
 > conda update conda
 ```
 
-- Enter/exist a specific environment 
+**Enter/exist a specific environment**
 
 ``` console
 > conda activate env_name
 > conda deactivate
 ```
 
-- Install/uninstall packages for a specific environment
+**Install/uninstall packages for a specific environment**
 
 ``` console
 > conda install -n env_name package_name
 > conda remove -n env_name package_name
 ```
 
-- Completely remove an environment
+**Completely remove an environment**
 
 ``` console
 > conda remove -n env_name --all
