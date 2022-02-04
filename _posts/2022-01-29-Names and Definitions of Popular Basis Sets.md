@@ -10,7 +10,12 @@ In this post are listed the naming schemes of popular basis sets (BSs) that can 
 References:  
 1. D. C. Young, in *Computational Chemistry: A Practical Guide for Applying Techniques to Real-World Problems*, Wiley, 2001, pp. 78–91.  
 2. B. Nagy and F. Jensen, in *Reviews in Computational Chemistry*, John Wiley & Sons, Inc., Hoboken, NJ, USA, 2017, vol. 3, pp. 93–149.  
-3. Sobereva, *谈谈弥散函数和“月份”基组*, <http://sobereva.com/119>. 
+3. Sobereva, *谈谈弥散函数和“月份”基组*, <http://sobereva.com/119>.  
+4. D. Vilela Oliveira, J. Laun, M. F. Peintinger and T. Bredow, *J Comput Chem*, 2019, **40**, 2364–2376.
+5. L. E. Daga, B. Civalleri and L. Maschio, *J. Chem. Theory Comput.*, 2020, **16**, 2192–2201.
+6. Wikipedia, *Basis set(chemistry)*, <https://en.wikipedia.org/wiki/Basis_set_%28chemistry%29>
+
+
 
 # Background knowledge
 ## The developing proposes of basis set
@@ -21,7 +26,7 @@ For BSs developed for the **exact electron correlation energy** of wave function
 For BSs developed for **HF / DFT**, the target system for the occupied orbitals is isolated atoms. The target system for the polarization orbitals is usually molecules. 
 
 ## Contraction
-The Gaussian functions used for constructing basis sets are called primitive functions (PGTO), which usually contains more functions than practically needed (contracted Gaussian type orbitals, CGTO). Since the core orbitals are insensitive to different chemical environments, it will be computationally efficient to represent the core shells with a fixed linear combination of Gaussian orbitals, which is known as *contraction*. 
+The Gaussian functions used for constructing basis sets are called primitive functions (PGTO), which usually contains more functions than practically needed (contracted Gaussian type orbitals, CGTO). Since the core orbitals are insensitive to different chemical environments, it will be computationally efficient to represent the core with a fixed linear combination of Gaussian orbitals, which is known as *contraction*. 
 
 **Segmented contraction**
 
@@ -44,7 +49,7 @@ In practice, the situation is usually in the middle. For example, several PGTOs 
 It is intuitively correct that segmented contraction basis set is computationally more efficient. However, it also requires the simultaneous optimization of the exponents and contraction coefficients, making basis set construction more difficult. 
 
 ## Split-valance: n-$$ \zeta $$ BSs
-The distribution of valance electrons is susceptible to chemical environment. To add some flexibility, the valance shell can be expressed as the linear combination of multiple shells composed of GTOs with different parameters. *n*-$$ \zeta $$ indicates the valance shell is split into *n* shells. 
+The distribution of valance electrons is susceptible to chemical environment. To add some flexibility, the valance shell can be expressed as the linear combination of multiple shells (a shell here means GTOs with the same angular momentum) composed of GTOs with different parameters. *n*-$$ \zeta $$ indicates the valance shell is split into *n* shells. 
 
 For HF/DFT calculations BSs with *n* beyond 4 or 5 can be regarded as close to the complete basis set (CBS) limit, which means problems related to basis set incompleteness are eliminated. 
 
@@ -87,10 +92,70 @@ Segmented contraction BS optimized by HF energy (occupied orbitals) or from cc-P
 
 ## def2 version
 
-`def2-[S/TZ/QZ]VP` - Karlsruhe def2- double/triple/quadruple $$ \zeta $$ split-valance-shell BSs, with polarization. 
+`def2-SV(P)` - Karlsruhe def2-double $$ \zeta $$ split-valance-shell BS, with polarization on heavy atoms.
+
+`def2-SVP` - Karlsruhe def2-double $$ \zeta $$ split-valance-shell BS, with polarization on all atoms.
+
+`def2-TZVPD` - Karlsruhe def2-triple $$ \zeta BS with diffuse functions on valance and polarization shells.
+
+`def2-TZVPP` - Karlsruhe def2-TZVP BS with an extra set of polarization orbitals for all atoms.
+
+`def2-QZVPPD` - Karlsruhe def2-quadruple $$ \zeta $$ split-valance-shell BSs, with 2 sets of polarization orbitals and diffuse orbitals. 
+
+**Polarization scheme**
 
 ## pob version
+The [pob-XZVP basis sets](https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/ssc_basis/basis) are developed by T. Bredow's group (University of Bonn) especially for solid-state calculations. Its recent update (rev2, 2019) improves the SCF stability. 
 
-`pob-TZVP` - 
+pob-XZVP BSs are based on the def2- series. They are constructed by firstly removing very diffuse PGTOs (exponent < 0.1) and then augmenting the truncated BS with the lowest exponent $$ \geq $$ 0.1 till the desired accuracy is reached. Meanwhile, high angular momentum polarization orbitals are truncated. 
 
-`pob-[DZ/TZ]VP-rev2` - 
+`pob-TZVP` - The triple-$$ \zeta $$ split-valance-shell BS with polarization on all atoms. 
+
+`pob-[DZ/TZ]VP-rev2` - Revised double/triple-$$ \zeta $$ pob- series BSs, including the revised version of the unpublished pob-DZVP. 
+
+## dcm version
+System-specific BSs optimized by basis set direct inversion of iterative subspace (BDIIS) algorithm by L. Maschio's group (University of Turin). Optimizations are performed by iterating the exponents of def2-TZVP orbitals, high angular momentum polarization orbitals are kept. 
+
+`dcm[Cdiam]-TZVP` - Carbon def2-TZVP BS reparameterized for diamond. 
+
+# Empirical extrapolation towards CBS limit
+In this section BSs constructed to systematically approach the CBS limit using empirical extrapolation are covered. All of them are general contracted BSs. 
+
+## Correlation consistent BSs
+Dunning's cc-pVnZ BSs are developed for post HF methods to deal with electron correlation. 
+
+`cc-pVnZ` - n = D, T, Q, 5, 6, correlation consistent 2~6-$$ \zeta $$ split-valance BSs with polarization. 
+
+`cc-pV(n + d)Z` - cc-pVnZ BSs with an extra *d* orbital, to improve the extrapolation to the CBS limit. 
+
+`cc-pwCVnZ, cc-pCVnZ` - cc-pVnZ BSs with tight core augmentation. 
+
+`cc-pVnZ-F12` - cc-pVnZ BSs optimized for explicitly correlated F12 methods. 
+
+## Augmentation and "Month" BSs
+It is possible to insert diffuse functions to Dunning cc- BSs to reach CBS limit. 
+
+`aug-cc-pVnZ` - The cc-pVnZ BSs with diffuse functions for all shells, all elements. 
+
+However, the diffuse functions for H, and high angular momentum diffuse functions, usually play a minor role. "Month" BSs removes the diffuse functions of H, while for heavy atoms, the diffuse functions are removed in the decreasing sequence of angular momentum, and they are named in the inverse month sequence from August (aug, chemists' strange sense of humor). However, diffuse functions for s and p shells are kept, and the end point is equivalent to 'maug-cc-pVnZ' BSs. 
+
+`jul-cc-pVnZ` - aug-cc-pVnZ without diffuse functions for H. 
+
+`jun-cc-pVnZ` - jul-cc-pVnZ without the highest angular momentum diffuse functions for heavy atoms. 
+
+...
+
+`maug-cc-pVnZ` - cc-pVnZ BSs with diffuse functions for s,p shells of heavy atoms. 
+
+## Polarization consistent BSs
+Adopting the similar methods, Jensen's group developed the pc-*n* polarization consistent BSs for HF/DFT calculations. 
+
+`pc-n` - n = 0, 1, 2, 3, 4, Jensen's polarization consistent BSs. The meaning of n is given below. 
+
+|  *n*       | 0              | 1   | 2   | 3   | 4   |
+|:-----------|:--------------:|:---:|:---:|:---:|:---:|
+| **Quality**| unpolarized DZ | DZP | TZP | QZP | 5ZP |
+
+`pcseg-n` - The segmented contraction version of 'pc-*n*' BSs, generated by orthogonalization transformation. 
+
+# Other BSs
