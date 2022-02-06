@@ -34,7 +34,7 @@ Preliminary step, not required. The directory of MikTeX executable file should b
 
 Open 'Preferences/Package Settings/LaTeXTools/Settings - User', Search `texpath` and edit the path according to OSs. For Windows users, if the prerequisite is not satisfied, variables `texpath` and `sumatra` should be specified as the directory of MiKTeX and the executable file of SumatraPDF. Otherwise the variable `texpath` can be left blank. The format of `texpath` should follow the commented line. 
 
-``` JSON
+``` json
 "windows": {
     "texpath" : "disc:\\miktex\\executable\\folder;$PATH",
     "sumatra": "disc:\\SubatraPDF\\executable\\file\\SumatraPDF.exe"
@@ -45,7 +45,7 @@ Open 'Preferences/Package Settings/LaTeXTools/Settings - User', Search `texpath`
 
 Search the same file for `builder`, modify its value to "script". Then go a little down to find the variable `builder_settings`, set the OS-specific commands. In Windows system, the iterative scheme of 'pdfLaTeX - BibTeX' is adopted: 
 
-``` JSON
+``` json
 "windows" : {
 	"script_commands":[
 		"pdflatex -synctex=1 -interaction=nonstopmode",
@@ -62,7 +62,7 @@ Search the same file for `builder`, modify its value to "script". Then go a litt
 
 LaTeXTools can automatically install the Ghostscript for MikTeX, as long as the directory of its executable file is added as the value of either `texpath` or environmental variable `$Path`. To manually install and specify Ghostscript, add the folder of executable to `$Path` or `texpath`: 
 
-``` JSON
+``` json
 "texpath" : "disc:\\miktex\\executable\\folder;disc:\\ghostscrip\\executable\\folder;$PATH"
 ```
 
@@ -102,7 +102,7 @@ After finishing compilation, SumatraPDF should be automatically launched to disp
 
 Open the menu on the top left and click on 'Settings/Options'. In the 'Set inverse search command-line' panel, enter the command below: 
 
-``` Console
+``` console
 "disc:\\sublime\\text\\executable\\sublime_text.exe" "%f:%l"
 ```
 
