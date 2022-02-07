@@ -18,11 +18,13 @@ The python environment loaded on the cluster is only used for testing proposes. 
 
 Note: The access to the module 'anaconda3' is restricted. The personal edition is recommended. 
 
-If it is the first time loading anaconda, the Linux shell should be initialized. Taking the commonly used bash as an example, anaconda will automatically modify the '.bashrc' file in the home directory if following commands are executed: 
+For the first-time users, the system will take half an hour or even more to install the packages Anadonda depends on. Follow the instructions when 'anaconda3/personal' module is successfully loaded. After finishing installations, restart the terminal to execute initialization. Taking the commonly used bash as an example, anaconda will automatically modify the '.bashrc' file in the home directory if following commands are executed: 
 
 ``` console
 > conda init bash
 ```
+
+*Thanks to A. A. for testing this procedure (Feb. 3-22).*
 
 Then use the command below to activate `conda` commands. The `module` command and the `source` command should be executed every time the user logs in. 
 

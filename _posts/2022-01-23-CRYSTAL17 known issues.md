@@ -23,11 +23,14 @@ Tests of the parallel edition are performed on [Imperial cluster](https://www.im
 : When specifying the pre-defined basis set names using `BASISSET`, the `END` keywords of geometry block and basis set block should be removed in case of error in reading input deck. 
 
 
-# Exchange-Correlation functional
+# Exchange-Correlation functional & related
 `HYBRID` `SR-OMEGA` `MR-OMEGA` `LR-OMEGA` *both editions* - A noticeable issue about their incompatibility. 
 : Fock hybrid percentage and short/medium/long rangeness cannot be modified simultaneously. `SR-OMEGA`, `MR-OMEGA`, and `LR-OMEGA` are only applicable to pre-defined range-separated functionals. 
 
 : **SOLUTION** The current situation is acceptable unless for developing new hybrid functionals, which is a delicate thing. The code also supports user-defined range separation of PBE based hybrid functionals - the keyword `LSRSH-PBE` is compatible with `HYBRID`. 
+
+`DFTD3` subblock *both editions* - A noticeable issue that this block is closed by `END` keyword only. 
+: Code does not recognize `END` keywords with suffixes for differentiating proposes, such as `ENDD3`. 
 
 # Geometry optimization
 `ITATOCEL` `RESTART` *both editions* - An incompatible bug in certain conditions. 
