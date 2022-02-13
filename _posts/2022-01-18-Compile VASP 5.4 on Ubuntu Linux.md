@@ -74,6 +74,14 @@ To launch VASP, firstly load Intel mpi and then execute `vasp_std` in parallel:
 > mpirun -np [number of processors] VASP/directory/bin/vasp_std > printout.log 
 ```
 
+## A known issue with multi-node parallelization
+An issue has been identified with Intel Parallel Studio XE 2020 when parallelizing multiple nodes. Discussions can be found in [this page](https://community.intel.com/t5/Intel-oneAPI-HPC-Toolkit/Issue-with-MPI-2019U6-and-MLX-provider/td-p/1167008). To address this problem, the following line, of which the exact meaning is unclear to me, should be inserted into the job submission script, or be entered in the command line, before the sentences executing parallel computations: 
+
+``` console
+> export UCX_TLS=ud,sm,self
+```
+
+
 # By GNU
 Compilation with GNU packages are more cumbersome because of the absence of a one-stop solution. Various packages and libraries are needed, and their dependencies and proper parameters should be checked carefully. The steps below were tested reliable in Jan. 2020 on a WSL1 Debain subsystem. However, error was reported when compiling the same source codes in Jan. 2022, saying that inconsistency in data type was detected for a certain variable. Not sure whether it originates from a library assumed to be unnecessary (libscalapack-openmpi1, see below). This section is listed here as a supplement. 
 

@@ -23,7 +23,7 @@ Then follow the instructions to generate the key pair. After generating that key
 > ssh login_account@login.archer2.ac.uk
 ```
 
-Enter the passwords for ARCHER2 account and for SSH public key in sequence. 
+Enter the passwords for ARCHER2 account and for SSH public key in sequence. For first-time users, the default password is available in [SAFE user page](https://safe.epcc.ed.ac.uk/): In menu 'Login accounts', select the corresponding account, and click 'View Login Account Password' button on near the bottom of the screen. The default password is required to be substituted by a user-defined one during the initial login, and such change will **NOT** appear in the page 'View Login Account Password'. 
 
 For the detailed, step-by-step guide, please refer: <https://docs.archer2.ac.uk/user-guide/connecting/#ssh-key-pairs> 
 
