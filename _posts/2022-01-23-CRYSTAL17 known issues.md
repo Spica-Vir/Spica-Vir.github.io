@@ -29,7 +29,7 @@ Tests of the parallel edition are performed on [Imperial cluster](https://www.im
 
 : **SOLUTION** The current situation is acceptable unless for developing new hybrid functionals, which is a delicate thing. The code also supports user-defined range separation of PBE based hybrid functionals - the keyword `LSRSH-PBE` is compatible with `HYBRID`. 
 
-`DFTD3` subblock *both editions* - A noticeable issue that this block is closed by `END` keyword only. 
+`DFTD3` `gCP` *both editions* - A noticeable issue that this sub-block is closed by `END` keyword only. 
 : Code does not recognize `END` keywords with suffixes for differentiating proposes, such as `ENDD3`. 
 
 # Geometry optimization
