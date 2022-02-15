@@ -2,7 +2,7 @@
 title: Obtain paramter lists for Grimme's DFT-D3 and gCP methods
 date: 2022-02-07 15:14:57 +0000
 categories: [Research, DFT]
-tags: [Empirical correction, molecular crystals]
+tags: [Empirical correction, molecular crystals, CRYSTAL, regular inspection]
 ---
 
 This is a short note discussing how to obtain the critical parameters for empirical DFT-D3 and geometric counterpoise (gCP) corrections developed in [S. Grimme's group](https://www.chemie.uni-bonn.de/pctc/mulliken-center/grimme/welcome). For DFT-D3, part of the parameters are available from its original publication, yet not complete. For gCP, no data is given in published papers. However, they can be easily obtained from the source code of the software posted in group webpage - [DFT-D3](https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/dft-d3) and [gCP](https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/gcp). They are actually toolkit written in Fortran90 to calculate dispersion energy and gCP energy correction terms of a given geometry and based on a given level of accuracy. 
@@ -11,6 +11,7 @@ The latest releases available on Feb. 07-22 are adopted: DFT-D3 v3.2 Rev0 and gC
 
 # DFT-D3
 
+Relatively up-to-date coefficient files for [BJ damping](https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/functionalsbj) and [zero damping](https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/functionals) are available. Specifying functional names by `FUNC` of `DFTD3` sub-block is supported, yet there is a [related issue](https://spica-vir.github.io/posts/CRYSTAL17-known-issues/). 
 
 # gCP
 

@@ -32,6 +32,11 @@ Tests of the parallel edition are performed on [Imperial cluster](https://www.im
 `DFTD3` `gCP` *both editions* - A noticeable issue that this sub-block is closed by `END` keyword only. 
 : Code does not recognize `END` keywords with suffixes for differentiating proposes, such as `ENDD3`. 
 
+`FUNC` of `DFTD3` *both editions* - A bug that some functionals claimed to support actually cannot perform auto-parameterization. 
+: Test performed on M06-2X functional. For the list of available functionals please refer to [Obtain paramter lists for Grimme's DFT-D3 and gCP methods](https://spica-vir.github.io/posts/Parameter-list-for-Grimme's-DFT-D3-and-gCP-method/). 
+
+: **SOLUTION** Turn to the current coefficient pages ([BJ damping](https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/functionalsbj) and [zero damping](https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/functionals)) of DFT-D3 for parameters and enter them manually. 
+
 # Geometry optimization
 `ITATOCEL` `RESTART` *both editions* - An incompatible bug in certain conditions. 
 : Cell parameter optimization is launched as the initial step of `ITATOCEL`. If the optimization is interrupted at the atomic coordinate optimization step, the restarted optimization will still begin from the cell parameters, leading to the error message `OPTIMIZATION TYPE CHANGED`. 
