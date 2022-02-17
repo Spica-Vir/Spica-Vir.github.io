@@ -27,15 +27,25 @@ Tests of the parallel edition are performed on [Imperial cluster](https://www.im
 `HYBRID` `SR-OMEGA` `MR-OMEGA` `LR-OMEGA` *both editions* - A noticeable issue about their incompatibility. 
 : Fock hybrid percentage and short/medium/long rangeness cannot be modified simultaneously. `SR-OMEGA`, `MR-OMEGA`, and `LR-OMEGA` are only applicable to pre-defined range-separated functionals. 
 
-: **SOLUTION** The current situation is acceptable unless for developing new hybrid functionals, which is a delicate thing. The code also supports user-defined range separation of PBE based hybrid functionals - the keyword `LSRSH-PBE` is compatible with `HYBRID`. 
+: **SOLUTION** The current situation is acceptable unless for developing new hybrid functionals, which is a delicate thing. The code also supports user-defined range separation of PBE based hybrid functionals - the keyword `LSRSH-PBE` is compatible with `HYBRID`.
+
+`SR-HYB_WB97X` *both editions* - A bug with the keyword
+: Used for tuning the short-range HF mixing percentage. Does not work at all because the code cannot recognize 'wB97X'. 
+
+: **SOLUTION** Unknown. 
 
 `DFTD3` `gCP` *both editions* - A noticeable issue that this sub-block is closed by `END` keyword only. 
 : Code does not recognize `END` keywords with suffixes for differentiating proposes, such as `ENDD3`. 
 
 `FUNC` of `DFTD3` *both editions* - A bug that some functionals claimed to support actually cannot perform auto-parameterization. 
-: Test performed on M06-2X functional. For the list of available functionals please refer to [Obtain paramter lists for Grimme's DFT-D3 and gCP methods](https://spica-vir.github.io/posts/Parameter-list-for-Grimme's-DFT-D3-and-gCP-method/). 
+: Test performed on M06-2X functional. For the list of available functionals please refer to [Obtain parameter lists for Grimme's DFT-D3 and gCP methods](https://spica-vir.github.io/posts/Parameter-list-for-Grimme's-DFT-D3-and-gCP-method/). 
 
 : **SOLUTION** Turn to the current coefficient pages ([BJ damping](https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/functionalsbj) and [zero damping](https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/functionals)) of DFT-D3 for parameters and enter them manually. 
+
+`FUNC` of `DFTD3` *Parallel edition* - A noticeable issue about incompatibility of newly published functionals
+: `DFTD3` only recognizes the supported functionals and that goes beyond its own block. `FUNC` keyword will not cover the setups if a functional unsupported is defined in `DFT` block, which means users cannot cheat the code with a supported functional name at `FUNC` keyword and manually modify all parameters for the functional actually used. 
+
+: **SOLUTION** Unknown.
 
 # Geometry optimization
 `ITATOCEL` `RESTART` *both editions* - An incompatible bug in certain conditions. 

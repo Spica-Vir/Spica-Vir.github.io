@@ -1,5 +1,5 @@
 ---
-title: Obtain paramter lists for Grimme's DFT-D3 and gCP methods
+title: Obtain parameter lists for Grimme's DFT-D3 and gCP methods
 date: 2022-02-07 15:14:57 +0000
 categories: [Research, DFT]
 tags: [Empirical correction, molecular crystals, CRYSTAL, regular inspection]
