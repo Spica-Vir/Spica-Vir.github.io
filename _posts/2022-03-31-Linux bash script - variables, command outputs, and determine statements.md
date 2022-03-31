@@ -100,10 +100,10 @@ command 2>&1 > file.out
 * Command 1: Standard output redirected to 'file.out'; Copied to standard error; Standard error redirected to 'file.out'. ---> Output and error printed in 'file.out'.  
 * Command 2: Standard output by default printed on screen; Copied to standard error; Standard output redirected to 'file.out'. ---> Output printed in 'file.out', error printed on screen.  
 
-## Determine statements
+# Determine statements
 Determine statements are important for both 'if' sentences and 'while' loops. The differences between statements acting on variables / files, or numbers / strings should be noticed. 
 
-**For files and directories**
+## For files and directories
 
 | OPERATORS | MEANINGS                          | 
 |:---------:|:----------------------------------|
@@ -116,14 +116,14 @@ Determine statements are important for both 'if' sentences and 'while' loops. Th
 | -w        | Writable, True                    |
 | -x        | Executable, True                  |
 
-**For variables**
+## For variables
 
 | OPERATORS   | MEANINGS                 | 
 |:-----------:|:-------------------------|
 | ${variable} | ${variable} exists, True |
 | -z          | Variable is empty, True  |
 
-**For strings**
+## For strings
 
 For string comparison, in case of spaces, adding "" to protect variables is recommended. Besides, `==` is preferred to `-eq` due to the same reason. 
 
@@ -131,7 +131,7 @@ For string comparison, in case of spaces, adding "" to protect variables is reco
 |:-----------------------------------:|:-----------------------------------------------------|
 | "\${string_1}" == \*"${string_2}"\* | If ${string_1} contains sub-string ${string_2}, True |
 
-**For numbers**
+## For numbers
 
 For integer comparison, either `-eq` formats or `==` formats are acceptable. But to compare float numbers, `bc` command should be used: 
 
