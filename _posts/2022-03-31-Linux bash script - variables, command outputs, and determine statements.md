@@ -29,7 +29,8 @@ Here is the list of special variables and their meanings, which should not be oc
 ## Environmental variables
 The specific definition of environmental variables depend on the specific environment. Here the important environmental variables of [Imperial cluster](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/) / [PBS job scheduler](https://www.openpbs.org/) and [ARCHER2](https://www.archer2.ac.uk/) / [slurm job scheduler](https://slurm.schedmd.com/overview.html) are listed for reference. 
 
-**Imperial cluster / PBS**  
+**Imperial cluster / PBS**
+
 | VARIABLES       | MEANINGS                                                                  |
 |:---------------:|:--------------------------------------------------------------------------|
 | \${HOME}        | Home directory, /rds/general/user/${USER}/home/                           |
@@ -38,7 +39,8 @@ The specific definition of environmental variables depend on the specific enviro
 | ${PBS_JOBID}    | ID of the current PBS job                                                 |
 | ${PBS_NODEFILE} | The list of nodes currently running the PBS job                           |
 
-**ARCHER2 / slurm**  
+**ARCHER2 / slurm**
+
 | VARIABLES       | MEANINGS                                                                  |
 |:---------------:|:--------------------------------------------------------------------------|
 | \${HOME}        | Home directory, /rds/general/user/${USER}/home/                           |
@@ -101,7 +103,8 @@ command 2>&1 > file.out
 ## Determine statements
 Determine statements are important for both 'if' sentences and 'while' loops. The differences between statements acting on variables / files, or numbers / strings should be noticed. 
 
-**For files and directories**  
+**For files and directories**
+
 | OPERATORS | MEANINGS                          | 
 |:---------:|:----------------------------------|
 | -e        | File / directory exists, True     |
@@ -113,10 +116,28 @@ Determine statements are important for both 'if' sentences and 'while' loops. Th
 | -w        | Writable, True                    |
 | -x        | Executable, True                  |
 
-**For variables**  
+**For variables**
+
 | OPERATORS   | MEANINGS                 | 
 |:-----------:|:-------------------------|
 | ${variable} | ${variable} exists, True |
 | -z          | Variable is empty, True  |
 
 **For strings**
+
+For string comparison, in case of spaces, adding "" to protect variables is recommended. Besides, `==` is preferred to `-eq` due to the same reason. 
+
+| OPERATOR                            | MEANING                                              | 
+|:-----------------------------------:|:-----------------------------------------------------|
+| "\${string_1}" == \*"${string_2}"\* | If ${string_1} contains sub-string ${string_2}, True |
+
+**For numbers**
+
+For integer comparison, either `-eq` formats or `==` formats are acceptable. But to compare float numbers, `bc` command should be used: 
+
+| COMMAND                     | MEANING                           | 
+|:---------------------------:|:----------------------------------|
+| $(echo "$a==$b" \| bc) == 1 | If float $a equals float $b, True |
+
+Note
+: `bc` command returns an integer variable, and it cannot be used as determine statements, otherwise the statement can only tell whether the specific variable is empty. 
