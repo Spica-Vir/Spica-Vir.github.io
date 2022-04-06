@@ -1,5 +1,5 @@
 ---
-title: ARCHER2 & Useage
+title: ARCHER2: connection and basic commands
 date: 2022-01-14 22:00:08 +0000
 categories: [Technique, Parallel Computing]
 tags: [cluster, ARCHER2, CRYSTAL, regular inspection, linux]
