@@ -64,6 +64,12 @@ Tests of the parallel edition are performed on [Imperial cluster](https://www.im
 
 : **Solution** To examine the eigenvectors of mass-weighted Hessian matrices during phonon band calculations, insert `MODES` in the `FREQCALC` block. Or an alternative is suggested to make the output clearer: Run frequency calculations at Γ first and restart the calculations for phonon bands. 
 
+
+`fort.9` tested on *parallel edition* - A noticeable issue about empty binary wavefunction file for restarted jobs
+: Unlike optimization module, the frequency module does not save binary wavefunction files (fort.9) of subsequent SCF calculations, so the fort.9 file for a restarted calculation is empty. 
+
+: **SOLUTION** Use the fort.9 file of the initial run. 
+
 # Properties
 `CPHF` *both editions* - A noticeable issue about supported exchange-correlation functionals. 
 : Only a limited number of functionals are supported in CPHF/KS method. Listed in the manual.  
@@ -78,3 +84,12 @@ Tests of the parallel edition are performed on [Imperial cluster](https://www.im
 : Set the value of INF array in source code. The list of specific definitions of INF array is not available for released editions. `SETINF` is available in the manual, but ineffective in practical calculations. 
 
 : **SOLUTION** Unknown. 
+
+`BIPOSIZE` tested on *parallel edition* - A noticeable issue about exceeding disk quota 
+: The keyword `BIPOSIZE` defines the size of bi-electron integral buffer. By default it is 32Mb. That limit might be exceeded when using large basis sets / screened hybrid functionals. Typically that issue can only lead to a warning message during SCF calculations and slightly sluggish computation, because the system has to re-allocate disk quota and restart calculations after the bi-electron integral exceeds the pre-defined buffer. 
+
+: However, such re-allocation is not saved in SCF output files. When restart calculations with new SCF calculation involved (e.g., frequency, geometry), 'Disk quota exceeded' error will be reported and the program will exit without re-allocating the disk quota. 
+
+: **NOTE** According to tests, missing `BIPOSIZE` might kill other running jobs as well. 
+
+: **SOLUTION** Do an SCF trial run for large systems and set `BIPOSIZE` no smaller than the output value. 

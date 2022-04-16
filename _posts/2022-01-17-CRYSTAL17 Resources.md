@@ -48,40 +48,67 @@ Known issues
 : - ASE also has an [interface](https://www.databases.fysik.dtu.dk/ase/ase/calculators/crystal.html?highlight=crystal#module-ase.calculators.crystal) to CRYSTAL14 to enable DFT/HF calculations within ASE.  
 
 # Appendix: the output naming scheme
-A table is provided here to list the current naming schemes of the simulation outputs in my research group, with modifications. The original naming scheme can be found on the Imperial cluster. For CRYSTAL17 on ARCHER2 and my personal server, the naming scheme strictly follows the table below. 
+A table is provided here to list the current naming schemes of the simulation outputs in my research group, with modifications. Even though this page is regularly inspection, oversight is inevitable. The complete and up-to-date naming scheme can be found in the [CRYSTAL jobsubmitter page](https://github.com/cmsg-icl/crystal_shape_control/tree/main/CRYSTAL_job_sub_ICHPC) of the group github repository. 
 
-Note: The input file and job submission file are named as `jobname.xxx`. 
+The input file and job submission file are named as `jobname.xxx`. 
 
-|  NAME               | FORMAT         | DESCRIPTION                           |
-|:--------------------|:---------------|:--------------------------------------|
-| *Crystal calculations (.d12)* |      |                                       |
-|  jobname.gui        | fort.34        | geometry input                        |
-|  jobname.xyz        | fort.33        | geometry, atom coordinates only       |
-|  jobname.GAUSSIAN   | GAUSSIAN.DAT   | input for Gaussian98/03               |
-|  jobname.FINDSYM    | FINDSYM.DAT    | input format for findsym              |
-|  jobname.ERROR      | fort.87        | error report                          |
-|  jobname.f9         | fort.9         | binary wavefunction                   |
-|  jobname.f98        | fort.98        | formatted wavefunction                |
-|  jobname.PPAN       | PPAN.DAT       | mulliken population                   |
-|  jobname.f20        | fort.20        | SCF guess (last step density matrix)  |
-|  jobname.HESSOPT    | HESSOPT.DAT    | Hessian matrix per optimisation step  |
-|  jobname.OPTINFO    | OPTINFO.DAT    | optimisation restart data             |
-|  jobname.optstory/  | opt*           | optimised geometry per step           |
-|  jobname.SCFLOG     | SCFOUT.LOG     | SCF output per optimisation step      |
-|  jobname.FREQINFO   | FREQINFO.DAT   | frequency restart data                |
-|  jobname.f13        | fort.13        | binary reducible density matrix       |
-|  jobname.f28        | fort.28        | binary IR intensity restart data      |
-|  jobname.f80        | fort.80        | binary localised Wannier funcions     |
-|  jobname.f25        | fort.25        | Phonon bands Crgra2006 format         |
-|  jobname.PHONBANDS  | PHONBANDS.DAT  | Phonon bands xmgrace format           |
-|  jobname.scanmode/  | SCAN*_DISP*    | Displaced .gui along scanned mode     |
-| *Property calculations (.d3)* |      |                                       |
-|  jobname.f25        | fort.25        | all Crgra2006 format data             |
-|  jobname.BAND       | BAND.DAT       | band xmgrace format                   |
-|  jobname.DOSS       | BAND.DOSS      | dos xmgrace format                    |
-|  jobname.prop3d     | fort.31        | all 3D grid data                      |
-|  jobname_CHG.CUBE   | DENS_CUBE.DAT  | 3D charge density Gaussian CUBE format|
-|  jobname_SPIN.CUBE  | SPIN_CUBE.DAT  | 3D spin density CUBE format           |
-|  jobname_POT.CUBE   | POT_CUBE.DAT   | 3D electrostatic potential CUBE format|
-|  jobname.POTC       | POTC.DAT       | 1D electrostatic potential            |
-|  jobname.DIEL       | DIEL.DAT       | dielectric constant                   |
+|  NAME               | FORMAT            | DESCRIPTION                           |
+|:--------------------|:------------------|:--------------------------------------|
+| *Computation setups*                                                            |
+|  jobname.d12        | INPUT             | crystal input file                    |
+|  jobname.d3         | INPUT             | properties input file                 |
+|  jobname.GAUSSIAN   | GAUSSIAN.DAT      | input in format of Gaussian98/03      |
+| *Geometry information*                                                          |
+|  jobname.gui        | fort.34           | geometry, periodic                    |
+|  jobname.xyz        | fort.33           | geometry, atom coordinates only       |
+|  jobname.cif        | GEOMETRY.CIF      | geometry, cif format                  |
+|  jobname.STRUC      | STRUC.INCOOR      | geometry, STRUC.INCOOR format         |
+|  jobname.FINDSYM    | FINDSYM.DAT       | input format for findsym              |
+| *General output*                                                                |
+|  jobname.ERROR      | fort.87           | error report                          |
+|  jobname.out        | -                 | screen output of program              |
+| *SCF*                                                                           |
+|  jobname.f9         | fort.20, fort.9*  | binary wavefunction                   |
+|  jobname.f98        | fort.98           | formatted wavefunction                |
+|  jobname.SCFLOG     | SCFOUT.LOG        | SCF output of subsequent steps        |
+|  jobname.PPAN       | PPAN.DAT          | mulliken population                   |
+|  jobname.GRED       | GRED.DAT          | real space wavefunction for cryapi_inp |
+|  jobname.KRED       | KRED.DAT          | k space wavefunction for cryapi_inp   |
+| *Optimization*                                                                  |
+|  jobname.HESSOPT    | HESSOPT.DAT       | Hessian matrix per optimisation step  |
+|  jobname.OPTINFO    | OPTINFO.DAT       | optimisation restart data             |
+|  jobname.optstory/  | opt*              | optimised geometry per step           |
+| *Frequency & spectra*                                                           |
+|  jobname.FREQINFO   | FREQINFO.DAT      | frequency restart data                |
+|  jobname.f13        | fort.13           | binary reducible density matrix       |
+|  jobname.f28        | fort.28           | binary IR intensity restart data      |
+|  jobname.f81        | fort.81, fort.80* | binary localized Wannier function     |
+|  jobname.f25        | fort.25           | Phonon bands Crgra2006 format         |
+|  jobname.PHONBANDS  | PHONBANDS.DAT     | Phonon bands xmgrace format           |
+|  jobname.scanmode/  | SCAN*_DISP*       | Displaced .gui along scanned mode     |
+|  jobname.IRDIEL     | IRDIEL.DAT        | IR dielectric function                |
+|  jobname.IRREFR     | IRREFR.DAT        | IR refractive index                   |
+|  jobname.IRSPEC     | IRSPEC.DAT        | IR absorbance and reflectance         |
+|  jobname.BORN       | BORN.DAT          | Born tensor                           |
+|  jobname.RAMSPEC    | RAMSPEC.DAT       | Raman spectra                         |
+|  jobname.TENS_RAMAN | TENS_RAMAN.DAT    | Raman tensor                          |
+|  jobname.EOSINFO    | EOSINFO.DAT       | QHA and equation of states data       |
+| *CPHF/KS & dielectric constants*                                                |
+|  jobname.f32        | fort.31, fort.32* | CPHF/KS restart data                  |
+|  jobname.DIEL       | DIEL.DAT          | dielectric constant                   |
+| *Electronic bands & density of states*                                          |
+|  jobname.f25        | fort.25           | all Crgra2006 format data             |
+|  jobname.BAND       | BAND.DAT          | band xmgrace format                   |
+|  jobname.DOSS       | BAND.DOSS         | dos xmgrace format                    |
+| *Charge & 3D grid data*                                                         |
+|  jobname.prop3d     | fort.31        | all 3D grid data                         |
+|  jobname_CHG.CUBE   | DENS_CUBE.DAT  | 3D charge density Gaussian CUBE format   |
+|  jobname_SPIN.CUBE  | SPIN_CUBE.DAT  | 3D spin density CUBE format              |
+|  jobname.RHOLINE    | RHOLINE.DAT    | 1D charge density and gradient           |
+|  jobname.POINTCHG   | POINTCHG.INP   | Set dummy atoms with given charge        |
+|  jobname_POT.CUBE   | POT_CUBE.DAT   | 3D electrostatic potential CUBE format   |
+|  jobname.POTC       | POTC.DAT       | 1D electrostatic potential               |
+| *Molecular & crystalline orbitals*                                              |
+|  jobname.molden     | defname.molden | molecular/crystalline orbitals for Jmol  |
+
+**Note** Dual file names in the middle column marked with '\*' stand for input file name (left) and output file name (right) respectively. Files are duplicated during calculation in case of losing important data.

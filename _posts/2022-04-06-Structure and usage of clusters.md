@@ -6,7 +6,7 @@ tags: [cluster, Imperial RCS, ARCHER2, regular inspection, linux]
 mermaid: true
 ---
 
-This page is adapted from my Crystal Growth project notebook, which was written between Feb. and Mar. 2022 and shared within the group for introduction and training proposes. Both this page and the notebook are under regular inspection. 
+This page is adapted from my Crystal Growth project notebook with added contents, which was written between Feb. and Mar. 2022 and shared within the group for induction and training proposes. Both this page and the notebook are under regular inspection, but their contents are not synced. 
 
 # Divide a job: Nodes, Processors and Threads
 
@@ -30,11 +30,32 @@ In practice, users can either run each process in serial (i.e., number of thread
 
 # The internal coordinator: What is MPI
 
-# Distribute files: Copy vs split
+Message passing interface, or MPI, is a standard for communicating and transferring data between nodes and therefore distributed memories. It is utilized via MPI libraries. The most popular implementations include: 
+
+- [MPICH](https://www.mpich.org/) - an open-source library;  
+- [Intel MPI](https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html#gs.xld8oa) - a popular implementation of MPICH especially developed for Intel CPUs;  
+- [OpenMPI](https://www.open-mpi.org/) - an open-source library;  
+- [OpenMP](https://www.openmp.org/) - Not MPI; parallelization based on shared memory, so only implemented in a single node; can be used for multithreading;  
+
+In practice, a hybrid parallelization combining MPI and OpenMP to run multithread jobs on cluster is allowed, though not recommended. 
+
+So far, MPI only supports C/C++ and FORTRAN, which explains why all parallel computing software is based on these languages. To launch an executable in parallel, one should specify: `mpiexec` or `mpirun`. 
+
+Technical details about how MPI is implemented is too advanced for typical computational chemists / solid state physicists, which is a specific, completely different research area, so they are not covered in this page. 
+
+# Distribute files
+
+As mentioned in previous sections, memories are distributed to nodes. Considering the inefficiency of inter-node communication, it is unpractical to frequently transfer files across nodes. In practice, required input files are duplicated, or synced, to all the nodes before any calculation. During the calculation, data is transferred from computing nodes to the I/O node. 
+
+Although such sync is automatic for almost any modern cluster, it is safer to specify that when developing job submission scripts: 
+
+``` bash
+ssh ${NODEADDRESS} "${COMMAND}"
+```
 
 # Secure your storage: Work space and home space
 
-# The external coordinator: What is job scheduler
+# The external coordinator: What is a job scheduler
 
 # Work flow: How to run a job in parallel
 
