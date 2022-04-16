@@ -35,7 +35,7 @@ Here I collected the English name list of common symbols for reference.
 | .       | Full stop, Full stop punction             |
 | ,       | Comma                                     |
 | @       | At, At sign                               |
-| #       | Number sign, Hash tag                     |
+| #       | Number sign, Hash                         |
 | ''      | (single) Quotation marks, Quotes          |
 | ""      | (double) Quotation marks, Quotes          |
 | !       | Exclamation mark                          |
