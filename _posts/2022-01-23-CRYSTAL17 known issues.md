@@ -96,12 +96,13 @@ Tests of the parallel edition are performed on [Imperial cluster](https://www.im
 Fully Optimized Contracted Gaussian Basis Sets for Atoms Li to Kr. A. Schäfer, H. Horn and R. Ahlrichs; J. Chem. Phys. 97, 2571 (1992). 
 ```  
 
-: This issue leads to probable errors when decoding files. For example, when using reading files with python:
+This issue leads to probable errors when decoding files. For example, when using reading files with python:
 
 ``` python
 >>> file = read(filename, 'r')
 ```
-: The command above leads to error message: 'Non UTF-8 encoded character.' Either delete 'ä' or add the option to skip the character can solve this problem:
+
+The command above leads to error message: 'Non UTF-8 encoded character.' Either delete 'ä' or add the option to skip the character can solve this problem:
 
 ``` python
 >>> file = read(filename, 'r', errors='ignore')
