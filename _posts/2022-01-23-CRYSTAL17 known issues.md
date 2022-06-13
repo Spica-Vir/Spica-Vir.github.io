@@ -80,16 +80,29 @@ Tests of the parallel edition are performed on [Imperial cluster](https://www.im
 : **SOLUTION** To visualize the spatial shape of CBM, compute crystalline orbitals with the keyword `ORBITALS` instead. 
 
 # Developers
-`SETINF` *both editions* - Not available.
-: Set the value of INF array in source code. The list of specific definitions of INF array is not available for released editions. `SETINF` is available in the manual, but ineffective in practical calculations. 
-
-: **SOLUTION** Unknown. 
-
 `BIPOSIZE` tested on *parallel edition* - A noticeable issue about exceeding disk quota 
 : The keyword `BIPOSIZE` defines the size of bi-electron integral buffer. By default it is 32Mb. That limit might be exceeded when using large basis sets / screened hybrid functionals. Typically that issue can only lead to a warning message during SCF calculations and slightly sluggish computation, because the system has to re-allocate disk quota and restart calculations after the bi-electron integral exceeds the pre-defined buffer. 
 
-: However, such re-allocation is not saved in SCF output files. When restart calculations with new SCF calculation involved (e.g., frequency, geometry), 'Disk quota exceeded' error will be reported and the program will exit without re-allocating the disk quota. 
+: However, such re-allocation is not saved in SCF output files. When restart calculations with new SCF calculation involved (e.g., frequency), 'Disk quota exceeded' error will be reported and the program will exit without re-allocating the disk quota. 
 
 : **NOTE** According to tests, missing `BIPOSIZE` might kill other running jobs as well. 
 
 : **SOLUTION** Do an SCF trial run for large systems and set `BIPOSIZE` no smaller than the output value. 
+
+`def2-mSVP` *both editions* - A noticeable issue that non-UTF-8 encoded character is printed out when specifying `BASISSET` using Grimme's modified 'def2-SVP' basis sets (for `PBEH3C` and `HSE3C`).  
+: The non-UTF-8 encoded character lies in the 'ä' of the following line:
+
+```
+Fully Optimized Contracted Gaussian Basis Sets for Atoms Li to Kr. A. Schäfer, H. Horn and R. Ahlrichs; J. Chem. Phys. 97, 2571 (1992). 
+```  
+
+: This issue leads to probable errors when decoding files. For example, when using reading files with python:
+
+``` python
+>>> file = read(filename, 'r')
+```
+: The command above leads to error message: 'Non UTF-8 encoded character.' Either delete 'ä' or add the option to skip the character can solve this problem:
+
+``` python
+>>> file = read(filename, 'r', errors='ignore')
+```

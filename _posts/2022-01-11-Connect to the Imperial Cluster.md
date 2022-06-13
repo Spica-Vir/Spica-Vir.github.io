@@ -27,11 +27,11 @@ Notes
 1. If `ssh: command not found` error is reported, install the ssh package by `sudo apt-get install ssh` (Ubuntu / Debian) or activate openssh service in OpenSUSE.  
 
 ``` console
-# Enable ssh services
-> service sshd start
-# If firewall blocks the visit
-> sudo firewall-cmd --permanent --add-service=ssh
-> sudo firewall-cmd --reload
+~$ # Enable ssh services
+~$ service sshd start
+~$ # If firewall blocks the visit
+~$ sudo firewall-cmd --permanent --add-service=ssh
+~$ sudo firewall-cmd --reload
 
 ```
 
@@ -41,7 +41,7 @@ Notes
 Sometimes the VPN service might be unstable or even not available. It is possible to channel through the gateway of the cluster: 
 
 ``` console
-> ssh username@sshgw.ic.ac.uk
+~$ ssh username@sshgw.ic.ac.uk
 ```
 
 Then you will log into an intermediate server. Use the command in the last section to visit the Imperial cluster. 
@@ -113,7 +113,7 @@ Solution
 : Logging in via VPN and another WiFi, or use the command to specify CX2: 
 
 ``` console
-> ssh username@login.cx2.hpc.ic.ac.uk
+~$ ssh username@login.cx2.hpc.ic.ac.uk
 ```
 
 Fixed

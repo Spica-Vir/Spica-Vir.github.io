@@ -23,7 +23,7 @@ This website, of course :-)
 
 A collection of system-specific, Gaussian BSs optimized by [**Dr Mike Towler**](https://vallico.net/mike_towler/crystal.html). **Not maintained anymore**.
 
-# Geometry & Visualization
+# Geometry, Visualization and Data processing
 A main drawback of CRYSTAL package is the lack of matching geometry edit & visualization kit, making it comparatively not as user friendly as more popular codes like VASP/CASTEP. It should be noted that even though links here provide some temporary solutions, the images obtained are typically not satisfying from a point of publication, so coding seems to be the only choice for now. Meanwhile, for some keywords, there are print options for formats widely supported by mainstream visualization software - a typical example is the .CUBE format by the ECH3 keyword - which will not be discussed any more. Anyway, it should not be a real problem for any researcher with the basic programming capability. Maybe I will post my scripts to github someday when I am free and happy to do so. 
 
 [**CRYSPLOT**](http://crysplot.crystalsolutions.eu/) - An all-in-one visualization solution
@@ -46,6 +46,17 @@ Known issues
 Known issues
 : - The `ase.io.crystal.write_crystal` method has no symmetry analysis. Its output only has the P1 symmetry.  
 : - ASE also has an [interface](https://www.databases.fysik.dtu.dk/ase/ase/calculators/crystal.html?highlight=crystal#module-ase.calculators.crystal) to CRYSTAL14 to enable DFT/HF calculations within ASE.  
+
+[**CRYSTAL tools**](https://github.com/crystal-code-tools) **In development** - A pre- and post- processing tool co-developed by [Computational Materials Science Group](https://cmsg-icl.github.io/web/index.html) at Imperial College and [Theoretical Chemistry Group](https://www.chimica.unito.it/do/gruppi.pl/Show?_id=7myq) at University of Torino. It adopts the heavily object-oriented fashion of [Pymatgen](https://pymatgen.org/) and can easily cooperate with it. The first stable release is named as 'crystal_functions' and is accessible via `pip`. Installation instructions can be found on [this page](https://github.com/crystal-code-tools/crystal_functions).
+
+# Job submission scripts
+There are several job submission scripts available online. Considering the pros and cons of available scripts, I developed a new version based on Dr G. M.'s good example, which can be found on [CRYSTAL jobsubmitter page](https://github.com/cmsg-icl/crystal_shape_control/tree/main/CRYSTAL_job_sub_ICHPC) of the group github repository.
+
+Note the setups of jobsubmitters are highly dependent on the environment of clusters. Currently 3 versions are developed, which covers the most common cases:
+
+1. For PBS batch system, using the [RCS of Imperial College](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/) as the target environment.  
+2. For Slurm batch system, using the UK national super-computing service [ARCHER2](https://www.archer2.ac.uk/) as the target environment.  
+3. For local servers without batch system. Both serial and parallel versions of CRYSTAL are supported.
 
 # Appendix: the output naming scheme
 A table is provided here to list the current naming schemes of the simulation outputs in my research group, with modifications. Even though this page is regularly inspection, oversight is inevitable. The complete and up-to-date naming scheme can be found in the [CRYSTAL jobsubmitter page](https://github.com/cmsg-icl/crystal_shape_control/tree/main/CRYSTAL_job_sub_ICHPC) of the group github repository. 

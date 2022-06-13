@@ -40,9 +40,9 @@ Besides, packages listed below should be installed at least before compiling VAS
 2. Type the command `./Install_GUI.sh` and enter the installing environment. Follow the instructions to complete the installation.  
 3. Set the environment variable for the Ifort compiler and the MKL library in `~/.bashrc`. Substitute `/your-intel-directory/` with the actual directory you place the folder.   
 ``` console 
-> echo "source /your-intel-directory/intel/bin/compilervars.sh intel64" >> ~/.bashrc
-> echo "source /your-intel-directory/intel/mkl/bin/mklvars.sh intel64" >> ~/.bashrc
-> source ~/.bashrc
+~$ echo "source /your-intel-directory/intel/bin/compilervars.sh intel64" >> ~/.bashrc
+~$ echo "source /your-intel-directory/intel/mkl/bin/mklvars.sh intel64" >> ~/.bashrc
+~$ source ~/.bashrc
 ```
 
 4. Check whether the compiler has been successfully installed and set up successfully with the commands `ifort -v`, ``icc -v`` and `echo $MKLROOT`.  
@@ -70,15 +70,15 @@ The compiled program is at the `bin/` sub-folder. The most commonly used edition
 
 To launch VASP, firstly load Intel mpi and then execute `vasp_std` in parallel:   
 ``` console
-> source /your-intel-directory/intel/parallel_studio_xe_2020/psxevars.sh
-> mpirun -np [number of processors] VASP/directory/bin/vasp_std > printout.log 
+~$ source /your-intel-directory/intel/parallel_studio_xe_2020/psxevars.sh
+~$ mpirun -np [number of processors] VASP/directory/bin/vasp_std > printout.log 
 ```
 
 ## A known issue with multi-node parallelization
 An issue has been identified with Intel Parallel Studio XE 2020 when parallelizing multiple nodes. Discussions can be found in [this page](https://community.intel.com/t5/Intel-oneAPI-HPC-Toolkit/Issue-with-MPI-2019U6-and-MLX-provider/td-p/1167008). To address this problem, the following line, of which the exact meaning is unclear to me, should be inserted into the job submission script, or be entered in the command line, before the sentences executing parallel computations: 
 
 ``` console
-> export UCX_TLS=ud,sm,self
+~$ export UCX_TLS=ud,sm,self
 ```
 
 
@@ -135,12 +135,12 @@ These packages are also recommended to be installed manually because of the vers
 Unzip the VASP packages and enter the folder. Use the commands below to add patches to the source code: 
 
 ``` console
-> wget http://cms.mpi.univie.ac.at/patches/patch.5.4.1.14032016.gz
-> wget http://cms.mpi.univie.ac.at/patches/patch.5.4.1.03082016.gz
-> gunzip patch.5.4.1.14032016.gz
-> gunzip patch.5.4.1.03082016.gz
-> patch -p0 < patch.5.4.1.14032016
-> patch -p0 < patch.5.4.1.03082016
+~$ wget http://cms.mpi.univie.ac.at/patches/patch.5.4.1.14032016.gz
+~$ wget http://cms.mpi.univie.ac.at/patches/patch.5.4.1.03082016.gz
+~$ gunzip patch.5.4.1.14032016.gz
+~$ gunzip patch.5.4.1.03082016.gz
+~$ patch -p0 < patch.5.4.1.14032016
+~$ patch -p0 < patch.5.4.1.03082016
 ```
 
 Issue identified Jan. 9-21  
@@ -204,5 +204,5 @@ BINDIR     = ../../bin
 ## Usage
 Similar to VASP compiled by Intel parallel studio, the command to launch parallel computation is: 
 ``` console
-> /usr/bin/mpirun.openmpi -np [number of processors] VASP/directory/bin/vasp_std > printout.log
+~$ /usr/bin/mpirun.openmpi -np [number of processors] VASP/directory/bin/vasp_std > printout.log
 ```

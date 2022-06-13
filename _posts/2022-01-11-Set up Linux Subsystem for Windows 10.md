@@ -35,13 +35,13 @@ Prerequisites of WSL 2
 2. Type the command:  
 
 ``` console
-> wsl --install
+~$ wsl --install
 ```
 
 By default, a Ubuntu distribution will be installed. If another distribution is preferred, e.g. openSUSE: 
 
 ``` console
-> wsl --install --openSUSE-42
+~$ wsl --install --openSUSE-42
 ```
 
 Use the command `wsl --list --online` to check available distributions. 
@@ -53,7 +53,7 @@ This step has been integrated into the previous step if you used the **Automatic
 If a WSL 1 application was installed previously, or by mistake, it is possible to upgrade it. First, you should check your WSL version by cmd or PowerShell: 
 
 ``` console
-> wsl -l -v
+~$ wsl -l -v
   NAME      STATE           VERSION
 * Debian    Running         2
 ```
@@ -61,7 +61,7 @@ If a WSL 1 application was installed previously, or by mistake, it is possible t
 Then use the command below and the distribution name (`Debian`) to upgrade WSL: 
 
 ``` console
-> wsl --set-version Debian 2
+~$ wsl --set-version Debian 2
 ```
 
 # Migrate WSL to another disk
@@ -72,7 +72,7 @@ P.S., Nevertheless, the routine of allocating limited memory to system disk to m
 After downloading the executable application, open PowerShell and `cd` to its directory. Type the command below (substitute `Debian` and `D:\Debian` with your own distribution name and path): 
 
 ``` console
-> .\\LxRunOffline.exe m -n Debian -d D:\\Debian
+~$ .\\LxRunOffline.exe m -n Debian -d D:\\Debian
 ```
 
 Then a virtual disk is visible in the folder specified. 
