@@ -1,15 +1,15 @@
 ---
-title: Create a new environment in Anaconda3
+title: Install Anaconda3 and create a new environment
 date: 2022-01-26 19:52:11 +0000
 categories: [Technique, programming]
 tags: [python, Anaconda3, windows, linux, Imperial RCS]
 ---
-This post is to summarize the procedures to create an [Anaconda](https://www.anaconda.com/) python environment in Windows and Linux systems. Tested on Jan. 08-2022 with Windows 10 21H2, and on Jan. 29-2022 with Imperial cluster cx3. 
+This post is to summarize the procedures to create an [Anaconda](https://www.anaconda.com/) python environment in Windows and Linux systems. Tested on Jan. 08, 2022 with Windows 10 21H2, and on Jan. 29, 2022 with Imperial cluster cx3. Imperial cluster instructions updated Jun. 20, 2022.
 
 # Windows system
 [Anaconda 3](https://www.anaconda.com/products/individual)has been integrated into a application with GUI. After installing [Anaconda 3](https://www.anaconda.com/products/individual), launch the 'Anaconda Prompt(Anaconda3)' application, which is the command line of the software, and setup everything (see below). It is also accessible to available environments / packages through Anaconda Navigator(Anaconda3) with a GUI. 
 
-# Load Anaconda3 on Imperial cluster
+# Load and Install Anaconda3 on Imperial cluster
 The python environment loaded on the cluster is only used for testing proposes. Any demanding jobs are required to run on Anaconda environments. To load Anaconda3, use the command below: 
 
 ``` console
@@ -18,17 +18,27 @@ The python environment loaded on the cluster is only used for testing proposes. 
 
 Note: The access to the module 'anaconda3' is restricted. The personal edition is recommended. 
 
-For the first-time users, the system will take half an hour or even more to install the packages Anadonda depends on. Follow the instructions when 'anaconda3/personal' module is successfully loaded. After finishing installations, restart the terminal to execute initialization. Taking the commonly used bash as an example, anaconda will automatically modify the '.bashrc' file in the home directory if following commands are executed: 
+After the module is correctly loaded, using the command below will automatically install anaconda3 to your home directory: `${HOME}/anaconda3/`
 
 ``` console
-~$ conda init bash
+~$ anaconda-setup
 ```
 
-*Thanks to A. A. for testing this procedure (Feb. 3-22).*
-
-Then use the command below to activate `conda` commands. The `module` command and the `source` command should be executed every time the user logs in. 
+Alternatively, copying the corresponding shell script into your work directory enables you to make modifications. Then execute the script in your work directory:
 
 ``` console
+~$ which anaconda-setup
+/apps/anaconda3/2019.10/anaconda-setup
+~$ cp /apps/anaconda3/2019.10/anaconda-setup ./
+~$ ./anaconda-setup
+```
+
+It takes roughly 1 hr to setup everything. Have a cup of tea.
+
+Afterwards, anaconda needs to be initialized. Use the command below to initialize and activate `conda` commands. The `source` command should be executed every time the user logs in. 
+
+``` console
+~$ ./anaconda3/bin/conda init
 ~$ source ~/.bashrc
 ```
 
@@ -55,9 +65,13 @@ Create a new environment
 
 **Check available updates**
 
+To update anaconda, do it in the base environment.
+
 ``` console
 ~$ conda update conda
 ```
+
+Substituting `conda` with the specific package name can update the package in a specific environment.
 
 **Enter/exist a specific environment**
 
