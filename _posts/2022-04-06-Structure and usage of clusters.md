@@ -26,7 +26,11 @@ From the figure above, it is not difficult to distinguish the differences betwee
 
 However, multithreading is not always advantageous. A technical prerequisite is that the program should be developed for multithread proposes. Python, for example, is a pseudo-multithread language, while Java is a real one. Sometimes multithreading can lead to catastrophic results. Since threads share the same resource allocation (CPU, RAM, I/O, etc.), when a thread fails, the whole process fails as well. Comparatively, in multiple processes, other processes will be protected if a process fails. 
 
-In practice, users can either run each process in serial (i.e., number of threads = 1), or in parallel (i.e., number of threads > 1) on clusters. However, **the former is recommended**, because of more secured resource managements. The latter is not advantageous. Besides the problem mentioned above, it might lead to problems such as memory leak when running programs poorly developed for multithreading - a common problem of scientific computing packages :-). 
+In practice, users can either run each process in serial (i.e., number of threads = 1), or in parallel (i.e., number of threads > 1) on clusters. However, **the former is recommended**, because of more secured resource managements. The latter is not advantageous. Besides the problem mentioned above, it might lead to problems such as memory leak when running programs either: poorly developed for multithreading /  compiled with improper flags / launched in an improper environmental setup - common problems of scientific computing packages & their users. :-) 
+
+## More nodes vs more CPUs
+
+When memory allocation is allowed, from my experience, using more CPUs/processes per node is usually a better idea, considering that all nodes have independent memory space and the inter-node communications are achieved by wired networks. It almost always takes longer to coordinate nodes than to coordinate processors within the same node.
 
 # The internal coordinator: What is MPI
 
@@ -49,13 +53,27 @@ As mentioned in previous sections, memories are distributed to nodes. Considerin
 
 Although such sync is automatic for almost any modern cluster, it is safer to specify that when developing job submission scripts: 
 
-``` bash
-ssh ${NODEADDRESS} "${COMMAND}"
+``` console
+~$ ssh ${NODEADDRESS} "${COMMAND}"
 ```
 
-# Secure your storage: Work space and home space
+# Secure your storage: Work directory and home directory
 
-# The external coordinator: What is a job scheduler
+All the modern clusters have separate disk spaces for differently proposes, namely, work directory and home directory. This originates again from the famous speed difference between CPU and RAM/ROM. 2 distinctly kinds of disks are used respectively to improve the overall efficiency and secure important data:
+
+- For work directory, large, high-frequency disks are used. Data stored in work directory is usually not backed up, and in some cases, will be automatically cleaned after a fixed time length.  
+- For home directory, mechanical disks with slower read/write frequency but better robustness are used. Usually files in home space are backed up.
+
+For large clusters like ARCHER2, the work directory and the home directory are completely separated, i.e., directory is only viable by login nodes; work directory is viable by both job and login nodes. Job submission in home directory is prohibited. 
+
+For more flexible, medium-sized clusters like Imperial CX1, submitting jobs in home directory and visiting home directory by job nodes are allowed, yet storing temporary files during calculation in home directory is still not recommended because of the potential influence on other files and the reduced overall efficiency. Work and home directories can be called with the following environmental variables:
+
+`${EPHEMERAL}` - Work directory. Data will be cleaned over 30 days.  
+`${HOME}` - Home directory.  
+ 
+# The external coordinator: What is a batch system
+
+Always bear in mind that the computational resources are limited, so you need to acquire reasonable resources for your job. Besides, the cluster also needs to coordinate jobs submitted by various users and make the best of available resources. When job is running, maybe you also want to check its status. All of this are fulfilled by batch systems.
 
 # Work flow: How to run a job in parallel
 
