@@ -41,7 +41,7 @@ Message passing interface, or MPI, is a standard for communicating and transferr
 - [OpenMPI](https://www.open-mpi.org/) - an open-source library;  
 - [OpenMP](https://www.openmp.org/) - Not MPI; parallelization based on shared memory, so only implemented in a single node; can be used for multithreading;  
 
-In practice, a hybrid parallelization combining MPI and OpenMP to run multithread jobs on cluster is allowed, though not recommended. 
+In practice, a hybrid parallelization combining MPI and OpenMP to run multithread jobs on cluster is allowed, though not recommended. The first process (probably not a node or a processor) is usually allocated for I/O, and the rest is used for parallel computing.
 
 So far, MPI only supports C/C++ and FORTRAN, which explains why all parallel computing software is based on these languages. To launch an executable in parallel, one should specify: `mpiexec` or `mpirun`. 
 
@@ -70,10 +70,38 @@ For more flexible, medium-sized clusters like Imperial CX1, submitting jobs in h
 
 `${EPHEMERAL}` - Work directory. Data will be cleaned over 30 days.  
 `${HOME}` - Home directory.  
+
+# Setup your environment: What does an application need?
+
+
  
 # The external coordinator: What is a batch system
 
-Always bear in mind that the computational resources are limited, so you need to acquire reasonable resources for your job. Besides, the cluster also needs to coordinate jobs submitted by various users and make the best of available resources. When job is running, maybe you also want to check its status. All of this are fulfilled by batch systems.
+Always bear in mind that the computational resources are limited, so you need to acquire reasonable resources for your job. Besides, the cluster also needs to calculate your budget, coordinate jobs submitted by various users, and make the best of available resources. When job is running, maybe you also want to check its status. All of this are fulfilled by batch systems.
+
+In practice, a Linux shell script is needed. Parameters of the batch system of are set in the commented lines at the top of the file. After the user submit the script to batch system, the system will:
+
+1. Examine the parameters  
+2. Allocate and coordinate the requested resources  
+3. Set up the environments, such as environmental variables, package dependency, and sync the same setting to all nodes
+4. Launch a parallel calculation - see mpi part
+5. Do post-processing
+
+Note that a 'walltime' is usually required for a batch job, i.e., the maximum allowed time for the running job. The job will be 'killed', or suspended, when the time exceeds the walltime, and the rest part of the script will not be executed. `timeout` command can be used to set another walltime for a specific command.
+
+Common batch systems include [PBS](https://en.wikipedia.org/wiki/Portable_Batch_System), which involves different releases, and [Slurm](https://slurm.schedmd.com/overview.html). For Imperial cluster CX1 and MMM Hub Young (managed by UCL), PBS system is implemented; for ARCHER2 and Tianhe-2 LvLiang(天河二号-吕梁), Slurm is implemented. Tutorials of batch systems are not covered here, since they are highly machine-dependent - usually modifications are made to enhance the efficiency. Refer to the specific user documentations for more information.
+
+Successfully setting and submitting a batch job script symbolizes that you do not need this tutorial any more. Before being able to do that, some considerations might be important:
+
+- How large is my system? Is it efficient to use the resources I requested(Note that it is not a linear-scaling problem...)?  
+- To which queue should I submit my job? Is it too long/not applicable/not available?
+- Is it safe to use multi-threading?  
+- Is it memory,GPU etc. demanding?  
+- Roughly how long will it take?  
+- What is my budget code? Do I have enough resources?  
+- Which MPI release version is my code compatible with? Should I load a module or set variables?  
+- Any other specific environmental setups does my code need?  
+- Do I have any post-processing script after MPI part is finished? How long does it take?
 
 # Work flow: How to run a job in parallel
 
