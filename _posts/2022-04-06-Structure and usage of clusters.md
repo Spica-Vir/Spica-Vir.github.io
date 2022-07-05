@@ -73,8 +73,41 @@ For more flexible, medium-sized clusters like Imperial CX1, submitting jobs in h
 
 # Setup your environment: What does an application need?
 
+**Executable**  
+The binary executable should, theoretically, all be stored in `\usr\bin`. This never happens in practice, unless you are a fanatical fundamentalist of the early Linux releases. To guide your system to the desired executable, you can either laboriously type its absolute path every time you want to use it or add the path to the environmental variable:
 
- 
+``` console
+~$ export PATH=${PATH}:path_to_bin
+```
+
+Running any executable in parallel requires mpi to coordinate all the processes/threads. The path to mpi executable is also required. 
+
+Many scientific codes require other specific environmental variables. Read their documentations for further information.
+
+**lib/a/o files**  
+When writing a script, you might need some extra packages to do more complex jobs. Those packages are developed by experts in computer science and can be called by a line of code. The same thing happens when people were developing applications like CRYSTAL and ONETEP. 
+
+However, scientific computing codes are usually distributed in the form of source code. Source codes in FORTRAN/C/C++ need be compiled into a binary executable. There are 2 options during compiling:
+
+1. Include the whole package as long as one of its functions is called, also known as a 'static lib'.  
+2. Only include a 'table of contents' when compiling, also known as 'dynamic lib'. The packages needed are separately stored in 'dll/so' files, making it possible for multiple applications sharing the same lib.
+
+The details about compilation are not touched in this post. Maybe I will make another post to discuss them, when I am more confident with this topic. The thing is: when running a dynamically linked application, information should be given to help the code find the libs needed. This can be specified by: 
+
+``` console
+~$ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:path_to_lib`
+```
+
+For statically linked applications, usually you need not worry about it - but the volume of the compiled executable might make you feel wonder whether there is an alternative way.
+
+**Conflicts**  
+Improper previous settings may lead to a wrong application, or a wrong version, if multiple applications with similar functions are installed in the system, such as Intel compiler and GCC, OpenMPI and MPICH - a common phenomenon for shared computing resources. To avoid this, the path to the undesired application or lib should be removed from the environmental variables.
+
+**Environmental Modules**  
+[Environmental modules](http://modules.sourceforge.net/) is a popular software managing the necessary environmental setups and conflicts for each application. It can easily add or erase the environmental variables by commands `module load` or `module rm`, and modulefiles written in Tool Command Language (TCL). The default directory of modulefiles is given in the environmental variable `${MODULEPATH}`, but files in other directories can also be loaded by their absolute path.
+
+Both Imperial CX1 and ARCHER2 adopt this application, which pre-compiled applications offered.
+
 # The external coordinator: What is a batch system
 
 Always bear in mind that the computational resources are limited, so you need to acquire reasonable resources for your job. Besides, the cluster also needs to calculate your budget, coordinate jobs submitted by various users, and make the best of available resources. When job is running, maybe you also want to check its status. All of this are fulfilled by batch systems.
