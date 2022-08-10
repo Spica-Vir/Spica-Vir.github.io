@@ -79,5 +79,4 @@ Multi-threading needs a separate setting of stack size. Use the following comman
 
 **NOTE**  
 1. Compilation on CX1 does not support the option `-xhost`, which forces the use of the highest instruction set available, due to unknown reasons. Compilation is killed by signal when interpreting the object file, 'function_basis_mod.o', of the script 'function_basis_mod.F90'.    
-2. The attached CX1 configuration file is incompatible with the CX1 job submission template, with the 'executable not found' error.  
-2. The current compilation on CX1 works well on login nodes, but has issue with test scripts. Will go back after solving this.  
+2. The current compilation on CX1 is not compatible with test scripts on throughput nodes. In the best case, the job got stuck after printing the input information. Test scripts works well on login nodes.
