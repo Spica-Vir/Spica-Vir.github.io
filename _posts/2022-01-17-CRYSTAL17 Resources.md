@@ -37,7 +37,7 @@ Known issues
 
 [**J-ICE**](http://j-ice.sourceforge.net/) - *Not tested* A web-based, crystallographic version of [Jmol](http://jmol.sourceforge.net/). 
 
-[**DL Visualize (DLV)**](http://www.cse.clrc.ac.uk/cmg/DLV/) **Not maintained anymore**. Developed in Daresbury laboratory. Its website has been unavailable since late 2021, so regarded as not maintained even though there are rumors that there is a plan to re-write codes of DLV. 
+[**DL Visualize (DLV)**](https://gitlab.com/bmgcsc/dlv3-release) Developed in Daresbury laboratory, mainly by B. Searle. There was a release webpage which requires registration, but due to unknown reasons, now instead of the webpage, its repository is accessible, so currently it is open-source and free of charge.
 
 [**FINDSYM**](https://stokes.byu.edu/iso/findsym.php) - Identify the space group from a CIF structure file and provide fractional coordinates of all the nonequivalent atomic sites. 
 
@@ -50,7 +50,7 @@ Known issues
 [**CRYSTAL tools**](https://github.com/crystal-code-tools) **In development** - A pre- and post- processing tool co-developed by [Computational Materials Science Group](https://cmsg-icl.github.io/web/index.html) at Imperial College and [Theoretical Chemistry Group](https://www.chimica.unito.it/do/gruppi.pl/Show?_id=7myq) at University of Torino. It adopts the heavily object-oriented fashion of [Pymatgen](https://pymatgen.org/) and can easily cooperate with it. The first stable release is named as 'crystal_functions' and is accessible via `pip`. Installation instructions can be found on [this page](https://github.com/crystal-code-tools/crystal_functions).
 
 # Job submission scripts
-There are several job submission scripts available online. Considering the pros and cons of available scripts, I developed a new version based on Dr G. M.'s good example, which can be found on [CRYSTAL jobsubmitter page](https://github.com/cmsg-icl/crystal_shape_control/tree/main/CRYSTAL_job_sub_ICHPC) of the group github repository.
+There are several job submission scripts available online. Considering the pros and cons of available scripts, I developed a new version based on Dr G. M.'s good example, which can be found on [CRYSTAL jobsubmitter page](https://github.com/cmsg-icl/crystal_shape_control/tree/main/Job_Submitter_specific/CRYSTAL) of the group github repository.
 
 Note the setups of jobsubmitters are highly dependent on the environment of clusters. Currently 3 versions are developed, which covers the most common cases:
 
@@ -59,7 +59,7 @@ Note the setups of jobsubmitters are highly dependent on the environment of clus
 3. For local servers without batch system. Both serial and parallel versions of CRYSTAL are supported.
 
 # Appendix: the output naming scheme
-A table is provided here to list the current naming schemes of the simulation outputs in my research group, with modifications. Even though this page is regularly inspection, oversight is inevitable. The complete and up-to-date naming scheme can be found in the [CRYSTAL jobsubmitter page](https://github.com/cmsg-icl/crystal_shape_control/tree/main/CRYSTAL_job_sub_ICHPC) of the group github repository. 
+A table is provided here to list the current naming schemes of the simulation outputs in my research group, with modifications. Even though this page is regularly inspection, oversight is inevitable. The complete and up-to-date naming scheme is available in the `settings` files of the job submission script folders. 
 
 The input file and job submission file are named as `jobname.xxx`. 
 
