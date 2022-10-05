@@ -7,7 +7,7 @@ tags: [cluster, Imperial RCS, regular inspection, linux, windows]
 
 This page is to show how to set up the connection to Imperial cluster for the research computing services (RCS) and its usage. Contents of this page are regularly inspected. 
 
-**N.B. MAKE SURE YOU HAVE BEEN AUTHORIZED TO DO SO.** Please note this page is not an official guidance. The author disclaims all responsibility for any trouble induced by the improper use of the information provided. For further details and technical supports, please visit the [Imperial RCS website](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/). 
+**N.B. MAKE SURE YOU HAVE BEEN AUTHORIZED TO DO SO.** Please note this page is not an official guidance. The author disclaims all responsibility for any trouble induced by the improper use of the information provided. For further details and technical supports, please visit the [Imperial RCS website](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/) and the [Wiki Page](https://wiki.imperial.ac.uk/display/HPC/High+Performance+Computing). Brief introductions to parallel computing, queuing systems and the structures are provided in [this post](https://spica-vir.github.io/posts/Structure-and-usage-of-clusters/). 
 
 # Connection via VPN
 VPN is the easiest access to the Imperial cluster when users are off-campus. The cluster is directly accessible for on-campus visitors connected to the 'Imperial-WPA' WiFi. 
@@ -20,7 +20,7 @@ The most convenient way to visit computing resources. For guidance of setting up
 
 The connection command: 
 ``` console
-> ssh -XY username@login.hpc.ic.ac.uk
+~$ ssh -XY username@login.hpc.ic.ac.uk
 ```
 
 Notes  
@@ -74,11 +74,19 @@ Note: There is a CRYSTAL14 module in the list. For users in NMH's group, the lat
 
 # CX1 vs. CX2
 
-CX1 and CX2 are old names of Imperial clusters. Now they are merged, so you have access to both resources if logging in with the previous commands. Their job type and the core number per node are slightly different, which can be checked by `availability`. 
+## New Job partition guide
+
+The new job partition guide is released in April 2022, which makes the old CX1/CX2 job partitions degenerate. For the new job sizing guide, refer to [Wiki Page](https://wiki.imperial.ac.uk/display/HPC/New+Job+sizing+guidance). The command `availability` is still useful to check the availability of resources. 
+
+Note that the new job sizing scheme increases its flexibility, which is especially friendly for smaller, array-like jobs, at the price of increased inter-node communication cost (My own understanding, although received some agreements, not from my supervisor). To improve the efficiency of large jobs, increasing the number of processors per node rather than increasing the number of nodes is recommended. See [Structure and usage of clusters](https://spica-vir.github.io/posts/Structure-and-usage-of-clusters/) for more information.
+
+
+## Old job partitions - Only as a historical record
+
+CX1 and CX2 are old names of Imperial clusters. Now they are merged, so you have access to both resources if logging in with the previous commands. Their job type and the core number per node are slightly different, which can be checked by `availability`. CX1 job partitions are listed under the name of 'High-Throughput jobs', and CX2 jobs are 'High-End Parallel jobs'.
 
 ``` console
-> availability
-# CX1 resources
+~$ availability
 High-Throughput jobs: 
 Nodes available for throughput  :   0 (24hr)   0 (72hr) 
 Nodes available for general     :   0 (24hr)   0 (72hr) 
@@ -96,7 +104,6 @@ GPUs available:
 
   RTX6000 :   0/112 (24hr)       0/  0 (48hr) 
 
-# CX2 resources
 High-End Parallel jobs: 
  Nodes available for short      ( select=1-18   ncpus=24 mem=120gb walltime=2:0:0  ) : 14  
                    large      ( select=18-72  ncpus=24 mem=120gb walltime=48:0:0 ) : 140, of which 0 are 28-core 
@@ -117,4 +124,4 @@ Solution
 ```
 
 Fixed
-: Jan. 19 -21. For both campus and VPN connections, the old cx1 and cx2 addresses are merged to cx3: `cx3.hpc.ic.ac.uk`. Job types unchanged.  
+: Jan. 19 -21. For both campus and VPN connections, the old cx1 and cx2 addresses are merged to cx3: `cx3.hpc.ic.ac.uk`. Job types unchanged. 

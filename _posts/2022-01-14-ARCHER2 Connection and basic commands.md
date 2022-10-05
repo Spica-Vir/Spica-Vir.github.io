@@ -49,6 +49,8 @@ Note:
 # CRYSTAL on ARCHER2
 A good example for the job submission file is provided in [this webpage](https://docs.archer2.ac.uk/other-software/crystal/#running-parallel-crystal-jobs). It is pasted here for reference, with the modification suggested in the same page. 
 
+A job submission script developed by myself and now used accross the group is open for download [here](https://github.com/cmsg-icl/crystal_shape_control/tree/main/Job_Submitter_specific/CRYSTAL/ARCHER2).
+
 Note: 
 1. To launch different calculations, substitute the `MPPcrystal` keyword in the script below with corresponding keywords:  
     * `MPPcrystal` crystal (.d12) calculation in the massive parallel edition  
