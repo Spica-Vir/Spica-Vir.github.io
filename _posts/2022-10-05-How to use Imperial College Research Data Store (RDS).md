@@ -24,6 +24,13 @@ Instead of visiting your data every time via a web browser, RDS folders can be m
 
 ## On lab servers
 
+1. Open the Dolphin file manager. From the left column, select 'Remote-Network'.  
+2. From the panel that appears, click on 'Shared Folders (SMB)'.  
+3. Click on 'smb:' on the top of the panel and open the address line. In the address line, enter the path to your RDS folder: `smb://rds.imperial.ac.uk/RDS/user/${USER}/home` (This commands leads to your home directory on CX1).  
+4. In the popup window, enter your username with the domain, i.e., `${USER}@ic.ac.uk` and your college account password.
+
+The account management software that comes with OpenSUSE (KDE Wallet) will popup the window with auto-filled credentials every time you access the shared folder. Use KWallet Manager to modify your information.
+
 ## On Windows machines
 
 1. Connect to Imperial VPN. For instructions of setting it up, refer to [this step-by-step guide](https://www.imperial.ac.uk/admin-services/ict/self-service/connect-communicate/remote-access/virtual-private-network-vpn/). Note that according to tests on Win10 Pro, connection by Open VPN is not needed.  

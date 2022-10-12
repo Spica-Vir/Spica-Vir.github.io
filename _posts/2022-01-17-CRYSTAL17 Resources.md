@@ -12,7 +12,7 @@ Current public release: **CRYSTAL17 v1.0.2**
 # Manual & Tutorials
 [**User manual**](https://www.crystal.unito.it/Manuals/crystal17.pdf) - The 'bible' of CRYSTAL17.  
 
-[**CRYSTAL tutorial project**](http://tutorials.crystalsolutions.eu/index.html) - A collection of specially designed tutorials and workshops  
+[**CRYSTAL tutorial project**](https://tutorials.crystalsolutions.eu/) - A collection of specially designed tutorials and workshops  
 
 This website, of course :-)  
 
