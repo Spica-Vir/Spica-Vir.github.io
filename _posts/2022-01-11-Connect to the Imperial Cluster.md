@@ -67,6 +67,7 @@ The `module` commands can be used to examine/load publicly accessible modules.
 
 - `module avail` List all the available modules;  
 - `module load mod_name` Load a specific module, 'mod_name';  
+- `module rm mod_name` Remove a specific module, 'mod_name';  
 - `module list` List all the loaded modules in the current environment;  
 - `module help mod_name` Check the instructions of the module 'mod_name'. 
 

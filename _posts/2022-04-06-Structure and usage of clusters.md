@@ -26,30 +26,30 @@ From the figure above, it is not difficult to distinguish the differences betwee
 
 However, multithreading is not always advantageous. A technical prerequisite is that the program should be developed for multithread proposes. Python, for example, is a pseudo-multithread language, while Java is a real one. Sometimes multithreading can lead to catastrophic results. Since threads share the same resource allocation (CPU, RAM, I/O, etc.), when a thread fails, the whole process fails as well. Comparatively, in multiple processes, other processes will be protected if a process fails. 
 
-In practice, users can either run each process in serial (i.e., number of threads = 1), or in parallel (i.e., number of threads > 1) on clusters. However, **the former is recommended**, because of more secured resource managements. The latter is not advantageous. Besides the problem mentioned above, it might lead to problems such as memory leak when running programs either: poorly developed for multithreading /  compiled with improper flags / launched in an improper environmental setup - common problems of scientific computing packages & their users. :-) 
+In practice, users can either run each process in serial (i.e., number of threads = 1), or in parallel (i.e., number of threads > 1) on clusters. However, **the former is recommended**, because of more secured resource managements. The latter is not advantageous. Besides the problem mentioned above, it might lead to problems such as memory leak when running programs either: not developed for multithreading / requires improper packages (See the famous [libfabric issue](https://docs.archer2.ac.uk/known-issues/#oom-due-to-memory-leak-in-libfabric-added-2022-02-23) on ARCHER2) - common problems of scientific computing packages & their users. :-) 
 
 ## More nodes vs more CPUs
 
-When memory allocation is allowed, from my experience, using more CPUs/processes per node is usually a better idea, considering that all nodes have independent memory space and the inter-node communications are achieved by wired networks. It almost always takes longer to coordinate nodes than to coordinate processors within the same node.
+When the allocated memory permits, from my experience, using more CPUs/processes per node is usually a better idea, considering that all nodes have independent memory space and the inter-node communications are achieved by wired networks. It almost always takes longer to coordinate nodes than to coordinate processors within the same node.
 
 # The internal coordinator: What is MPI
 
 Message passing interface, or MPI, is a standard for communicating and transferring data between nodes and therefore distributed memories. It is utilized via MPI libraries. The most popular implementations include: 
 
 - [MPICH](https://www.mpich.org/) - an open-source library;  
-- [Intel MPI](https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html#gs.xld8oa) - a popular implementation of MPICH especially developed for Intel CPUs;  
+- [Intel MPI](https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html#gs.xld8oa) - a popular implementation of MPICH especially optimised for Intel CPUs;  
 - [OpenMPI](https://www.open-mpi.org/) - an open-source library;  
 - [OpenMP](https://www.openmp.org/) - Not MPI; parallelization based on shared memory, so only implemented in a single node; can be used for multithreading;  
 
-In practice, a hybrid parallelization combining MPI and OpenMP to run multithread jobs on cluster is allowed, though not recommended. The first process (probably not a node or a processor) is usually allocated for I/O, and the rest is used for parallel computing.
+In practice, a hybrid parallelization combining MPI and OpenMP to run multithread jobs on cluster is allowed, though sometimes not recommended. The first process (probably not a node or a processor) is usually allocated for I/O, and the rest is used for parallel computing.
 
 So far, MPI only supports C/C++ and FORTRAN, which explains why all parallel computing software is based on these languages. To launch an executable in parallel, one should specify: `mpiexec` or `mpirun`. 
 
 Technical details about how MPI is implemented is too advanced for typical computational chemists / solid state physicists, which is a specific, completely different research area, so they are not covered in this page. 
 
-# Distribute files
+# Distribute files: The role of job submission scripts
 
-As mentioned in previous sections, memories are distributed to nodes. Considering the inefficiency of inter-node communication, it is unpractical to frequently transfer files across nodes. In practice, required input files are duplicated, or synced, to all the nodes before any calculation. During the calculation, data is transferred from computing nodes to the I/O node. 
+As mentioned in previous sections, memories are distributed to nodes. Considering the inefficiency of inter-node communication, it is unpractical to frequently transfer files across nodes. In practice, required input files are duplicated, or synced, to all the nodes before any calculation. During the calculation, data is transferred from computing nodes between the I/O node. 
 
 Although such sync is automatic for almost any modern cluster, it is safer to specify that when developing job submission scripts: 
 
@@ -74,15 +74,13 @@ For more flexible, medium-sized clusters like Imperial CX1, submitting jobs in h
 # Setup your environment: What does an application need?
 
 **Executable**  
-The binary executable should, theoretically, all be stored in `\usr\bin`. This never happens in practice, unless you are a fanatical fundamentalist of the early Linux releases. To guide your system to the desired executable, you can either laboriously type its absolute path every time you want to use it or add the path to the environmental variable:
+The binary executable should, theoretically, all be stored in `\usr\bin`. This never happens in practice, unless you are a fanatical fundamentalist of the early Linux releases. To guide your system to the desired executable, you can either laboriously type its absolute path every time you need it or add the path to the environmental variable:
 
 ``` console
 ~$ export PATH=${PATH}:path_to_bin
 ```
 
-Running any executable in parallel requires mpi to coordinate all the processes/threads. The path to mpi executable is also required. 
-
-Many scientific codes require other specific environmental variables. Read their documentations for further information.
+Running any executable in parallel requires mpi to coordinate all the processes/threads. The path to mpi executable is also required. Besides, many scientific codes require other specific environmental variables such as linear algebra packages. Read their documentations for further information.
 
 **lib/a/o files**  
 When writing a script, you might need some extra packages to do more complex jobs. Those packages are developed by experts in computer science and can be called by a line of code. The same thing happens when people were developing applications like CRYSTAL and ONETEP. 
@@ -92,7 +90,7 @@ However, scientific computing codes are usually distributed in the form of sourc
 1. Include the whole package as long as one of its functions is called, also known as a 'static lib'.  
 2. Only include a 'table of contents' when compiling, also known as 'dynamic lib'. The packages needed are separately stored in 'dll/so' files, making it possible for multiple applications sharing the same lib.
 
-The details about compilation are not touched in this post. Maybe I will make another post to discuss them, when I am more confident with this topic. The thing is: when running a dynamically linked application, information should be given to help the code find the libs needed. This can be specified by: 
+Details about compilation are beyond the scope of this post. Maybe I will make another post to discuss them, when I am more confident with this topic. The thing is: when running a dynamically linked application, information should be given to help the code find the libs needed. This can be specified by: 
 
 ``` console
 ~$ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:path_to_lib`
@@ -118,7 +116,7 @@ In practice, a Linux shell script is needed. Parameters of the batch system of a
 2. Allocate and coordinate the requested resources  
 3. Set up the environments, such as environmental variables, package dependency, and sync the same setting to all nodes
 4. Launch a parallel calculation - see mpi part
-5. Do post-processing
+5. Post-process
 
 Note that a 'walltime' is usually required for a batch job, i.e., the maximum allowed time for the running job. The job will be 'killed', or suspended, when the time exceeds the walltime, and the rest part of the script will not be executed. `timeout` command can be used to set another walltime for a specific command.
 
@@ -126,7 +124,7 @@ Common batch systems include [PBS](https://en.wikipedia.org/wiki/Portable_Batch_
 
 Successfully setting and submitting a batch job script symbolizes that you do not need this tutorial any more. Before being able to do that, some considerations might be important:
 
-- How large is my system? Is it efficient to use the resources I requested(Note that it is not a linear-scaling problem...)?  
+- How large is my system? Is it efficient to use the resources I requested(Note that it is not a linear-scaling problem... Refer to [this test](https://tutorials.crystalsolutions.eu/tutorial.html?td=tuto_HPC&tf=tuto_hpc#scale) on CRYSTAL17)?  
 - To which queue should I submit my job? Is it too long/not applicable/not available?
 - Is it safe to use multi-threading?  
 - Is it memory,GPU etc. demanding?  
