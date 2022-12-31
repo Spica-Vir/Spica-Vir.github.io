@@ -93,26 +93,29 @@ After installation, the dynamic lib file (liblammps_dym.so) is in '/path/to/lamm
 ~$ export PYTHONPATH="${PYTHONPATH}:/path/to/lammps/23Jun2022/lib/python3.10/site-packages"
 ```
 
+Alternatively, the path can be added in python environment if an interactive environment is used (which is preferred):
+
+``` python
+>>> import sys
+>>> sys.path.append('/path/to/lammps/23Jun2022/lib/python3.10/site-packages')
+```
+
 The variable `${OMP_NUM_THREADS}` can be set if multi-threading is activated in compilation. The default vale is 1, i.e., no shared memory threading:
 
 ``` console
 ~$ export OMP_NUM_THREADS=2
 ```
 
-Launch the python in command line:
+Launch the python environment, use the following commands:
 
-``` console
-~$ python
-Python 3.10.4 (main, Mar 31 2022, 08:41:55) [GCC 7.5.0] on linux
-Type "help", "copyright", "credits" or "license" for more information.
+``` python
 >>> import lammps
 >>> lmp=lammps.lammps()
 LAMMPS (23 Jun 2022)
   using 2 OpenMP thread(s) per MPI task
 >>> exit()
-Total wall time: 0:00:03
 ```
-It is probable that an error occurs: 'OSError: libpython3.10.so.1.0: cannot open shared object file: No such file or directory'. Executable linked dynamically does not include the basic python libs, so the path to python libs should be added to `${LD_LIBRARY_PATH}`. Auto edition of environmental variables can be realized during activation / deactivation of anaconda environments. Use the following commands to set initialization options:
+It is probable that an error occurs: 'OSError: libpython3.10.so.1.0: cannot open shared object file: No such file or directory'. Executable linked dynamically does not include the basic python libs, so the path to python libs should be added to `${LD_LIBRARY_PATH}`. Auto edition of environmental variables can be realized during activation / deactivation of anaconda environments. Use the following commands to set initialization options and then restart the python environment:
 
 ``` console
 ~$ mkdir -p ${CONDA_PREFIX}/etc/conda/activate.d
@@ -123,3 +126,4 @@ It is probable that an error occurs: 'OSError: libpython3.10.so.1.0: cannot open
 ~$ echo "LD_LIBRARY_PATH=\`echo \${LD_LIBRARY_PATH//\"\${CONDA_PREFIX}/lib:\"/''}\`" >> ${CONDA_PREFIX}/etc/conda/deactivate.d/env_vars.sh
 ```
 
+Note: That seems to cause an error of missing the ncurses lib, making the `top` command invalid. But the `ps` command is effective. If error occurs, deactivate the current environment is recommended. 
