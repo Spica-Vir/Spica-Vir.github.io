@@ -84,20 +84,31 @@ Some comments:
 3. The `LAMMPS_EXCEPTIONS=ON` option is to help keep and trace back the potential LAMMPS errors happened within python scripts.  
 4. Dynamic FFTW3 libs ('libfftw3f.so', 'libfftw3f_omp.so') are used in this example.
 
-## Load the dynamic lib in Python
+# Integration with Python developing environment
 
-After installation, the dynamic lib file (liblammps_dym.so) is in '/path/to/lammps/23Jun2022/lib64' and the port to python (site-packages/lammps) is in '/path/to/lammps/23Jun2022/lib'. The default lib name of python lammps package is 'liblammps.so'. To correctly import lammps as a python package, use the following commands to set the variable and build symbolic link (supposing Python 3.10 is used):
+## Use static libs
+
+Loading the static builds for simulations and other packages for pre- and post- processing is a rather mature technique, which involves mainly python programming and a moderate amount of Linux command line. This can be achieved by already developed packages such as [ASE LAMMPS calculators](https://wiki.fysik.dtu.dk/ase/ase/calculators/lammps.html#module-ase.calculators.lammps) and [PyIron](https://pyiron.readthedocs.io/en/latest/source/notebooks/first_steps.html#Perform-a-LAMMPS-MD-simulation).
+
+## Enable a object-oriented programming
+
+An purely object-oriented programming fashion is realized by loading the dynamic lib to Python developing environment, see [LAMMPS manual](https://docs.lammps.org/Python_head.html). The following paths should be specified:
+
+- the dynamic lib file, in '/path/to/lammps/23Jun2022/lib64/liblammps_dym.so'  
+- the LAMMPS python module, in '/path/to/lammps/23Jun2022/lib/site-packages/lammps' 
+
+The default lib name for lammps object is 'liblammps.so'. To correctly import and create the lammps object, the name can be specified by `lammps.lammps(name='dym')`, or use the following command:
 
 ``` console
 ~$ ln -s /path/to/lammps/23Jun2022/lib64/liblammps_dym.so /path/to/lammps/23Jun2022/lib64/liblammps.so
-~$ export PYTHONPATH="${PYTHONPATH}:/path/to/lammps/23Jun2022/lib/python3.10/site-packages"
 ```
 
-Alternatively, the path can be added in python environment if an interactive environment is used (which is preferred):
+To correctly load the LAMMPS python module, the user can either merge the 'lib/site-package' folder with the default 'site-package' directory of the conda environment, or export the path to the environmental variable `$PYTHONPATH`. Alternatively, the path can be added on the top of python scripts, which is recommended:
 
 ``` python
 >>> import sys
->>> sys.path.append('/path/to/lammps/23Jun2022/lib/python3.10/site-packages')
+>>> sys.path.append('/path/to/lammps/23Jun2022/lib/python3.X/site-packages')
+>>> import lammps
 ```
 
 The variable `${OMP_NUM_THREADS}` can be set if multi-threading is activated in compilation. The default vale is 1, i.e., no shared memory threading:
@@ -115,7 +126,10 @@ LAMMPS (23 Jun 2022)
   using 2 OpenMP thread(s) per MPI task
 >>> exit()
 ```
-It is probable that an error occurs: 'OSError: libpython3.10.so.1.0: cannot open shared object file: No such file or directory'. Executable linked dynamically does not include the basic python libs, so the path to python libs should be added to `${LD_LIBRARY_PATH}`. Auto edition of environmental variables can be realized during activation / deactivation of anaconda environments. Use the following commands to set initialization options and then restart the python environment:
+
+## A collection of potential problems
+
+When loading the dynamic lib, it is probable that an error occurs: **OSError: libpython3.10.so.1.0: cannot open shared object file: No such file or directory**. Executable linked dynamically does not include the basic python libs, so the path to python libs should be added to `${LD_LIBRARY_PATH}`. Auto edition of environmental variables can be realized during activation / deactivation of anaconda environments. Use the following commands to set initialization options and then restart the python environment:
 
 ``` console
 ~$ mkdir -p ${CONDA_PREFIX}/etc/conda/activate.d
@@ -126,4 +140,12 @@ It is probable that an error occurs: 'OSError: libpython3.10.so.1.0: cannot open
 ~$ echo "LD_LIBRARY_PATH=\`echo \${LD_LIBRARY_PATH//\"\${CONDA_PREFIX}/lib:\"/''}\`" >> ${CONDA_PREFIX}/etc/conda/deactivate.d/env_vars.sh
 ```
 
-Note: That seems to cause an error of missing the ncurses lib, making the `top` command invalid. But the `ps` command is effective. If error occurs, deactivate the current environment is recommended. 
+By doing so, the *ncurses* lib from Anaconda seems to cover the default one, which leads to 2 problems. The first one is warnings such as '**libtinfo.so.6: no version information available message using conda environment**', which is due to the releases of ncurses on the default Anaconda channel lack the version information. This can be solved by reinstalling it from the `conda-forge` channel:
+
+``` console
+~$ conda install -c conda-forge ncurses
+```
+
+The second one is that it makes the `top` command, and probably more commands, invalid. But the `ps` command is effective. If the error occurs, finding an alternative or deactivating the current environment seem to be the only 2 solutions. 
+
+If the dumping option of video is activated, the path to the *ffmpeg* (for dumping videos) executable should be exported to `${PATH}`, while *libpng*, *zlib* and *libjpeg* remain accessible.
