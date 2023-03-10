@@ -1,23 +1,23 @@
 ---
-title: CRYSTAL17 Resources
+title: CRYSTAL Resources
 date: 2022-01-17 17:23:43 +0000
 categories: [Research, DFT]
 tags: [CRYSTAL, regular inspection]
 ---
 
-Some useful resources for [CRYSTAL17](https://www.crystal.unito.it/index.php) learning and usage are listed in this page. All resources listed here are available online free of charge. Those currently not well-maintained ones are marked. Special thanks to my supervisors, N.M.H & G.M, and my colleague F.B. for kindly providing their suggestions. Contents of this page are regularly inspected. 
+Some useful resources for [CRYSTAL](https://www.crystal.unito.it/index.html) learning and usage are listed in this page. All resources listed here are available online free of charge. Those currently not well-maintained ones are marked. Special thanks to my supervisors, N.M.H & G.M, and my colleague F.B. for kindly providing their suggestions. Contents of this page are regularly inspected. 
 
-Current public release: **CRYSTAL17 v1.0.2**
+Current public release: **CRYSTAL23 v1.0.1**
 
 # Manual & Tutorials
-[**User manual**](https://www.crystal.unito.it/Manuals/crystal17.pdf) - The 'bible' of CRYSTAL17.  
+[**User manual**](https://www.crystal.unito.it/include/manuals/crystal23.pdf) - The 'bible' of all versions of CRYSTAL.  
 
 [**CRYSTAL tutorial project**](https://tutorials.crystalsolutions.eu/) - A collection of specially designed tutorials and workshops  
 
 This website, of course :-)  
 
 # Basis set
-[**The officially listed BSs**](https://www.crystal.unito.it/compounds.php) - Published tests on periodic systems are available.
+[**The officially listed BSs**](https://www.crystal.unito.it/basis_sets.html) - Published tests on periodic systems are available.
 
 [**Basis Set Exchange (BSE)**](https://www.basissetexchange.org/) - Tests on linear dependency needed. Available BSs are usually optimized for molecular systems.
 
@@ -37,7 +37,7 @@ Known issues
 
 [**J-ICE**](http://j-ice.sourceforge.net/) - *Not tested* A web-based, crystallographic version of [Jmol](http://jmol.sourceforge.net/). 
 
-[**DL Visualize (DLV)**](https://gitlab.com/bmgcsc/dlv3-release) Developed in Daresbury laboratory, mainly by B. Searle. There was a release webpage which requires registration, but due to unknown reasons, now instead of the webpage, its repository is accessible, so currently it is open-source and free of charge.
+[**DL Visualize (DLV) 3**](https://gitlab.com/bmgcsc/dlv3-release) Developed in Daresbury laboratory, mainly by B. Searle. There was a release webpage which requires registration, but due to unknown reasons, now instead of the webpage, its repository is accessible, so currently it is open-source and free of charge.
 
 [**FINDSYM**](https://stokes.byu.edu/iso/findsym.php) - Identify the space group from a CIF structure file and provide fractional coordinates of all the nonequivalent atomic sites. 
 
@@ -47,14 +47,14 @@ Known issues
 : - The `ase.io.crystal.write_crystal` method has no symmetry analysis. Its output only has the P1 symmetry.  
 : - ASE also has an [interface](https://www.databases.fysik.dtu.dk/ase/ase/calculators/crystal.html?highlight=crystal#module-ase.calculators.crystal) to CRYSTAL14 to enable DFT/HF calculations within ASE.  
 
-[**CRYSTALpy**](https://github.com/crystal-code-tools/CRYSTALpy) **In development** - A pre- and post- processing tool co-developed by [Computational Materials Science Group](https://cmsg-icl.github.io/web/index.html) at Imperial College and [Theoretical Chemistry Group](https://www.chimica.unito.it/do/gruppi.pl/Show?_id=7myq) at University of Torino. It adopts the heavily object-oriented fashion of [Pymatgen](https://pymatgen.org/) and can easily cooperate with it. The latest stable release is accessible via `pip`. Installation instructions can be found on [this page](https://github.com/crystal-code-tools/CRYSTALpy).
+[**CRYSTALpytools with workflows**](https://github.com/crystal-code-tools/CRYSTALpytools) **In development** - A pre- and post- processing tool co-developed by [Computational Materials Science Group](https://cmsg-icl.github.io/web/index.html) at Imperial College and [Theoretical Chemistry Group](https://www.chimica.unito.it/do/gruppi.pl/Show?_id=7myq) at University of Torino. It adopts the heavily object-oriented fashion of [Pymatgen](https://pymatgen.org/) and can easily cooperate with it. The latest stable release is accessible via `pip`. Installation instructions can be found on [this page](https://github.com/crystal-code-tools/CRYSTALpytools).
 
 # Job submission scripts
-There are several job submission scripts available online. Considering the pros and cons of available scripts, I developed a new version based on Dr G. M.'s good example, which can be found on [CRYSTAL jobsubmitter page](https://github.com/cmsg-icl/crystal_shape_control/tree/main/Job_Submitter_specific/CRYSTAL) of the group github repository.
+There are several job submission scripts available online. Considering the pros and cons of available scripts, I developed a new version for [Imperial College HPC (CX1)](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/) based on Dr G. M.'s good example, which can be found on the [Imperial-HPC-Jb-Submission page](https://github.com/cmsg-icl/crystal_shape_control/tree/main/Imperial-HPC-Job-Submission) of the group github repository. Also check [Job_Submitter_specific page](https://github.com/cmsg-icl/crystal_shape_control/tree/main/Job_Submitter_specific/CRYSTAL) for other environments.
 
 Note the setups of jobsubmitters are highly dependent on the environment of clusters. Currently 3 versions are developed, which covers the most common cases:
 
-1. For PBS batch system, using the [RCS of Imperial College](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/) as the target environment.  
+1. For PBS batch system, using the Imperial College HPC (CX1) as the target environment.  
 2. For Slurm batch system, using the UK national super-computing service [ARCHER2](https://www.archer2.ac.uk/) as the target environment.  
 3. For local servers without batch system. Both serial and parallel versions of CRYSTAL are supported.
 
@@ -112,7 +112,7 @@ The input file and job submission file are named as `jobname.xxx`.
 |  jobname.BAND       | BAND.DAT          | band xmgrace format                   |
 |  jobname.DOSS       | BAND.DOSS         | dos xmgrace format                    |
 | *Charge & 3D grid data*                                                         |
-|  jobname.prop3d     | fort.31        | all 3D grid data                         |
+|  jobname.f31        | fort.31        | all 3D grid data                         |
 |  jobname_CHG.CUBE   | DENS_CUBE.DAT  | 3D charge density Gaussian CUBE format   |
 |  jobname_SPIN.CUBE  | SPIN_CUBE.DAT  | 3D spin density CUBE format              |
 |  jobname.RHOLINE    | RHOLINE.DAT    | 1D charge density and gradient           |
