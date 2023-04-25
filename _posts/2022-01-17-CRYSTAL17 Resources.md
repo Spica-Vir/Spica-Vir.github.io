@@ -49,6 +49,8 @@ Known issues
 
 [**CRYSTALpytools with workflows**](https://github.com/crystal-code-tools/CRYSTALpytools) **In development** - A pre- and post- processing tool co-developed by [Computational Materials Science Group](https://cmsg-icl.github.io/web/index.html) at Imperial College and [Theoretical Chemistry Group](https://www.chimica.unito.it/do/gruppi.pl/Show?_id=7myq) at University of Torino. It adopts the heavily object-oriented fashion of [Pymatgen](https://pymatgen.org/) and can easily cooperate with it. The latest stable release is accessible via `pip`. Installation instructions can be found on [this page](https://github.com/crystal-code-tools/CRYSTALpytools).
 
+[**Seek Path**](https://tools.materialscloud.org/seekpath/) A web-based engine to generate high-symmetric paths in irreducible Brillouin Zone.
+
 # Job submission scripts
 There are several job submission scripts available online. Considering the pros and cons of available scripts, I developed a new version for [Imperial College HPC (CX1)](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/) based on Dr G. M.'s good example, which can be found on the [Imperial-HPC-Jb-Submission page](https://github.com/cmsg-icl/crystal_shape_control/tree/main/Imperial-HPC-Job-Submission) of the group github repository. Also check [Job_Submitter_specific page](https://github.com/cmsg-icl/crystal_shape_control/tree/main/Job_Submitter_specific/CRYSTAL) for other environments.
 

@@ -5,7 +5,7 @@ categories: [Technique, OS]
 tags: [linux, windows]
 ---
 
-This post is to show how to install and set up a proper Windows subsystem for Linux (WSL). Tested on Windows 10 Home 21H2, Jan. 07 - 21.
+This post is to show how to install and set up a proper Windows subsystem for Linux (WSL). Tested on Windows 10 Home 21H2, Jan. 07, 2022. Updated on Apr. 25, 2023.
 
 Resources:  
 <https://docs.microsoft.com/en-us/windows/wsl/install-manual>  
@@ -27,7 +27,7 @@ Prerequisites of WSL 2
 1. open "Settings", find and click on **Apps & features**  
 2. From the right panel, find and click the **Programs and Feature**  
 3. From the left panel, find and click the **Turn Windows features on or off**. Note, 'Run as administrator' needed.  
-4. Select the check box for **Windows Subsystem for Linux** from the menu and click OK.  
+4. Select the check boxes for **Virtual Machine Platform** and **Windows Subsystem for Linux** from the menu and click OK.  
 5. Restart your computer to install the updates.  
 
 ## Automatic installation
@@ -72,7 +72,7 @@ P.S., Nevertheless, the routine of allocating limited memory to system disk to m
 After downloading the executable application, open PowerShell and `cd` to its directory. Type the command below (substitute `Debian` and `D:\Debian` with your own distribution name and path): 
 
 ``` console
-~$ .\\LxRunOffline.exe m -n Debian -d D:\\Debian
+~$ .\LxRunOffline.exe m -n Debian -d D:\Debian
 ```
 
 Then a virtual disk is visible in the folder specified. 
