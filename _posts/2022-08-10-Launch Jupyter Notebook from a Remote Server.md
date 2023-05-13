@@ -49,17 +49,17 @@ Open the configuration file `jupyter_server_config.py`. Find and uncomment the f
 ``` python
 c.ServerApp.allow_password_change = True # Allow the password to be changed at login for the Jupyter server
 c.ServerApp.allow_remote_access = True # Allow remote access to the server
-c.NotebookApp.ip = '*' # Viable for all ip addresses
-c.NotebookApp.password = u'argon2:$argon2id$v=......' # The hashed password
+c.ServerApp.ip = '*' # Viable for all ip addresses
+c.ServerApp.password = u'argon2:$argon2id$v=......' # The hashed password
 c.ServerApp.password_required = False # If you do not want to enter password everytime you login
-c.NotebookApp.port = 1008 # Port number, can be any number, as long as it is unoccupied.
+c.ServerApp.port = 1008 # Port number, can be any number, as long as it is unoccupied.
 c.ServerApp.root_dir = '/home/username' # Root directory of Jupyter Server, the directory from which the Jupyter service starts
 ```
 
 If you are sure that you will not use graphic interface of the server, you can set `--no-browser` as the default option in the configuration file to prevent the server to launch the browser locally:
 
 ``` python
-c.NotebookApp.open_browser = False
+c.ServerApp.open_browser = False
 ```
 
 In practice, it is found that leaving the hashed password in `jupyter_server_config.json` will lead to invalid token error for the first-time login. So it is strongly recommended to copy the hashed password into the configuration file however the user generated it. And the user should be noted that for the first-time login, the password is required even though `c.ServerApp.password_required = False`.
