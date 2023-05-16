@@ -74,5 +74,3 @@ In 'PREFIX/lib64', or 'PREFIX/lib', 4 versions ending with nothing, '\_mpi', '\_
 # Problems with Intel compilers
 
 Compilation with Intel OneAPI compilers (version 2022.1.2.146 and 2023.0.0) always fail with the error message of unknown flag `-ansi-alias`. This flag seems to be a universal one but the error only occurs when compiling the mpi version, so Intel compilers should be ok if the serial version is needed, i.e., `--enable-mpi`, `--enable-openmp` and `--enable-threads` commands should be avoided (it is not clear whether the later 2 work without the first flag). Using either the classic C/C++ compiler, `CC=icc`, or the modern DPC++/C++ one, `CC=icx` cannot address this problem. Compilation with a more recent MPICH 4.0.2 + Intel DFC++/C++, rather than the built-in Intel MPI did not solve this problem as well. This section might be updated if more hints are available. 
-
-random text intesrted here
