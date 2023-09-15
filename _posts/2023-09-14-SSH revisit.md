@@ -1,7 +1,7 @@
 ---
 title: Revisiting SSH - Key Pair and Configuration file
 date: 2023-09-30 19:33:49 +0100
-categories: [Technique, others]
+categories: [Technique, SSH]
 tags: [linux]
 ---
 

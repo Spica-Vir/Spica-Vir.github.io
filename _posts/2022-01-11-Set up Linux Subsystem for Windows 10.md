@@ -23,45 +23,46 @@ Prerequisites of WSL 2
 - x64 systems, should be Version **1903** or higher  
 - ARM64 systems should be Version **2004** or higher  
 
-## Manual installation
+## Update Windows settings
 1. open "Settings", find and click on **Apps & features**  
 2. From the right panel, find and click the **Programs and Feature**  
 3. From the left panel, find and click the **Turn Windows features on or off**. Note, 'Run as administrator' needed.  
 4. Select the check boxes for **Virtual Machine Platform** and **Windows Subsystem for Linux** from the menu and click OK.  
 5. Restart your computer to install the updates.  
 
-## Automatic installation
-1. Open the cmd or PowerShell as the administrator. Note: Search 'cmd'/'PowerShell' or Win + R, type 'cmd'/'PowerShell', enter.  
-2. Type the command:  
+## Install via Windows PowerShell
+1. Open the PowerShell as the administrator. Note: Search 'PowerShell' or Win + R, type 'PowerShell', enter.  
+2. Type the command below to check available distributions:  
 
 ``` console
-~$ wsl --install
+> wsl --list --online
 ```
 
-By default, a Ubuntu distribution will be installed. If another distribution is preferred, e.g. openSUSE: 
+A Ubuntu WSL1 virtual machine seems to be installed by default in recent Windows 10 updates (in late 2022), but is not shown by `wsl -l` command. Using the following command will download the Ubuntu application from Microsoft store and activate the pre-installed virtual machine only - in which case the next section is skipped.
 
 ``` console
-~$ wsl --install --openSUSE-42
+> wsl --install --Ubuntu
 ```
 
-Use the command `wsl --list --online` to check available distributions. 
+If other distributions are preferred, modify the `--Ubuntu` option into other distribution names listed on the screen.
 
 # Install a Linux distribution
 This step has been integrated into the previous step if you used the **Automatic installation** option. If not, install a distribution you like from [Microsoft Store](https://www.microsoft.com/en-gb/store/apps/windows). Then launch the application and initialize the WSL as instructed. 
 
 # Upgrade from WSL 1 to WSL 2
-If a WSL 1 application was installed previously, or by mistake, it is possible to upgrade it. First, you should check your WSL version by cmd or PowerShell: 
+WSL1 is the previous version of WSL, which seems not to be a virtual machine platform of full functionality. It is suggested to check your WSL version and to upgrade it to WSL2. In PowerShell: 
 
 ``` console
-~$ wsl -l -v
+> wsl -l -v
   NAME      STATE           VERSION
-* Debian    Running         2
+* Ubuntu    Running         1
 ```
 
-Then use the command below and the distribution name (`Debian`) to upgrade WSL: 
+Then use the commands below and the distribution name (`Ubuntu`) to upgrade WSL: 
 
 ``` console
-~$ wsl --set-version Debian 2
+> wsl --shutdown
+> wsl --set-version Ubuntu 2
 ```
 
 # Migrate WSL to another disk
@@ -72,7 +73,7 @@ P.S., Nevertheless, the routine of allocating limited memory to system disk to m
 After downloading the executable application, open PowerShell and `cd` to its directory. Type the command below (substitute `Debian` and `D:\Debian` with your own distribution name and path): 
 
 ``` console
-~$ .\LxRunOffline.exe m -n Debian -d D:\Debian
+> .\LxRunOffline.exe m -n Debian -d D:\Debian
 ```
 
 Then a virtual disk is visible in the folder specified. 

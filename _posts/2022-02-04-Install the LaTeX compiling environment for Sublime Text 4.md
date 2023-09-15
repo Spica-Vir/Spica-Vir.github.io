@@ -1,7 +1,7 @@
 ---
 title: Install the LaTeX compiling environment for Sublime Text 4
 date: 2022-02-04 23:46:36 +0000
-categories: [Technique, Others]
+categories: [Technique, LaTeX]
 tags: [Sublime Text 4, LaTeX, windows]
 ---
 
