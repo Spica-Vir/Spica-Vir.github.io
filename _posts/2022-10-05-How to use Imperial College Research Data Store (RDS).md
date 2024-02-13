@@ -5,16 +5,16 @@ categories: [Technique, others]
 tags: [linux, windows, Imperial RCS, Imperial RDS]
 ---
 
-In this post, necessary tutorials are collected and the step-by-step guides are provided for setting up connections to [Imperial College Research Data Store (RDS) services](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/rds/) on Linux (OpenSUSE) and Windows (Windows10 Pro) machines. Connection on OpenSUSE is tested on NHPC101\@ic.ac.uk on 29 Sept. 2022, and the connection on Win10 Pro is tested on my personal laptop on 5 Oct. 2022. Special thanks to Dr. G. M. for addressing my issues with Windows. 
+In this post, necessary tutorials are collected and the step-by-step guides are provided for setting up connections to [Imperial College Research Data Store (RDS) services](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/service-offering/rds/) on Linux (OpenSUSE) and Windows (Windows10 Pro) machines. Connection on OpenSUSE is tested on NHPC101\@ic.ac.uk on 29 Sept. 2022, and the connection on Win10 Pro is tested on my personal laptop on 5 Oct. 2022. Special thanks to Dr. G. M. for addressing my issues with Windows. Updated 13 Feb. 2024.
 
 
 # What is RDS?
 
-A comprehensive introduction is given [here](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/rds/). There is also a [Wiki page](https://wiki.imperial.ac.uk/display/HPC/Research+Data+Store) accessible for college users. Several comments are added for explanation. 
+A comprehensive introduction is in the [Wiki page](https://icl-rcs-user-guide.readthedocs.io/en/latest/rds/) accessible for college users. Several comments are added for explanation. 
 
 - RDS is a cloud disk of which the space can be requested by the principle investigator (PI) of a group only, based on his/her budgets. Students' access (either editable or read-only) to the certain folder of RDS is provided after being permitted by its admin.  
 - RDS has been integrated into Imperial CX1. The `rds.imperial.ac.uk/RDS/user/${USER}/home/` folder is the `${HOME}` directory of cluster; the `rds.imperial.ac.uk/RDS/user/${USER}/ephemeral/` is the `${EPHEMERAL}` directory (`${USER}` is your college username, same for following texts.). See [Connect to the Imperial Cluster](https://spica-vir.github.io/posts/Connect-to-the-Imperial-Cluster/) and [Structure and usage of Clusters](https://spica-vir.github.io/posts/Structure-and-usage-of-clusters/#secure-your-storage-work-directory-and-home-directory) for more information. Even if you do not have access to any project folder, your own data can still be stored on the 1TB disk space that comes with your HPC resource allocation.  
-- The `rds.imperial.ac.uk/RDS/user/${USER}/projects` folder stores data of specific projects (in the sub-folder of that project) that may be shared around the group. The partition of archives is explained [here](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/rds/archiving-data-in-the-rds/). Usually *live* is sufficient for ongoing projects.  
+- The `rds.imperial.ac.uk/RDS/user/${USER}/projects` folder stores data of specific projects (in the sub-folder of that project) that may be shared around the group. The partition of archives is explained [here](https://icl-rcs-user-guide.readthedocs.io/en/latest/rds/managing/disk-space/). Usually *live* is sufficient for ongoing projects.  
 - To examine and manage your RDS project allocations, visit [this website](https://selfservice.rcs.imperial.ac.uk/rds/manage/projects/).  
 - RDS can also be accessed by this [webpage](https://www.globus.org/). After logging in, click on the 'File Manager' tab from the side bar. In the 'Collection' box on the top, search for 'Imperial College London Research Data Store' to visit folders under your account.  
 

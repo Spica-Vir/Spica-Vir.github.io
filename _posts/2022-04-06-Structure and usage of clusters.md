@@ -122,6 +122,8 @@ Note that a 'walltime' is usually required for a batch job, i.e., the maximum al
 
 Common batch systems include [PBS](https://en.wikipedia.org/wiki/Portable_Batch_System), which involves different releases, and [Slurm](https://slurm.schedmd.com/overview.html). For Imperial cluster CX1 and MMM Hub Young (managed by UCL), PBS system is implemented; for ARCHER2 and Tianhe-2 LvLiang(天河二号-吕梁), Slurm is implemented. Tutorials of batch systems are not covered here, since they are highly machine-dependent - usually modifications are made to enhance the efficiency. Refer to the specific user documentations for more information.
 
+# How to run a job in parallel: Things to consider
+
 Successfully setting and submitting a batch job script symbolizes that you do not need this tutorial any more. Before being able to do that, some considerations might be important:
 
 - How large is my system? Is it efficient to use the resources I requested(Note that it is not a linear-scaling problem... Refer to [this test](https://tutorials.crystalsolutions.eu/tutorial.html?td=tuto_HPC&tf=tuto_hpc#scale) on CRYSTAL17)?  
@@ -133,6 +135,3 @@ Successfully setting and submitting a batch job script symbolizes that you do no
 - Which MPI release version is my code compatible with? Should I load a module or set variables?  
 - Any other specific environmental setups does my code need?  
 - Do I have any post-processing script after MPI part is finished? How long does it take?
-
-# Work flow: How to run a job in parallel
-

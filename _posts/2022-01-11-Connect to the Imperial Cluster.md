@@ -7,7 +7,7 @@ tags: [cluster, Imperial RCS, regular inspection, linux, windows]
 
 This page is to show how to set up the connection to Imperial cluster for the research computing services (RCS) and its usage. Contents of this page are regularly inspected. 
 
-**N.B. MAKE SURE YOU HAVE BEEN AUTHORIZED TO DO SO.** Please note this page is not an official guidance. The author disclaims all responsibility for any trouble induced by the improper use of the information provided. For further details and technical supports, please visit the [Imperial RCS website](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/) and the [Wiki Page](https://wiki.imperial.ac.uk/display/HPC/High+Performance+Computing). Brief introductions to parallel computing, queuing systems and the structures are provided in [this post](https://spica-vir.github.io/posts/Structure-and-usage-of-clusters/). 
+**N.B. MAKE SURE YOU HAVE BEEN AUTHORIZED TO DO SO.** Please note this page is not an official guidance. The author disclaims all responsibility for any trouble induced by the improper use of the information provided. For further details and technical supports, please visit the [Imperial RCS website](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/), the [User Guide](https://icl-rcs-user-guide.readthedocs.io/en/latest/) and [high performance computing (HPC) service Wiki](https://icl-rcs-user-guide.readthedocs.io/en/latest/). The live status of the cluster is available from [RCS status page](https://status.rcs.imperial.ac.uk/d/u0zkcYQ7z/rcs-status?orgId=2&refresh=1m). Brief introductions to parallel computing, queuing systems and the structures are provided in [this post](https://spica-vir.github.io/posts/Structure-and-usage-of-clusters/). 
 
 # Connection via VPN
 VPN is the easiest access to the Imperial cluster when users are off-campus. The cluster is directly accessible for on-campus visitors connected to the 'Imperial-WPA' WiFi. 
@@ -56,6 +56,7 @@ Use the `scp` command to upload / download files. Its format is similar to `ssh`
 Note: if using the sshgw channel, `scp` will download the file to the intermediate server at first. You need another `scp` to download it to a local address. Same to upload. 
 
 # Usage
+## Batch system
 The [qsub](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/qsub.html) job scheduler is implemented on Imperial cluster. 
 
 * `availability` Check the availability resources;  
@@ -63,6 +64,7 @@ The [qsub](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/qsub.html)
 * `qstat` Check the state of submitted jobs;  
 * `qdel jobID` Kill the process with the ID number 'jobID'.  
 
+## Software
 The `module` commands can be used to examine/load publicly accessible modules.
 
 - `module avail` List all the available modules;  
@@ -73,11 +75,18 @@ The `module` commands can be used to examine/load publicly accessible modules.
 
 Note: There is a CRYSTAL14 module in the list. For users in NMH's group, the latest CRYSTAL edition is available, so do not use that module. 
 
+## Status
+The current status of imperial cluster can be inspected by [RCS status page](https://status.rcs.imperial.ac.uk/d/u0zkcYQ7z/rcs-status?orgId=2&refresh=1m).
+
+## Compilation and Parallelization
+It is suggested to use the compilers and MPI available on CX1 if the you want to compile any code, as they are tuned according to the architecture to get the optimal performance. The [Easy Build](https://icl-rcs-user-guide.readthedocs.io/en/latest/hpc/applications/easybuild/) tool packages is available on CX1 by running `module load tools/dev`. The efficiency issue has been encountered before when I tried to use a self compiled OpenMPI.
+
+
 # CX1 vs. CX2
 
 ## New Job partition guide
 
-The new job partition guide is released in April 2022, which makes the old CX1/CX2 job partitions degenerate. For the new job sizing guide, refer to [Wiki Page](https://wiki.imperial.ac.uk/display/HPC/New+Job+sizing+guidance). The command `availability` is still useful to check the availability of resources. 
+The new job partition guide is released in April 2022, which makes the old CX1/CX2 job partitions degenerate. For the new job sizing guide, refer to [Wiki Page](https://icl-rcs-user-guide.readthedocs.io/en/latest/hpc/queues/job-sizing-guidance/). The command `availability` is still useful to check the availability of resources. 
 
 Note that the new job sizing scheme increases its flexibility, which is especially friendly for smaller, array-like jobs, at the price of increased inter-node communication cost (My own understanding, although received some agreements, not from my supervisor). To improve the efficiency of large jobs, increasing the number of processors per node rather than increasing the number of nodes is recommended. See [Structure and usage of clusters](https://spica-vir.github.io/posts/Structure-and-usage-of-clusters/) for more information.
 
