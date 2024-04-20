@@ -39,8 +39,15 @@ Run `xclock`.
 
 # Programs on Cygwin
 ## XCrySDen
-I really lik XCrySDen as a free visualization tool for atomic structures and electron properties. The compiled distribution and instructions are available [online](http://www.xcrysden.org/Download.html).
+I really like XCrySDen as a free visualization tool for atomic structures and electron properties. The compiled distribution and instructions are available [online](http://www.xcrysden.org/Download.html).
 
 ## GDIS
 [GDIS](https://github.com/arohl/gdis) is a free, open source visualization tool developed in Curtin, West Australia, which does a neat symmetry analysis job especially for complex molecular crystals, as it was initially developed for classical force field people. As a DFT guy, I am beaten hard by them every fortnight. It requires `libgtk-2.0` and `libgtkglext` and their '-devel' distributions as compiling GDIS requires `pkg-config`.
 
+## CRYSTAL
+It might be too much for [a DFT code](https://www.crystal.unito.it/) on PC. It was intended for use with XCrySDen to read and visualize CRYSTAL wavefunction files. There is nothing new for compilation, which is actually easier as all the needed libraries are installed as the root user.
+
+However, for some reason the serial and static CRYSTAL does not run properly with XCrySDen (it does individually). Pre-compiled XCrySDen does not work well with wavefunction interpretation but fine with input files. Locally compiled XCrySDen work with neither.
+
+## VMD and DL Visualize
+Neither of them works as they have platform checks. There should be a way to walk around but currently I don't bother to check that as I have a genuine Linux machine at lab :) 
