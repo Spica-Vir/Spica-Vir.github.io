@@ -8,6 +8,8 @@ mermaid: true
 
 This post is to illustrate how to computerize the Skywatcher Virtuoso miniDob mount. Assembled and tested in July 2021. Some interesting discussions on the proper way to computerize it can be found in this [discussion](https://stargazerslounge.com/topic/239925-skywatcher-heritage-virtuoso-controlled-via-bluetooth/). Note: since everyone's expectations and budgets may largely differ, no comment will be made here on whether the mount discussed is a rational choice. 
 
+Update 2024: For connection to PC, an easier way is found with the latest version of Stellarium PC (24.1). See below. 
+
 # Background information
 The [Skywatcher Virtuoso miniDob mount](https://www.skywatcherusa.com/products/sky-watcher-virtuoso) is a single-arm, alt-azimuth mount sold with a 90mm Maksutov-Cassegrain telescope or a 114mm Newtonian telescope since 2014. Now the price of a used one is typically around £200. It can be driven by built-in motors or by hands. The clutches ensure the manually pushed rotations are tracked and recorded as motor-driven motivations. The mount has already been computerized with a relatively simple program - auto-tracking is utilized if the true North and geographic latitude is set correctly. Besides, it can also cruise along a pre-set path. The [official manual](https://cdn.shopify.com/s/files/1/0080/7095/5123/files/S11750_Virtuoso.pdf) in PDF version is available online. 
 
@@ -32,13 +34,14 @@ flowchart LR
     end
     subgraph Cellphone
         direction LR
-        B(WiFi Adapter) -.-> C(SynScan Android)
+        B -.-> C(SynScan Android)
     end
-    B(WiFi Adapter) -.-> D(SynScan Windows)
+    B -.-> D(SynScan Windows)
     subgraph PC
         direction LR
-        D(SynScan Windows) -- drive --> E(ASCOM)
-        E(ASCOM) -- drive --> F(Stellarium)
+        D -- ASCOM drive --> E(ASCOM)
+        E -- Stellarium-ASCOM port --> F(Stellarium, old)
+        D -- Stellarium-external port --> G(Stellarim, v24.1 and after)
     end
 ```
 
@@ -67,7 +70,24 @@ After setting up the connection, the laptop or cellphone can already function as
 
 Noticed in the new edition of [Stellarium PLUS app](https://www.stellarium-labs.com/telescope-control-in-stellarium-mobile-plus/), direct connection to SynScan Android is achieved. Will test that when I decide to buy that App (￡14.99) - Not an economic choice considering its price and features. [Mobile observatory 3 Pro](https://play.google.com/store/apps/details?id=com.zima.mobileobservatorypro&hl=en_US&gl=US) is a more rational choice, but no telescope control port is provided.  
 
-## Live tracking on personal computers
+## Live tracking on personal computers - New
+**Update 24/03/24**
+
+For some reason the old protocol (see the flow chart above and section below) did not work for me anymore when I tried to set it up on my new PC. Not sure if it is still workable for other PC environments. Anyway I think this one is superior since less steps and software are needed, which is important for the robustness of the whole system in practical applications. Besides Synscan for Windows, [Stellarium](https://stellarium.org/), a virtual planetarium is required for sky chart. 
+
+After successfully connected to telescope, setup Stellarium as follows
+
+*Step 1* launch Stellarium. Click 'Configuration window' on the left and go ['Plug-ins/Telescope Control'](http://stellarium.sourceforge.net/wiki/index.php/Telescope_Control_plug-in). Tick 'Load at startup' and restart Stellarium.
+
+*Step 2* Following the same path as the previous step, click 'configure'. From the pop-out window select 'add a new telescope'.
+
+*Step 3* In the 'Telescope controlled by' panel, select the 'External software or a remote computer' option. Provide a proper name of the telescope in the 'Telescope properties' panel. Defaults for other options would be fine. Click 'OK'.
+
+![Setup Stellarium](/220115-9.png){: w="400" h="420"}
+
+*Step 4* Return to the 'config' panel. Select the telescope just created from the list and click 'Connect'. If everything goes well the telescope should appear in the sky chart. Check the following section for the screenshots.
+
+## Live tracking on personal computers - Old
 It is possible to achieve the live tracking of the telescope FoV on personal computers. Two software should be installed: 
 
 1. [ASCOM](https://www.ascom-standards.org/), the platform bridge between the SynScan driver and the virtual planetarium software;  
@@ -105,9 +125,11 @@ It is possible to achieve the live tracking of the telescope FoV on personal com
 ## Usage & keybindings of Stellarium telescope control plug-in
 The circle indicating the current aim will automatically track movements of the mount. The following keybindings are used to control the telescope via Stellarium. 
 
-* `Ctrl + [x]` Automatically aim the telescope \[x\] to the selected celestial body. \[x\] is the ID number of the telescope. Check the first column of telescopes list (Step 8). For example, to control 'Skywatcher Mak 90', press `Ctrl 1`.  
+* `Ctrl + 0` Open the 'Slew telescope to' panel, where you can specify the telescope ID (Check the first column of telescopes list (Step 8)) and point it to specified coordinates.
 
-* `Alt + [x]` Aim the telescope \[x\] to the center of the screen.  
+* `Ctrl + [x]` Automatically aim the telescope `[x]` to the selected celestial body. `[x]` is the telescope ID. For example, to control 'Skywatcher Mak 90' (Step 8), press `Ctrl 1`.  
+
+* `Alt + [x]` Aim the telescope `[x]` to the center of the screen.  
 
 # Other options
 ## Hand controller
