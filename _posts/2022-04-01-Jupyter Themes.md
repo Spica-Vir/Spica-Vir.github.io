@@ -13,7 +13,7 @@ tags: [Anaconda3, python]
 To install Jupyter Themes, activate the corresponding environment, and use the command: 
 
 ``` console
-~$ pip install jupyterthemes
+$ pip install jupyterthemes
 ```
 
 Note: `conda install` command does not work. 
@@ -22,7 +22,7 @@ Note: `conda install` command does not work.
 For detailed usage, please refer to the [Readme page of Jupyter Themes project](https://github.com/dunovank/jupyter-themes/blob/master/README.md). Here is listed my settings for future reference: 
 
 ``` console
-~$ !jt -t monokai -f dejavu -fs 11 -nfs 10 -T -N -kl -lineh 120
+$ !jt -t monokai -f dejavu -fs 11 -nfs 10 -T -N -kl -lineh 120
 ```
 
 Use Jupyter Notebook to run setups, then relaunch it to see changes. 

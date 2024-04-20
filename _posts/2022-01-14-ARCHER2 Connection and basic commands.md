@@ -14,13 +14,13 @@ This page is to briefly summarize the connection and usage of the UK national su
 An SSH key pair is needed every time the user logs in. Use the command below to generate a key pair: 
 
 ``` console
-~$ ssh-keygen -t rsa -C your@email.com
+$ ssh-keygen -t rsa -C your@email.com
 ```
 
 Then follow the instructions to generate the key pair. After generating that key pair, log into your SAFE account and add the generated key pair, saved in `~/.ssh/id_rsa.pub` by default, to the corresponding Login account. After the system approves the request, connect to ARCHER2 via: 
 
 ``` console
-~$ ssh login_account@login.archer2.ac.uk
+$ ssh login_account@login.archer2.ac.uk
 ```
 
 Enter the passwords for ARCHER2 account and for SSH public key in sequence. For first-time users, the default password is available in [SAFE user page](https://safe.epcc.ed.ac.uk/): In menu 'Login accounts', select the corresponding account, and click 'View Login Account Password' button on near the bottom of the screen. The default password is required to be substituted by a user-defined one during the initial login, and such change will **NOT** appear in the page 'View Login Account Password'. 

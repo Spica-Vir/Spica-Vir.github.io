@@ -145,7 +145,7 @@ Then launch Jupyter Hub (see the next section), kernel 'fortran' is available on
 Now the server has already been set up. Use the following command to connect to the server:
 
 ``` console
-~$ ssh -L localhost:1009:localhost:1008 username@serverip
+$ ssh -L localhost:1009:localhost:1008 username@serverip
 ```
 
 `-L` option specifies the remote (1008) and local (1009) port numbers. The port numbers can be any ones that are not occupied by remote/local processes. The remote one is suggested to be the default port number of Jupyter services. Alternatively, the user can specify the Jupyter Service port when launching it (see below), but that number should be consistent with the remote port specified during logging in.

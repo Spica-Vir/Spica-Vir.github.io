@@ -54,7 +54,7 @@ As mentioned in previous sections, memories are distributed to nodes. Considerin
 Although such sync is automatic for almost any modern cluster, it is safer to specify that when developing job submission scripts: 
 
 ``` console
-~$ ssh ${NODEADDRESS} "${COMMAND}"
+$ ssh ${NODEADDRESS} "${COMMAND}"
 ```
 
 # Secure your storage: Work directory and home directory
@@ -77,7 +77,7 @@ For more flexible, medium-sized clusters like Imperial CX1, submitting jobs in h
 The binary executable should, theoretically, all be stored in `\usr\bin`. This never happens in practice, unless you are a fanatical fundamentalist of the early Linux releases. To guide your system to the desired executable, you can either laboriously type its absolute path every time you need it or add the path to the environmental variable:
 
 ``` console
-~$ export PATH=${PATH}:path_to_bin
+$ export PATH=${PATH}:path_to_bin
 ```
 
 Running any executable in parallel requires mpi to coordinate all the processes/threads. The path to mpi executable is also required. Besides, many scientific codes require other specific environmental variables such as linear algebra packages. Read their documentations for further information.
@@ -93,7 +93,7 @@ However, scientific computing codes are usually distributed in the form of sourc
 Details about compilation are beyond the scope of this post. Maybe I will make another post to discuss them, when I am more confident with this topic. The thing is: when running a dynamically linked application, information should be given to help the code find the libs needed. This can be specified by: 
 
 ``` console
-~$ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:path_to_lib`
+$ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:path_to_lib`
 ```
 
 For statically linked applications, usually you need not worry about it - but the volume of the compiled executable might make you feel wonder whether there is an alternative way.

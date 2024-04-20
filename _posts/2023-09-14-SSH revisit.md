@@ -12,19 +12,19 @@ Recently I reset my WSL virtual machine, which forces me to regenerate ssh key p
 SSH key is a requirement for ARCHER2, but not for other clusters. It is not until recently that I found that can save a lot of time. To generate a hashed ssh public/private key pair, use:
 
 ``` console
-~$ ssh-keygen
+$ ssh-keygen
 ```
 
 By default the public part is saved in `~/.ssh/id_rsa.pub` and the private part is in `~/.ssh/id_rsa`. When connecting server via SSH, the private key stored locally will be compared with the public part stored on the host. If that is a match, the connection is automatically set up. Therefore, the public key should be copied to the server:
 
 ``` console
-~$ ssh-copy-id user@server
+$ ssh-copy-id user@server
 ```
 
 The public key is saved in `~/.ssh/authorized_keys` by default. Alternatively, if the command `ssh-copy-id` is not available, use the following line to send a command to server:
 
 ``` console
-~$ ssh user@server 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
+$ ssh user@server 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 ```
 
 With public key the user can access server without password, as long as the corresponding private key is stored in `~/.ssh`. However, according to my tests, password is still required when accessing clusters including Imperial CX1 and ARCHER2. Clusters might have a separate host to deal with logins, which improves security. But the server in the lab can be accessed with public key only.
@@ -50,6 +50,6 @@ Host alias2
 After setting the config file, use the following commands for connection and file transfer:
 
 ``` console
-~$ ssh alias1
-~$ scp local/file alias1:host/destination
+$ ssh alias1
+$ scp local/file alias1:host/destination
 ```

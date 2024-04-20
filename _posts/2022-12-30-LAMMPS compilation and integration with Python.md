@@ -40,9 +40,9 @@ For Intel CPUs, the Intel suite are helpful to get the optimal accelerations esp
 Nvidia compilers are not required, so the NvidiaHPC-SDK suite is not necessarily needed, but CUDA is required. The [GPU package](https://docs.lammps.org/Build_extras.html#gpu-package) is a relatively independent one, which can be skipped without interfering the integrity of the code. To include GPU acceleration, the following paths must be added before compilation if the CUDA is not loaded individually by environment modulus, and it should be noted that NvidiaHPC-SDK suite should not be loaded as a whole since the Intel suite is needed:
 
 ``` console
-~$ export PATH="$PATH:/path/to/NvidiaHPC-SDK/22.3/cuda/11.6/bin"
-~$ export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/path/to/NvidiaHPC-SDK/22.3/cuda/11.6/lib64"
-~$ export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/path/to/NvidiaHPC-SDK/22.3/cuda/11.6/extras/CUPTI/lib64"
+$ export PATH="$PATH:/path/to/NvidiaHPC-SDK/22.3/cuda/11.6/bin"
+$ export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/path/to/NvidiaHPC-SDK/22.3/cuda/11.6/lib64"
+$ export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/path/to/NvidiaHPC-SDK/22.3/cuda/11.6/extras/CUPTI/lib64"
 ```
 
 # Compilation
@@ -54,9 +54,9 @@ LAMMPS can be compiled either statically or dynamically. Both can produce execut
 The following options enable a static linking:
 
 ``` console
-~$ cmake ../cmake --install-prefix /path/to/lammps/23Jun2022/ -D LAMMPS_MACHINE=stc -D CMAKE_CXX_COMPILER=icpc -D PKG_INTEL=ON -D INTEL_ARCH=cpu -D PKG_KSPACE=ON -D PKG_MOLECULE=ON -D PKG_EXTRA_MOLECULE=ON -D PKG_EXTRA_PAIR=ON -D PKG_PHONON=ON -D PKG_MANYBODY=ON -D BUILD_OMP=yes -D PKG_OPENMP=ON -D CMAKE_CXX_FLAGS=-fopenmp -D CMAKE_EXE_LINKER_FLAGS=-fopenmp -D PKG_GPU=ON -D GPU_API=cuda -D GPU_PREC=double -D GPU_ARCH=sm_60 -D FFT=FFTW3 -D FFT_SINGLE=YES -D FFTW3F_LIBRARY=/path/to/fftw/3.3.10/lib64/libfftw3f.a -D FFTW3F_OMP_LIBRARY=/path/to/fftw/3.3.10/lib64/libfftw3f_omp.a
-~$ cmake --build .
-~$ make install
+$ cmake ../cmake --install-prefix /path/to/lammps/23Jun2022/ -D LAMMPS_MACHINE=stc -D CMAKE_CXX_COMPILER=icpc -D PKG_INTEL=ON -D INTEL_ARCH=cpu -D PKG_KSPACE=ON -D PKG_MOLECULE=ON -D PKG_EXTRA_MOLECULE=ON -D PKG_EXTRA_PAIR=ON -D PKG_PHONON=ON -D PKG_MANYBODY=ON -D BUILD_OMP=yes -D PKG_OPENMP=ON -D CMAKE_CXX_FLAGS=-fopenmp -D CMAKE_EXE_LINKER_FLAGS=-fopenmp -D PKG_GPU=ON -D GPU_API=cuda -D GPU_PREC=double -D GPU_ARCH=sm_60 -D FFT=FFTW3 -D FFT_SINGLE=YES -D FFTW3F_LIBRARY=/path/to/fftw/3.3.10/lib64/libfftw3f.a -D FFTW3F_OMP_LIBRARY=/path/to/fftw/3.3.10/lib64/libfftw3f_omp.a
+$ cmake --build .
+$ make install
 ```
 
 Packages are loaded according to needs. Some comments:
@@ -72,9 +72,9 @@ Packages are loaded according to needs. Some comments:
 The following options enable a dynamic linking:
 
 ``` console
-~$ cmake ../cmake --install-prefix /path/to/lammps/23Jun2022/ -D LAMMPS_MACHINE=dym -D CMAKE_CXX_COMPILER=icpc -D PKG_INTEL=ON -D INTEL_ARCH=cpu -D PKG_KSPACE=ON -D PKG_MOLECULE=ON -D PKG_EXTRA_MOLECULE=ON -D PKG_EXTRA_PAIR=ON -D PKG_PHONON=ON -D PKG_MANYBODY=ON -D BUILD_OMP=yes -D PKG_OPENMP=ON -D CMAKE_CXX_FLAGS=-fopenmp -D CMAKE_EXE_LINKER_FLAGS=-fopenmp -D BUILD_SHARED_LIBS=ON -D LAMMPS_EXCEPTIONS=ON -D PKG_PYTHON=ON -D PKG_GPU=ON -D GPU_API=cuda -D GPU_PREC=double -D GPU_ARCH=sm_60 -D FFT=FFTW3 -D FFT_SINGLE=YES -D FFTW3F_LIBRARY=/path/to/fftw/3.3.10/lib64/libfftw3f.so -D FFTW3F_OMP_LIBRARY=/path/to/fftw/3.3.10/lib64/libfftw3f_omp.so
-~$ cmake --build .
-~$ make install
+$ cmake ../cmake --install-prefix /path/to/lammps/23Jun2022/ -D LAMMPS_MACHINE=dym -D CMAKE_CXX_COMPILER=icpc -D PKG_INTEL=ON -D INTEL_ARCH=cpu -D PKG_KSPACE=ON -D PKG_MOLECULE=ON -D PKG_EXTRA_MOLECULE=ON -D PKG_EXTRA_PAIR=ON -D PKG_PHONON=ON -D PKG_MANYBODY=ON -D BUILD_OMP=yes -D PKG_OPENMP=ON -D CMAKE_CXX_FLAGS=-fopenmp -D CMAKE_EXE_LINKER_FLAGS=-fopenmp -D BUILD_SHARED_LIBS=ON -D LAMMPS_EXCEPTIONS=ON -D PKG_PYTHON=ON -D PKG_GPU=ON -D GPU_API=cuda -D GPU_PREC=double -D GPU_ARCH=sm_60 -D FFT=FFTW3 -D FFT_SINGLE=YES -D FFTW3F_LIBRARY=/path/to/fftw/3.3.10/lib64/libfftw3f.so -D FFTW3F_OMP_LIBRARY=/path/to/fftw/3.3.10/lib64/libfftw3f_omp.so
+$ cmake --build .
+$ make install
 ```
 
 Some comments:
@@ -100,7 +100,7 @@ An purely object-oriented programming fashion is realized by loading the dynamic
 The default lib name for lammps object is 'liblammps.so'. To correctly import and create the lammps object, the name can be specified by `lammps.lammps(name='dym')`, or use the following command:
 
 ``` console
-~$ ln -s /path/to/lammps/23Jun2022/lib64/liblammps_dym.so /path/to/lammps/23Jun2022/lib64/liblammps.so
+$ ln -s /path/to/lammps/23Jun2022/lib64/liblammps_dym.so /path/to/lammps/23Jun2022/lib64/liblammps.so
 ```
 
 To correctly load the LAMMPS python module, the user can either merge the 'lib/site-package' folder with the default 'site-package' directory of the conda environment, or export the path to the environmental variable `$PYTHONPATH`. Alternatively, the path can be added on the top of python scripts, which is recommended:
@@ -114,7 +114,7 @@ To correctly load the LAMMPS python module, the user can either merge the 'lib/s
 The variable `${OMP_NUM_THREADS}` can be set if multi-threading is activated in compilation. The default vale is 1, i.e., no shared memory threading:
 
 ``` console
-~$ export OMP_NUM_THREADS=2
+$ export OMP_NUM_THREADS=2
 ```
 
 Launch the python environment, use the following commands:
@@ -132,18 +132,18 @@ LAMMPS (23 Jun 2022)
 When loading the dynamic lib, it is probable that an error occurs: **OSError: libpython3.10.so.1.0: cannot open shared object file: No such file or directory**. Executable linked dynamically does not include the basic python libs, so the path to python libs should be added to `${LD_LIBRARY_PATH}`. Auto edition of environmental variables can be realized during activation / deactivation of anaconda environments. Use the following commands to set initialization options and then restart the python environment:
 
 ``` console
-~$ mkdir -p ${CONDA_PREFIX}/etc/conda/activate.d
-~$ touch ${CONDA_PREFIX}/etc/conda/activate.d/env_vars.sh
-~$ echo "export LD_LIBRARY_PATH=\"\${CONDA_PREFIX}/lib:\${LD_LIBRARY_PATH}\"" >> ${CONDA_PREFIX}/etc/conda/activate.d/env_vars.sh
-~$ mkdir -p ${CONDA_PREFIX}/etc/conda/deactivate.d
-~$ touch ${CONDA_PREFIX}/etc/conda/deactivate.d/env_vars.sh
-~$ echo "LD_LIBRARY_PATH=\`echo \${LD_LIBRARY_PATH//\"\${CONDA_PREFIX}/lib:\"/''}\`" >> ${CONDA_PREFIX}/etc/conda/deactivate.d/env_vars.sh
+$ mkdir -p ${CONDA_PREFIX}/etc/conda/activate.d
+$ touch ${CONDA_PREFIX}/etc/conda/activate.d/env_vars.sh
+$ echo "export LD_LIBRARY_PATH=\"\${CONDA_PREFIX}/lib:\${LD_LIBRARY_PATH}\"" >> ${CONDA_PREFIX}/etc/conda/activate.d/env_vars.sh
+$ mkdir -p ${CONDA_PREFIX}/etc/conda/deactivate.d
+$ touch ${CONDA_PREFIX}/etc/conda/deactivate.d/env_vars.sh
+$ echo "LD_LIBRARY_PATH=\`echo \${LD_LIBRARY_PATH//\"\${CONDA_PREFIX}/lib:\"/''}\`" >> ${CONDA_PREFIX}/etc/conda/deactivate.d/env_vars.sh
 ```
 
 By doing so, the *ncurses* lib from Anaconda seems to cover the default one, which leads to 2 problems. The first one is warnings such as '**libtinfo.so.6: no version information available message using conda environment**', which is due to the releases of ncurses on the default Anaconda channel lack the version information. This can be solved by reinstalling it from the `conda-forge` channel:
 
 ``` console
-~$ conda install -c conda-forge ncurses
+$ conda install -c conda-forge ncurses
 ```
 
 The second one is that it makes the `top` command, and probably more commands, invalid. But the `ps` command is effective. If the error occurs, finding an alternative or deactivating the current environment seem to be the only 2 solutions. 

@@ -25,8 +25,8 @@ Compiling ONETEP on supercomputers is relatively easy thanks to the sensible dev
 Get Intel OneAPI 2022.1.2.184 base version and HPC version:
 
 ``` console
-~$ wget https://registrationcenter-download.intel.com/akdlm/irc_nas/18487/l_BaseKit_p_2022.1.2.146_offline.sh
-~$ wget https://registrationcenter-download.intel.com/akdlm/irc_nas/18479/l_HPCKit_p_2022.1.2.117_offline.sh
+$ wget https://registrationcenter-download.intel.com/akdlm/irc_nas/18487/l_BaseKit_p_2022.1.2.146_offline.sh
+$ wget https://registrationcenter-download.intel.com/akdlm/irc_nas/18479/l_HPCKit_p_2022.1.2.117_offline.sh
 ``` 
 
 According to the recommendation in the file 'INSTALL', the threaded FFTW3 wrapper of MKL is recommended (-DMKL_FFTW3) instead of a standalone FFTW3 lib to make sure the compiled version is **thread-safe** (Of course a standalone FFTW3 is fine if ONETEP is not compiled for multi-threading). To do this, the path to 'mkl_service.mod' should be given according to the CPU architecture and the length of MKL integer (see below).
@@ -48,7 +48,7 @@ COMPILER = INTEL-ifort-on-LINUX
 Note that NHPC101 has limited stack size(8192). Use the following command every time before launching a calculation:
 
 ``` console
-~$ ulimit -s unlimited
+$ ulimit -s unlimited
 ```
 
 ## Multi-threading parallelization
@@ -68,13 +68,13 @@ COMPILER = INTEL-ifort-on-LINUX
 `-DDEFAULT_THREADS=2` set the default `threads_max` and `threads_num_fftboxes` threading of each process to be 2. Using the following command before any calculation, the number of threading will cover the default value and increases to 4.
 
 ``` console
-~$ export OMP_NUM_THREADS=4
+$ export OMP_NUM_THREADS=4
 ```
 
 Multi-threading needs a separate setting of stack size. Use the following command before any calculation:
 
 ``` console
-~$ export OMP_STACKSIZE=64M
+$ export OMP_STACKSIZE=64M
 ```
 
 **NOTE**  
