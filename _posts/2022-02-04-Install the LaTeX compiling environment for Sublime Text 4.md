@@ -18,7 +18,7 @@ P.S. I still recommend [Overleaf](https://www.overleaf.com/) as a more compatibl
 
 # List of required packages/software
 
-- [**MikTeX**](https://miktex.org/download) - LaTeX compiler ([TeXStudio](http://texstudio.sourceforge.net/) is compatible as well, modify the settings according to the documentation);  
+- [**MikTeX**](https://miktex.org/download) - LaTeX compiler ([TeXStudio](https://texstudio.sourceforge.net/) is compatible as well, modify the settings according to the documentation);  
 - [**LaTeXTools**](https://latextools.readthedocs.io/en/latest/) - LaTeX editor plugin for sublime text;  
 - [**LaTeX Word count**](https://packagecontrol.io/packages/LaTeX%20Word%20Count) - Explicite word counter for LaTeX documents;  
 - [**SumatraPDF**](https://www.sumatrapdfreader.org/free-pdf-reader) - A free and light weight PDF reader. The only PDF reader supporting reverse lookup on Windows platform;  

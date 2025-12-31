@@ -18,7 +18,7 @@ Paths to binary executable, header files and static libs of GCC and MPICH are ad
 # Compilation
 ## Minimal procedures
 
-Download the source code from its [website](http://fftw.org/download.html). The compilation of FFTW3 follows the traditional make procedures, so the minimal installation steps are:
+Download the source code from its [website](https://fftw.org/download.html). The compilation of FFTW3 follows the traditional make procedures, so the minimal installation steps are:
 
 ``` console
 $ tar -zxvf fftw-3.3.10.tar.gz

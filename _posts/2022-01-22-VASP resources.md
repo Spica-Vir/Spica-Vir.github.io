@@ -12,7 +12,7 @@ In this post are listed some useful learning resources of the (probably) most po
 
 [**VASP forum**](https://www.vasp.at/forum/) - The official forum for VASP users. For most of times, VASP developers are very active in this forum - their replies can be found under many posts. 
 
-The old website of VASP, <http://cms.mpi.univie.ac.at>, has been unfortunately abandoned since late 2020. Old forum posts are believed to be safely transferred to the new forum, yet the their original links are no longer valid. Besides, the retired [online manual](https://cms.mpi.univie.ac.at/vasp/vasp/vasp.html) is not available. The contents of the [PDF manual](http://cms.mpi.univie.ac.at/vasp/vasp.pdf) are the same as its online counterpart, so they are out-of-date as well. The only reliable manual for the current version of VASP is [VASP Wiki](https://www.vasp.at/wiki/index.php/The_VASP_Manual). 
+The old website of VASP, (cms.mpi.univie.ac.at), has been unfortunately abandoned since late 2020. Old forum posts are believed to be safely transferred to the new forum, yet the their original links are no longer valid. Besides, the retired online manual hosted on the same site is not available. The contents of the PDF manual are the same as its online counterpart, so they are out-of-date as well. The only reliable manual for the current version of VASP is [VASP Wiki](https://www.vasp.at/wiki/index.php/The_VASP_Manual). 
 
 [**List of resources**](https://www.vasp.at/resources/) - The officially recommended tool kits for VASP simulations, which, I think, is better than any other recommendation. 
 
@@ -23,7 +23,7 @@ The old website of VASP, <http://cms.mpi.univie.ac.at>, has been unfortunately a
 
 涵盖了VASP编译，SCF，几何结构优化的参数测试方法、选择技巧，以及电学、磁学、界面性质计算的建模与计算方法。需要注意手册只有2004和2005两个版本，部分方法（如几何结构优化的方法）已经过时，需要结合[VASP Wiki](https://www.vasp.at/wiki/index.php/The_VASP_Manual)批判学习。
 
-[**世事如棋的GitHub博客**](http://blog.wangruixing.cn/2019/05/01/scf/) - *中文* 一些关于VASP以及配套工具使用方法的收录，讨论非常深入但是系统性不强。
+[**世事如棋的GitHub博客**](https://blog.shishiruqi.com/) - *中文* 一些关于VASP以及配套工具使用方法的收录，讨论非常深入但是系统性不强。
 
 [**第一原理計算入門**](https://www5.hp-ez.com/hp/calculations/page1) - *Japanese* A collection of instructions for various ab initio codes. Focused on compiling / setting up VASP and related tools.
 
@@ -35,7 +35,7 @@ The pseudopotential files (POTCAR) for VASP are maintained and regularly updated
 # Visualization
 The VASP format is widely supported by various mainstream visualization software. 
 
-[**VESTA**](http://jp-minerals.org/vesta/en/) - The visualization software supporting various geometry formats (but not CRYSTAL). Applicable for Windows, MacOS, and Linux.
+[**VESTA**](https://jp-minerals.org/vesta/en/) - The visualization software supporting various geometry formats (but not CRYSTAL). Applicable for Windows, MacOS, and Linux.
 
 Known Issue
 : The old 3.4.x versions, except 3.4.0, get problems when visualizing the charge density file (CHGCAR). Not a problem for now since the latest version is 3.5.7. 
@@ -82,11 +82,11 @@ Update Jan. 22-2022
 
 [**VTSTTools**](https://theory.cm.utexas.edu/vtsttools/index.html) - For transition state search and reactions. Not really used. 
 
-[**Bader**](http://theory.cm.utexas.edu/henkelman/code/bader/) - For atomic Bader charge analysis. Used with `chgsum.pl` script from VTSTTools. 
+[**Bader**](https://theory.cm.utexas.edu/henkelman/code/bader/) - For atomic Bader charge analysis. Used with `chgsum.pl` script from VTSTTools. 
 
 Although from a personal point of view, population analysis is somewhat 'nonphysical', and in many cases the results of Bader charge is even worse than the simpler Mulliken charge, but to the best of my knowledge, Bader analysis is the only available option for VASP. 
 
-[**phonopy**](https://phonopy.github.io/phonopy/) and [**phono3py**](http://phonopy.github.io/phono3py/) - Typically for phonon dispersion and thermodynamic properties via finite displacement method. 
+[**phonopy**](https://phonopy.github.io/phonopy/) and [**phono3py**](https://phonopy.github.io/phono3py/) - Typically for phonon dispersion and thermodynamic properties via finite displacement method. 
 
 The formal one is written in Python 2 and the latter one in Python 3 (should be, I did not remember clearly. Generally speaking they are the same in features). Combined with VASP to analyze the symmetry of input geometry and displace the initial geometry along all the symmetrically nonequivalent directions for phonon calculations. It also has interface to other calculators including CRYSTAL. 
 
@@ -95,13 +95,17 @@ The formal one is written in Python 2 and the latter one in Python 3 (should be,
 According to my preliminary tests only peak positions can be calculated correctly, nevertheless still an impressive achievement considering the lack of support of VASP in vibrational properties. 
 
 # Post-processing
-[**p4vasp**](https://github.com/orest-d/p4vasp) - A powerful post-processing software with graphical user interface
+[**p4vasp**](https://www.vasp.at/py4vasp/latest/) - A powerful post-processing software with graphical user interface
 
-It can be used to read, visualize, and export various electronic properties. Applicable for Windows, MacOS, and Linux. Based on `vasprun.xml` file, it can be launched by simply copying its executable file to the job folder. It can also used for structure visualization but not as beautiful as [VESTA](http://jp-minerals.org/vesta/en/). 
+It can be used to read, visualize, and export various electronic properties.
+Older versions are applicable for Windows, MacOS, and Linux, and the latest version can be installed via `apt-get` in Ubuntu linux and callable in Python via Jupyter.
+Based on `vasprun.xml` file, it can be launched by simply copying its executable file to the job folder.
+It can also used for structure visualization but not as beautiful as [VESTA](https://jp-minerals.org/vesta/en/). 
+Its [GitHub page](https://github.com/orest-d/p4vasp) is also included. 
 
 Known issue
-: Its [information webpage](http://www.p4vasp.at/) has been down due to sever problems since late 2021. Only [GitHub page](https://github.com/orest-d/p4vasp) is available now. 
+: Its old information page (p4vasp.at) has been down due to sever problems since late 2021. 
 
-[**VASPKIT**](http://vaspkit.sourceforge.net/) - A light-weight tool kit for post-processing. 
+[**VASPKIT**](https://vaspkit.com/) - A light-weight tool kit for post-processing. 
 
 No graphical interface, only available on Linux. Capable of dealing electronic and optic properties including band, DOS, electrostatic potential, differential charge/spin density and planar averaged properties. 

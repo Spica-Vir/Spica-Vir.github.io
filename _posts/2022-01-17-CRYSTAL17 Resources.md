@@ -26,16 +26,16 @@ A collection of system-specific, Gaussian BSs optimized by [**Dr Mike Towler**](
 # Geometry, Visualization and Data processing
 A main drawback of CRYSTAL package is the lack of matching geometry edit & visualization kit, making it comparatively not as user friendly as more popular codes like VASP/CASTEP. It should be noted that even though links here provide some temporary solutions, the images obtained are typically not satisfying from a point of publication, so coding seems to be the only choice for now. Meanwhile, for some keywords, there are print options for formats widely supported by mainstream visualization software - a typical example is the .CUBE format by the ECH3 keyword - which will not be discussed any more. Anyway, it should not be a real problem for any researcher with the basic programming capability. Maybe I will post my scripts to github someday when I am free and happy to do so. 
 
-[**CRYSPLOT**](http://crysplot.crystalsolutions.eu/) - An all-in-one visualization solution
+[**CRYSPLOT**](https://crysplot.crystalsolutions.eu/) - An all-in-one visualization solution
 
 Known issues  
 : - fort.25 (f25) file for DOSS/COOP/COHP: The Fermi level is not aligned to zero as routinely adopted. The calculated Fermi energy should be added to the values of the energy axis.  
 : - PHONBANDS.DAT file for phonon band calculation: A bug with the print option of CRYSTAL17 source code. Data on reciprocal points next to the high-symmetric points might go missing - use the fort.25 file instead.  
-: - [MOLDRAW](https://www.moldraw.unito.it/_sgg/f10000.htm) (visualizing the optimization steps and lattice vibrations) and [TOPOND](https://www.crystal.unito.it/topond/topond.php) (topological analysis of electron density) have been integrated to [CRYSPLOT](http://crysplot.crystalsolutions.eu/).  
+: - [MOLDRAW](https://www.moldraw.unito.it/_sgg/f10000.htm) (visualizing the optimization steps and lattice vibrations) and [TOPOND](https://www.crystal.unito.it/topond/topond.php) (topological analysis of electron density) have been integrated to [CRYSPLOT](https://crysplot.crystalsolutions.eu/).  
 
-[**Jmol**](http://jmol.sourceforge.net/) - Non-periodic system visualizer. The lattice boundaries can be visualized, but the atoms cannot be replicated along periodic directions. Used to visualize the molecular or crystalline orbitals (.molden file).
+[**Jmol**](https://jmol.sourceforge.net/) - Non-periodic system visualizer. The lattice boundaries can be visualized, but the atoms cannot be replicated along periodic directions. Used to visualize the molecular or crystalline orbitals (.molden file).
 
-[**J-ICE**](http://j-ice.sourceforge.net/) - *Not tested* A web-based, crystallographic version of [Jmol](http://jmol.sourceforge.net/). 
+[**J-ICE**](https://sourceforge.net/projects/j-ice/) - *Not tested* A web-based, crystallographic version of [Jmol](https://jmol.sourceforge.net/). 
 
 [**DL Visualize (DLV) 3**](https://gitlab.com/bmgcsc/dlv3-release) Developed in Daresbury laboratory, mainly by B. Searle. There was a release webpage which requires registration, but due to unknown reasons, now instead of the webpage, its repository is accessible, so currently it is open-source and free of charge.
 
@@ -47,7 +47,7 @@ Known issues
 : - The `ase.io.crystal.write_crystal` method has no symmetry analysis. Its output only has the P1 symmetry.  
 : - ASE also has an [interface](https://www.databases.fysik.dtu.dk/ase/ase/calculators/crystal.html?highlight=crystal#module-ase.calculators.crystal) to CRYSTAL14 to enable DFT/HF calculations within ASE.  
 
-[**CRYSTALpytools with workflows**](https://github.com/crystal-code-tools/CRYSTALpytools) **In development** - A pre- and post- processing tool co-developed by [Computational Materials Science Group](https://cmsg-icl.github.io/web/index.html) at Imperial College and [Theoretical Chemistry Group](https://www.chimica.unito.it/do/gruppi.pl/Show?_id=7myq) at University of Torino. It adopts the heavily object-oriented fashion of [Pymatgen](https://pymatgen.org/) and can easily cooperate with it. The latest stable release is accessible via `pip`. Installation instructions can be found on [this page](https://github.com/crystal-code-tools/CRYSTALpytools).
+[**CRYSTALpytools with workflows**](https://crystal-code-tools.github.io/CRYSTALpytools/) **In development** - A pre- and post- processing tool co-developed by [Computational Materials Science Group](https://cmsg-icl.github.io/web/index.html) at Imperial College and [Theoretical Chemistry Group](https://www.chimica.unito.it/do/gruppi.pl/Show?_id=7myq) at University of Torino. It adopts the heavily object-oriented fashion of [Pymatgen](https://pymatgen.org/) and can easily cooperate with it. The latest stable release is accessible via PyPI and Conda-forge. Installation instructions can be found on [this page](https://crystal-code-tools.github.io/CRYSTALpytools/installation.html).
 
 [**Seek Path**](https://tools.materialscloud.org/seekpath/) A web-based engine to generate high-symmetric paths in irreducible Brillouin Zone.
 

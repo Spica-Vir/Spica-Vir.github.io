@@ -48,7 +48,7 @@ flowchart LR
 ## Setup the connection
 To utilize the computerization, the official solution is adopted to avoid unnecessary troubles. In fact, non-official WiFi/Bluetooth solutions are not noticeably competitive in costs. For the official solution, two critical parts are required: 
 
-* [SynScan WiFi adaptor](http://skywatcher.com/product/synscan-wi-fi-adapter/), plugged into the RJ11/12 serial port for wireless communication;  
+* [SynScan WiFi adaptor](https://skywatcher.com/product/synscan-wi-fi-adapter/), plugged into the RJ11/12 serial port for wireless communication;  
 *  [SynScan App](https://www.skywatcher.com/download/software/synscan-app/), installed on your computer or cellphone (Android only) for connection to the mount.   
 
 *Step 1* Plug the WiFi adaptor into the RJ11/12 serial port and turn on the switch. 
@@ -77,7 +77,7 @@ For some reason the old protocol (see the flow chart above and section below) di
 
 After successfully connected to telescope, setup Stellarium as follows
 
-*Step 1* launch Stellarium. Click 'Configuration window' on the left and go ['Plug-ins/Telescope Control'](http://stellarium.sourceforge.net/wiki/index.php/Telescope_Control_plug-in). Tick 'Load at startup' and restart Stellarium.
+*Step 1* launch Stellarium. Click 'Configuration window' on the left and go ['Plug-ins/Telescope Control'](https://stellarium.org/doc/24.0/group__telescopeControl.html). Tick 'Load at startup' and restart Stellarium.
 
 *Step 2* Following the same path as the previous step, click 'configure'. From the pop-out window select 'add a new telescope'.
 
@@ -91,7 +91,7 @@ After successfully connected to telescope, setup Stellarium as follows
 It is possible to achieve the live tracking of the telescope FoV on personal computers. Two software should be installed: 
 
 1. [ASCOM](https://www.ascom-standards.org/), the platform bridge between the SynScan driver and the virtual planetarium software;  
-2. [ASCOM driver for SynScan APP](http://www.skywatcher.com/download/software/ascom-driver/), to connect SynScan APP to ASCOM device hub;
+2. [ASCOM driver for SynScan APP](https://www.skywatcher.com/download/software/ascom-driver/), to connect SynScan APP to ASCOM device hub;
 3. [Stellarium](https://stellarium.org/), a virtual planetarium supporting ASCOM.  
 
 ![Setup ASCOM](https://cdn.ipfsscan.io/weibo/https://tvax2.sinaimg.cn/large/0086k6b8gy1i8u4crsyamj31j70vfe2q.jpg){: .centered; w="600"}
@@ -104,7 +104,7 @@ It is possible to achieve the live tracking of the telescope FoV on personal com
 
 *Step 4* Go back to the initial panel, click on the button 'Connect Telescope' and wait for the software to setup the connection. 
 
-*Step 5* After the connection to ASCOM successfully set, launch Stellarium. Click 'Configuration window' on the left and go ['Plug-ins/Telescope Control'](http://stellarium.sourceforge.net/wiki/index.php/Telescope_Control_plug-in). Tick 'Load at startup' and restart Stellarium.
+*Step 5* After the connection to ASCOM successfully set, launch Stellarium. Click 'Configuration window' on the left and go ['Plug-ins/Telescope Control'](https://stellarium.org/doc/24.0/group__telescopeControl.html). Tick 'Load at startup' and restart Stellarium.
 
 *Step 6* Following the same path as the previous step, click 'configure'. From the pop-out window select 'add a new telescope'.
 

@@ -102,7 +102,7 @@ For statically linked applications, usually you need not worry about it - but th
 Improper previous settings may lead to a wrong application, or a wrong version, if multiple applications with similar functions are installed in the system, such as Intel compiler and GCC, OpenMPI and MPICH - a common phenomenon for shared computing resources. To avoid this, the path to the undesired application or lib should be removed from the environmental variables.
 
 **Environmental Modules**  
-[Environmental modules](http://modules.sourceforge.net/) is a popular software managing the necessary environmental setups and conflicts for each application. It can easily add or erase the environmental variables by commands `module load` or `module rm`, and modulefiles written in Tool Command Language (TCL). The default directory of modulefiles is given in the environmental variable `${MODULEPATH}`, but files in other directories can also be loaded by their absolute path.
+[Environmental modules](https://envmodules.io/) is a popular software managing the necessary environmental setups and conflicts for each application. It can easily add or erase the environmental variables by commands `module load` or `module rm`, and modulefiles written in Tool Command Language (TCL). The default directory of modulefiles is given in the environmental variable `${MODULEPATH}`, but files in other directories can also be loaded by their absolute path.
 
 Both Imperial CX1 and ARCHER2 adopt this application, which pre-compiled applications offered.
 

@@ -94,12 +94,12 @@ pageviews:
 #
 theme_mode:   # [light|dark]
 
-# The CDN endpoint for images.
+# The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
-# will be added to all image (site avatar & posts' images) paths starting with '/'
+# will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn: ""
+cdn: 
 
 # the avatar on sidebar, support local or CORS resources
 avatar: "https://cdn.ipfsscan.io/weibo/https://tvax4.sinaimg.cn/large/0086k6b8gy1i8u5cqexykj308c08c41p.jpg"
