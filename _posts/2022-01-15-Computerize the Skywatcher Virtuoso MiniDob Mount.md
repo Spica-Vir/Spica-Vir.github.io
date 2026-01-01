@@ -53,13 +53,13 @@ To utilize the computerization, the official solution is adopted to avoid unnece
 
 *Step 1* Plug the WiFi adaptor into the RJ11/12 serial port and turn on the switch. 
 
-![Connect to SynScan WiFi](https://cdn.ipfsscan.io/weibo/https://tvax1.sinaimg.cn/large/0086k6b8gy1i8u47cy98sj30jv07swfv.jpg){: .centered; w="400"}
+![Connect to SynScan WiFi](/large/0086k6b8gy1i8u47cy98sj30jv07swfv.jpg){: .centered; w="400"}
 
 *Step 2* Search available WiFi connection and connect your device to the WiFi spot named as 'SynScan_WiFi_*'. By doing this the connected device will lose the Internet connection.
 
-![Setup the connection to App](https://cdn.ipfsscan.io/weibo/https://tvax3.sinaimg.cn/large/0086k6b8gy1i8u49trdxmj30ix0asjtt.jpg){: .centered; w="400"}
+![Setup the connection to App](/large/0086k6b8gy1i8u49trdxmj30ix0asjtt.jpg){: .centered; w="400"}
 
-![Set the location](https://cdn.ipfsscan.io/weibo/https://tvax4.sinaimg.cn/large/0086k6b8gy1i8u4asr4qgj30iq0fd40n.jpg){: .centered; w="400"}
+![Set the location](/large/0086k6b8gy1i8u4asr4qgj30iq0fd40n.jpg){: .centered; w="400"}
 
 *Step 3* Launch the Synscan App, click on the 'Connect' button on the top of the window, select the available port and setup the connection. For PC users, probably no location sensor is available, so setting the latitude, longitude, and altitude manually is required. The panel can be found in 'Settings/Location/'. 
 
@@ -83,7 +83,7 @@ After successfully connected to telescope, setup Stellarium as follows
 
 *Step 3* In the 'Telescope controlled by' panel, select the 'External software or a remote computer' option. Provide a proper name of the telescope in the 'Telescope properties' panel. Defaults for other options would be fine. Click 'OK'.
 
-![Setup Stellarium](https://cdn.ipfsscan.io/weibo/https://tvax4.sinaimg.cn/large/0086k6b8gy1i8u4bz99csj31951bdwri.jpg){: .centered; w="400"}
+![Setup Stellarium](/large/0086k6b8gy1i8u4bz99csj31951bdwri.jpg){: .centered; w="400"}
 
 *Step 4* Return to the 'config' panel. Select the telescope just created from the list and click 'Connect'. If everything goes well the telescope should appear in the sky chart. Check the following section for the screenshots.
 
@@ -94,7 +94,7 @@ It is possible to achieve the live tracking of the telescope FoV on personal com
 2. [ASCOM driver for SynScan APP](https://www.skywatcher.com/download/software/ascom-driver/), to connect SynScan APP to ASCOM device hub;
 3. [Stellarium](https://stellarium.org/), a virtual planetarium supporting ASCOM.  
 
-![Setup ASCOM](https://cdn.ipfsscan.io/weibo/https://tvax2.sinaimg.cn/large/0086k6b8gy1i8u4crsyamj31j70vfe2q.jpg){: .centered; w="600"}
+![Setup ASCOM](/large/0086k6b8gy1i8u4crsyamj31j70vfe2q.jpg){: .centered; w="600"}
 
 *Step 1* Make sure the driver has been correctly installed. Open 'ASCOM Device Hub', click 'Tools' and select 'Setup'. 
 
@@ -108,17 +108,17 @@ It is possible to achieve the live tracking of the telescope FoV on personal com
 
 *Step 6* Following the same path as the previous step, click 'configure'. From the pop-out window select 'add a new telescope'.
 
-![Create a telescope object](https://cdn.ipfsscan.io/weibo/https://tvax3.sinaimg.cn/large/0086k6b8gy1i8u4df5mcij30tl0r07fv.jpg){: .centered; w="500"}
+![Create a telescope object](/large/0086k6b8gy1i8u4df5mcij30tl0r07fv.jpg){: .centered; w="500"}
 
-![Setup the ASCOM telescope](https://cdn.ipfsscan.io/weibo/https://tvax3.sinaimg.cn/large/0086k6b8gy1i8u4ducj3fj30tg0n0ams.jpg){: .centered; w="500"}
+![Setup the ASCOM telescope](/large/0086k6b8gy1i8u4ducj3fj30tg0n0ams.jpg){: .centered; w="500"}
 
 *Step 7* In the 'Telescope controlled by' panel, select the 'ASCOM' option. Provide a proper name of the telescope in the 'Telescope properties' panel. Choose 'SynScan App Driver' from the pull-down menu of 'Choose ASCOM Telescope'. Click 'OK'.
 
-![Connect to the telescope](https://cdn.ipfsscan.io/weibo/https://tvax1.sinaimg.cn/large/0086k6b8gy1i8u4e6ltaaj30t90qdk3n.jpg){: .centered; w="400"}
+![Connect to the telescope](/large/0086k6b8gy1i8u4e6ltaaj30t90qdk3n.jpg){: .centered; w="400"}
 
 *Step 8* Return to the 'config' panel. Select the telescope just created from the list and click 'Connect'.
 
-![The live FoV](https://cdn.ipfsscan.io/weibo/https://tvax4.sinaimg.cn/large/0086k6b8gy1i8u4ejidq9j30ku0bodl3.jpg){: .centered; w="600"}
+![The live FoV](/large/0086k6b8gy1i8u4ejidq9j30ku0bodl3.jpg){: .centered; w="600"}
 
 *Step 9* Return to the home screen. There will be a circle with name of the newly created telescope showing its live FoV. 
 
