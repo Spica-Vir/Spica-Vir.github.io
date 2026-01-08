@@ -1,8 +1,8 @@
 ---
 title: Computerize the Skywatcher Virtuoso MiniDob Mount
 date: 2022-01-15 00:03:53 +0000
-categories: [Interest, Astronomy]
-tags: [telescope, DIY]
+categories: [Interest, Sky]
+tags: [telescope, DIY, astronomy]
 mermaid: true
 ---
 
