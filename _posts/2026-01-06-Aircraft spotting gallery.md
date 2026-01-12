@@ -117,4 +117,32 @@ Though I typically do not include blurry images in this post, this one, from my 
 
 ### 西北工业大学 | NWPU
 
+如本文开篇链接中的图片所示，西工大校藏的老飞机多堆放在“飞机坟场”中风吹日晒，不便于拍摄。
+这一情况在我于西工大求学的四年间均未有改观。
+如今已有不少飞机经过修复，在长安校区展出了，等有机会回去了再拍一些照片。
+
+As shown in the previously mentioned news report, the aircraft hosted by NWPU used to be left unattended and piled up in the so-called 'aircraft graveyard', which causes much trouble to photographing.
+The situation was hardly improved throughout my years in NWPU, whereas nowadays most of them have been properly restored for exhibition in the Chang'an campus.
+More photos to be added when I have chance to visit there.
+
+![ARJ21-NWPU-COMACB992L](/large/0086k6b8gy1i985uy4oi0j318g0xchdt.jpg){: .centered; w="640"}
+
+- 中国商飞 ARJ-21 | COMAC ARJ-21，B992-L静力试验机
+- 29/12/2016，长安校区
+
 ### 南京航空航天大学 | NUAA
+
+![强教5-NUAA](/large/0086k6b8gy1i9860pevazj318g0rs4qp.jpg){: .centered; w="720"}
+
+- 中航洪都 强教-5 | Hongdu QJ-5
+- 25/12/2025，将军路校区
+
+![An24-NUAA-XinjiangB3425](/large/0086k6b8gy1i9863w3dpnj318g0p0b29.jpg){: .centered; w="720"}
+
+- 苏联安东诺夫 安-24 | USSR Antonov An-24，新疆航空B-3425
+- 24/12/2025，明故宫校区
+
+![运7-NUAA-ChianEasternB3482](/large/0086k6b8gy1i9869qnry5j318g0oz1kg.jpg){: .centered; w="720"}
+
+- 中航西飞 运-7-100C | Xi'an Y-7-100C，中国东方航空B-3482
+- 25/12/2025，将军路校区
