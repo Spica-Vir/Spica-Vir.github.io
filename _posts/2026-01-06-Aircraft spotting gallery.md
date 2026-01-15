@@ -1,5 +1,5 @@
 ---
-title: 飞机随拍 | Aircraft spotting gallery
+title: 飞机随拍 | Aviation photo gallery
 date: 2026-01-06 23:55:49 +0800
 categories: [Interest, Sky]
 tags: [aircraft]
@@ -127,22 +127,39 @@ More photos to be added when I have chance to visit there.
 
 ![ARJ21-NWPU-COMACB992L](/large/0086k6b8gy1i985uy4oi0j318g0xchdt.jpg){: .centered; w="640"}
 
-- 中国商飞 ARJ-21 | COMAC ARJ-21，B992-L静力试验机
+- 中国商飞 ARJ-21 \| COMAC ARJ-21，B-992L静力试验机
 - 29/12/2016，长安校区
 
 ### 南京航空航天大学 | NUAA
 
 ![强教5-NUAA](/large/0086k6b8gy1i9860pevazj318g0rs4qp.jpg){: .centered; w="720"}
 
-- 中航洪都 强教-5 | Hongdu QJ-5
+- 中航洪都 强教-5 \| AVIC Hongdu QJ-5
+- 25/12/2025，将军路校区
+
+![初教5-NUAA](/large/0086k6b8gy1i9bd9ir2t5j318g0p01kx.jpg){: .centered; w="720"}
+
+- 南昌飞机厂（今中航洪都） 初教-5 \| Nanchang (now AVIC Hongdu) CJ-5
+- 按许可证与图纸仿制自苏联雅科夫列夫雅克-18
 - 25/12/2025，将军路校区
 
 ![An24-NUAA-XinjiangB3425](/large/0086k6b8gy1i9863w3dpnj318g0p0b29.jpg){: .centered; w="720"}
 
-- 苏联安东诺夫 安-24 | USSR Antonov An-24，新疆航空B-3425
-- 24/12/2025，明故宫校区
+- 苏联安东诺夫 安-24 \| USSR Antonov An-24，新疆航空B-3425
+- 23/12/2025，明故宫校区
 
 ![运7-NUAA-ChianEasternB3482](/large/0086k6b8gy1i9869qnry5j318g0oz1kg.jpg){: .centered; w="720"}
 
-- 中航西飞 运-7-100C | Xi'an Y-7-100C，中国东方航空B-3482
+- 中航西飞 运-7-100C \| AVIC Xi'an Y-7-100C，中国东方航空B-3482
 - 25/12/2025，将军路校区
+
+![UH1-NUAA](/large/0086k6b8gy1i9bdfcwp33j30m80gotlr.jpg){: .centered; w="640"}
+
+- 美国贝尔 UH-1H “休伊” \| US Bell UH-1H 'Huey'
+- 中国唯一一架UH-1直升机，越战期间由越南人民军缴获自美军，1981年9月30日由乔清陆驾驶向解放军投诚。
+- 25/12/2025，将军路校区
+
+![Mi8-NUAA-ChinaGeneralB7808](/large/0086k6b8gy1i9bdqfwaqoj318g0p07wh.jpg){: .centered; w="720"}
+
+- 苏联米里 米-8 \| USSR Mil Mi-8，中国通用航空B-7808
+- 24/12/2025，将军路校区
