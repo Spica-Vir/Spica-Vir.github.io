@@ -92,17 +92,36 @@ The following online services are adopted for information:
 
 ### 波音 | Boeing
 
+![B738-ShandongAirlines-B20EY](/large/0086k6b8gy1i9qm709xxdj30xc0iralg.jpg){: .centered; w="720"}
+
+- B737-8JP(WL), ShanDong Airlines B20EY
+- SC4603 Qingdao Jiaodong Intl (TAO) - Shanghai Pudong Intl (PVG)
+- 28/01/2026, 上海滴水湖
+
 ![B748-Air China](/large/0086k6b8gy1i929tuaxtxj30xc0irahp.jpg){: .centered; w="720"}
 
 - B747-800, Air China
 - CA1523 Beijing Capital Intl (PEK) - Shanghai Hongqiao Intl (SHA) “京沪空中快线”
 - 13/09/2025, Shanghai Hongqiao Intl
 
+![B763-JapanAirline-JA618J](/large/0086k6b8gy1i9qmdujrmlj30xc0irguk.jpg){: .centered; w="720"}
+
+- B767-346(ER), Japan Airlines JA618J
+- JL873 Tokyo Narita Intl (NRT) - Shanghai Pudong Intl (PVG)
+- 28/01/2026, 上海滴水湖
+
 ![B773-Swiss-HBJNB](/large/0086k6b8gy1i92ko2nzasj318g0jmqig.jpg){: .centered; w="720"}
 
 - B777-3DE(ER), Swiss HB-JNB
 - LX189 Shanghai Pudong Intl (PVG) - Zurich (Kloten) (ZRH)
 - 22/09/2020, Shanghai Pudong Intl
+
+![B78X-KoreanAir-HL8535](/large/0086k6b8gy1i9qpk85uaxj30xc0ptwu6.jpg){: .centered; w="640"}
+
+- B787-10 Dreamliner, Korean Air HL8535
+- KE887 Seoul Incheon Intl (ICN) - Shanghai Pudong Intl (PVG)
+- 28/01/2026, 上海滴水湖
+
 
 ### 其它 | Others
 
