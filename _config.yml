@@ -99,7 +99,7 @@ theme_mode:   # [light|dark]
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-cdn: 'https://cdn.ipfsscan.io/weibo'
+cdn: 'https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn'
 
 # the avatar on sidebar, support local or CORS resources
 avatar: "/large/0086k6b8gy1i8u5cqexykj308c08c41p.jpg"
