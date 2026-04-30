@@ -18,7 +18,7 @@ This page is adapted from my Crystal Growth project notebook with added contents
 
 The figure below illustrates the hierarchy of node, processor, and thread: 
 
-![Hierarchy of computing units](https://cdn.ipfsscan.io/weibo/https://tvax2.sinaimg.cn/large/0086k6b8gy1i8u56mr8qgj32cw1fv4qp.jpg){: .centered; w="720"}
+![Hierarchy of computing units](https://s41.ax1x.com/2026/04/20/pecL1qx.png){: .centered; w="720"}
 
 ## Multiple processes vs multiple threads
 

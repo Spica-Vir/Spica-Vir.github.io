@@ -99,10 +99,10 @@ theme_mode:   # [light|dark]
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-cdn: 'https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn'
+cdn: ''
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "/large/0086k6b8gy1i8u5cqexykj308c08c41p.jpg"
+avatar: "https://s41.ax1x.com/2026/04/21/pegqaex.png"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.

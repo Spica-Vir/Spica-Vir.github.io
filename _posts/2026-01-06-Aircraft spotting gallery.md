@@ -54,37 +54,37 @@ The following online services are adopted for information:
 
 ### 中国商飞 | COMAC
 
-![C909-OTT-B655H](/large/0086k6b8gy1i92ht9m9e4j318g0p01kx.jpg){: .centered; w="720"}
+![C909-OTT-B655H](https://s41.ax1x.com/2026/04/21/pegqrfe.png){: .centered; w="720"}
 
 - ARJ21-700, also known as C909, OTT Airlines B-655H
 - 26/11/2025, Xi'an Xianyang Intl (XIY)
 
-![C919-ChinaEastern-B919C](/large/0086k6b8gy1i92hmv4uyqj318g0jg1e6.jpg){: .centered; w="720"}
+![C919-ChinaEastern-B919C](https://s41.ax1x.com/2026/04/21/pegqDYD.png){: .centered; w="720"}
 
 - C919, China Eastern B-919C
 - 26/11/2025, Shanghai Hongqiao Intl (SHA)
 
 ### 空中客车 | Airbus
 
-![A322-Junyao-B304G](/large/0086k6b8gy1i92ksl7vgoj318g0p34qp.jpg){: .centered; w="720"}
+![A322-Junyao-B304G](https://s41.ax1x.com/2026/04/21/pegq6ld.png){: .centered; w="720"}
 
 - A320-214(SL), Juneyao Air B-304G
 - HO1010, Guyuan Liupanshan (GYU) - Xi'an Xianyang Intl (XIY)
 - 02/01/2024, Guyuan Liupanshan
 
-![A332-ChinaEastern-B5942](/large/0086k6b8gy1i92iqy5u08j318g0p07wh.jpg){: .centered; w="720"}
+![A332-ChinaEastern-B5942](https://s41.ax1x.com/2026/04/21/pegqgOI.png){: .centered; w="720"}
 
 - A330-243, China Eastern B-5942
 - MU597 Shanghai Pudong Intl (PVG) - Vancouver Intl (YVR) 'transpacific'
 - 15/07/2017, Vancouver Intl
 
-![A343-Swiss-HBJMB](/large/0086k6b8gy1i92hwonq69j318g0p07wh.jpg){: .centered; w="720"}
+![A343-Swiss-HBJMB](https://s41.ax1x.com/2026/04/21/pegqRmt.png){: .centered; w="720"}
 
 - A340-300, Swiss HB-JMB
 - LX189 Shanghai Pudong Intl (PVG) - Zurich (Kloten) (ZRH)
 - 11/01/2024, Shanghai Pudong Intl
 
-![A35K-Virgin](/large/0086k6b8gy1i92a2h9ta7j30xc0iral3.jpg){: .centered; w="720"}
+![A35K-Virgin](https://s41.ax1x.com/2026/04/22/pe27s29.png){: .centered; w="720"}
 
 - A350-1000, Virgin Atlantic
 - VS046 New York John F Kennedy Intl (JFK) - London Heathrow (LHR) 'transatlantic'
@@ -92,31 +92,31 @@ The following online services are adopted for information:
 
 ### 波音 | Boeing
 
-![B738-ShandongAirlines-B20EY](/large/0086k6b8gy1i9qm709xxdj30xc0iralg.jpg){: .centered; w="720"}
+![B738-ShandongAirlines-B20EY](https://s41.ax1x.com/2026/04/22/pe27h5D.png){: .centered; w="720"}
 
 - B737-8JP(WL), ShanDong Airlines B20EY
 - SC4603 Qingdao Jiaodong Intl (TAO) - Shanghai Pudong Intl (PVG)
 - 28/01/2026, 上海滴水湖
 
-![B748-Air China](/large/0086k6b8gy1i929tuaxtxj30xc0irahp.jpg){: .centered; w="720"}
+![B748-Air China](https://s41.ax1x.com/2026/04/22/pe27cK1.png){: .centered; w="720"}
 
 - B747-800, Air China
 - CA1523 Beijing Capital Intl (PEK) - Shanghai Hongqiao Intl (SHA) “京沪空中快线”
 - 13/09/2025, Shanghai Hongqiao Intl
 
-![B763-JapanAirline-JA618J](/large/0086k6b8gy1i9qmdujrmlj30xc0irguk.jpg){: .centered; w="720"}
+![B763-JapanAirline-JA618J](https://s41.ax1x.com/2026/04/22/pe27gDx.png){: .centered; w="720"}
 
 - B767-346(ER), Japan Airlines JA618J
 - JL873 Tokyo Narita Intl (NRT) - Shanghai Pudong Intl (PVG)
 - 28/01/2026, 上海滴水湖
 
-![B773-Swiss-HBJNB](/large/0086k6b8gy1i92ko2nzasj318g0jmqig.jpg){: .centered; w="720"}
+![B773-Swiss-HBJNB](https://s41.ax1x.com/2026/04/22/pe27fUO.png){: .centered; w="720"}
 
 - B777-3DE(ER), Swiss HB-JNB
 - LX189 Shanghai Pudong Intl (PVG) - Zurich (Kloten) (ZRH)
 - 22/09/2020, Shanghai Pudong Intl
 
-![B78X-KoreanAir-HL8535](/large/0086k6b8gy1i9qpk85uaxj30xc0ptwu6.jpg){: .centered; w="640"}
+![B78X-KoreanAir-HL8535](https://s41.ax1x.com/2026/04/22/pe27WVK.png){: .centered; w="640"}
 
 - B787-10 Dreamliner, Korean Air HL8535
 - KE887 Seoul Incheon Intl (ICN) - Shanghai Pudong Intl (PVG)
@@ -125,7 +125,7 @@ The following online services are adopted for information:
 
 ### 其它 | Others
 
-![DH89-Virgin](/large/0086k6b8gy1i92m6kgk3uj30hs0a1dhk.jpg){: .centered; w="480"}
+![DH89-Virgin](https://s41.ax1x.com/2026/04/22/pe275Pe.png){: .centered; w="480"}
 
 Though I typically do not include blurry images in this post, this one, from my friend KTK, is definitely exempted.
 
@@ -144,41 +144,41 @@ As shown in the previously mentioned news report, the aircraft hosted by NWPU us
 The situation was hardly improved throughout my years in NWPU, whereas nowadays most of them have been properly restored for exhibition in the Chang'an campus.
 More photos to be added when I have chance to visit there.
 
-![ARJ21-NWPU-COMACB992L](/large/0086k6b8gy1i985uy4oi0j318g0xchdt.jpg){: .centered; w="640"}
+![ARJ21-NWPU-COMACB992L](https://s41.ax1x.com/2026/04/22/pe27I8H.png){: .centered; w="640"}
 
 - 中国商飞 ARJ-21 \| COMAC ARJ-21，B-992L静力试验机
 - 29/12/2016，长安校区
 
 ### 南京航空航天大学 | NUAA
 
-![强教5-NUAA](/large/0086k6b8gy1i9860pevazj318g0rs4qp.jpg){: .centered; w="720"}
+![强教5-NUAA](https://s41.ax1x.com/2026/04/23/peRhfFH.png){: .centered; w="720"}
 
 - 中航洪都 强教-5 \| AVIC Hongdu QJ-5
 - 25/12/2025，将军路校区
 
-![初教5-NUAA](/large/0086k6b8gy1i9bd9ir2t5j318g0p01kx.jpg){: .centered; w="720"}
+![初教5-NUAA](https://s41.ax1x.com/2026/04/23/peRh2wD.png){: .centered; w="720"}
 
 - 南昌飞机厂（今中航洪都） 初教-5 \| Nanchang (now AVIC Hongdu) CJ-5
 - 按许可证与图纸仿制自苏联雅科夫列夫雅克-18
 - 25/12/2025，将军路校区
 
-![An24-NUAA-XinjiangB3425](/large/0086k6b8gy1i9863w3dpnj318g0p0b29.jpg){: .centered; w="720"}
+![An24-NUAA-XinjiangB3425](https://s41.ax1x.com/2026/04/23/peRfW2q.png){: .centered; w="720"}
 
 - 苏联安东诺夫 安-24 \| USSR Antonov An-24，新疆航空B-3425
 - 23/12/2025，明故宫校区
 
-![运7-NUAA-ChianEasternB3482](/large/0086k6b8gy1i9869qnry5j318g0oz1kg.jpg){: .centered; w="720"}
+![运7-NUAA-ChianEasternB3482](https://s41.ax1x.com/2026/04/23/peRhISI.png){: .centered; w="720"}
 
 - 中航西飞 运-7-100C \| AVIC Xi'an Y-7-100C，中国东方航空B-3482
 - 25/12/2025，将军路校区
 
-![UH1-NUAA](/large/0086k6b8gy1i9bdfcwp33j30m80gotlr.jpg){: .centered; w="640"}
+![UH1-NUAA](https://s41.ax1x.com/2026/04/23/peRf4MV.png){: .centered; w="640"}
 
 - 美国贝尔 UH-1H “休伊” \| US Bell UH-1H 'Huey'
 - 中国唯一一架UH-1直升机，越战期间由越南人民军缴获自美军，1981年9月30日由乔清陆驾驶向解放军投诚。
 - 25/12/2025，将军路校区
 
-![Mi8-NUAA-ChinaGeneralB7808](/large/0086k6b8gy1i9bdqfwaqoj318g0p07wh.jpg){: .centered; w="720"}
+![Mi8-NUAA-ChinaGeneralB7808](https://s41.ax1x.com/2026/04/23/peRhwFJ.png){: .centered; w="720"}
 
 - 苏联米里 米-8 \| USSR Mil Mi-8，中国通用航空B-7808
 - 24/12/2025，将军路校区

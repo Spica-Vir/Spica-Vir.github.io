@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-![caption](/large/0086k6b8gy1i8v4mf30jmj318g0gowho.jpg){: .centered; w="720"}
+![caption](https://s41.ax1x.com/2026/04/20/pecLls1.jpg){: .centered; w="720"}
 
 # About this blog
 

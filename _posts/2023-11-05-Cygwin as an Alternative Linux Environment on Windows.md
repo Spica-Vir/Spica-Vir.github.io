@@ -22,20 +22,20 @@ In terms of file management, the root directories of both can be visited via fil
 ## Package management
 The installation tool is also the package management tool for Cygwin, i.e., `apt` or `yum` for other Linux distributions. The root directory is Cygwin installation directory. Here is a screenshot of Cygwin package manager user interface. 'Skip' means not-yet-installed packages.
 
-![Cygwin Package Manager](/large/0086k6b8gy1i8u52hmumtj30ub0ig44b.jpg){: .centered; w="720"}
+![Cygwin Package Manager](https://s41.ax1x.com/2026/04/20/pecLGdK.jpg){: .centered; w="720"}
 
 ## XMing and Graphics
 The graphic user interface (GUI) can be enabled following [Microsoft's Tutorial](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps), though my personal attempts in installing a GUI desktop always ended up in failure. As far as I am aware of, Cygwin requires X Window System (My supervisor called it an old school way but I don't agree with him) to run GUI apps. [Xming](http://www.straightrunning.com/XmingNotes/) is a free, open source package for Windows. For Cygwin, X11 components are needed. In package manager, search for 'xclock' to add a very basic X11 application and all dependencies to Cygwin environment. 
 
 After finishing installations, to run GUI apps, Xming should be launched as an idling server. The screenshot below shows the default option. GUI apps in Cygwin are launched in separate windows. Other options are for X Windows based desktop applications which displays the Linux environment as a proper graphic OS. 
 
-![Xming Setups](/large/0086k6b8gy1i8u53pw0kej30yj0qy10d.jpg){: .centered; w="640"}
+![Xming Setups](https://s41.ax1x.com/2026/04/20/pecLJIO.png){: .centered; w="640"}
 
 Then use the default settings. Since the display number is '0' for Xming server, in Cygwin, use `export DISPLAY=:0` to set the display port for client.
 
 Run `xclock`.
 
-![Xclock](/large/0086k6b8gy1i8u54m4n8ej315r0p11e1.jpg){: .centered; w="640"}
+![Xclock](https://s41.ax1x.com/2026/04/21/pegqtyR.png){: .centered; w="640"}
 
 # Programs on Cygwin
 ## XCrySDen
