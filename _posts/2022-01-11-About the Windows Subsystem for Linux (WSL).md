@@ -117,4 +117,13 @@ $ sudo apt autoremove # Automatically remove redundant packages
 $ apt search <keyword> # Search the basic information of a package
 ```
 
+Add mirrors to APT repository, which offer larger collections and faster speed:
 
+``` bash
+$ sudo echo 'deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ <Version Name, resolute in my case> main universe' >> /etc/apt/sources.list # THU mirror
+$ apt modernize-sources
+$ sudo apt update
+```
+
+Note that using a '.list' file is deprecated.
+`apt modernize-sources` converts the list file into the 'sources.list.d/' directory.

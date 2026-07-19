@@ -2,7 +2,7 @@
 title: Change the Grid Size for Plots of Quantum Espresso
 date: 2024-04-20 21:01:17 +0100
 categories: [Research, DFT]
-tags: [Quantum Espresso]
+tags: [Quantum Espresso, visualization]
 ---
 
 Earlier this week I wasted (or more neutrally, spent) a whole afternoon to read the source code of [`pp.x` of Quantum Espresso (QE) 7.1](https://www.quantum-espresso.org/Doc/INPUT_PP.html), which is a post-processing executable to analyze QE wavefunction files. Later I realized it was not a bug but I set wrong parameters. Another interesting finding is that I found a way to change the grid size of 3D plots in QE, which, for some reason, is lengthy and might not work well with released code. Though I put full credits to its developers I did not find anything suspicious for my tests. 
