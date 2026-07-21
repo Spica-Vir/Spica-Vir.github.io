@@ -10,8 +10,9 @@ The recommended installation method, mainly for Linux and WSL, is documented.
 
 **Note for WSL**
 
-Rendering can be very sluggish with the CPU graphic card default for WSL.
-Check [Nvidia Graphic Card for WSL2]({% link _posts/2026-07-19-Enable Graphic Card for WSL2.md %}) to enable GPU rendering.
+The accelerated GPU rendering with Nvidia graphic card can be launched for specific software, if CPU rendering is not explicitly recommended in the corresponding note.
+Check [Nvidia Graphic Card for WSL2]({% link _posts/2026-07-19-Enable Graphic Card for WSL2.md %}) for implementation details.
+
 
 ## VESTA
 
@@ -43,13 +44,8 @@ $ sudo apt install libwebkit2gtk-4.0-37
 
 **Note**
 
-AI diagnose identified a compatibility issue of Mesa D3D12 with *WSL apps* base on legacy OpenGL lib.
-This means that rendering with GPU would be extremely slow, while CPU remains unaffected.
-Use the following command to disable the global setting of rendering with GPU and launch vesta:
-
-``` bash
-$ env -u GALLIUM_DRIVER -u MESA_D3D12_DEFAULT_ADAPTER_NAME VMDTITLE=off VMDNOOPTIX=1 /path/to/VESTA
-```
+1. AI diagnose identified a compatibility issue of Mesa D3D12 with *WSL apps* base on legacy OpenGL lib.
+   This means that rendering with GPU would be extremely slow, so CPU rendering is suggested.
 
 ## VMD 2.0.0
 
@@ -77,8 +73,9 @@ $ cd src/ | make install
 
 **Note**
 
-Similar to VESTA, VMD is also based on legacy OpenGL libs.
-Prepend `env -u GALLIUM_DRIVER -u MESA_D3D12_DEFAULT_ADAPTER_NAME VMDTITLE=off VMDNOOPTIX=1` to the command launching VMD.
+1. Similar to VESTA, VMD is also based on legacy OpenGL libs and CPU rendering is recommended.
+2. AI diagnose identified an issue with the graphic user interface.
+   Prepend `env VMDTITLE=off VMDNOOPTIX=1` to the command launching VMD.
 
 ## Jmol
 
@@ -93,7 +90,7 @@ Some features:
 
 ### WSL
 
-Download the binary version and run `bash jmol.sh`.
+Download the binary version and run the script 'jmol.sh'.
 
 
 ## Avogadro 2
@@ -144,8 +141,7 @@ $ sudo apt install tk libglu1-mesa libtogl2 libxmu6 libgfortran4 libfftw3-bin \
 **Notes**
 
 1. The 'fftw3-3' package in official tutorial is deprecated and can lead to conflicts in dependence. The new 'fftw3-bin' package is used.
-2. Similar to VESTA, XCrySDen is also based on legacy OpenGL libs.
-Prepend `env -u GALLIUM_DRIVER -u MESA_D3D12_DEFAULT_ADAPTER_NAME VMDTITLE=off VMDNOOPTIX=1` to the command launching XCrySDen.
+2. Similar to VESTA, XCrySDen is also based on legacy OpenGL libs. CPU rendering is suggested.
 
 ### Cygwin
 

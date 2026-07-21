@@ -8,7 +8,7 @@ tags: [linux, windows, visualization]
 In [Cygwin as an Alternative Linux Environment on Windows]({% link _posts/2023-11-05-Cygwin as an Alternative Linux Environment on Windows.md %}), the drawback of WSL2 in visualization was discussed in detail.
 An obvious problem with Cygwin is being too old --- a lot of packages are left unmaintained, and it seems that people are gradually embracing WSL instead of Cygwin.
 
-This enables using Nvidia graphic within **WSL2**, so Linux-based visualization software can run smoothly.
+This posts enables using Nvidia graphic within **WSL2**, so Linux-based visualization software can run smoothly.
 Tested on 18 Jul. 2026.
 
 ## Install CUDA toolkit
@@ -41,7 +41,7 @@ $ sudo apt-get update
 $ sudo apt-get install cuda-toolkit-*
 ```
 
-## For visualization and graphic rendering
+## For graphic rendering
 
 ``` bash
 $ sudo apt install mesa-utils vulkan-tools
@@ -64,3 +64,9 @@ $ export GALLIUM_DRIVER=d3d12
 
 Then try `glxinfo -B` again.
 It should give something like 'OpenGL renderer string: D3D12 (NVIDIA RTX A1000 Laptop GPU)'.
+
+Alternatively, prepend the following command to force GPU rendering for specific software only:
+
+``` bash
+env MESA_D3D12_DEFAULT_ADAPTER_NAME=NVIDIA GALLIUM_DRIVER=d3d12 <path/to/executable>
+``` 
