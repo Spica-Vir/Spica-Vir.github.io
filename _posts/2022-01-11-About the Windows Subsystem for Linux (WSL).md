@@ -12,7 +12,7 @@ Resources:
 <https://docs.microsoft.com/en-us/windows/wsl/install>  
 <https://github.com/DDoSolitary/LxRunOffline>  
 
-# Enable WSL
+## Enable WSL
 
 WSL2 is a new edition of WSL with better compatibility with Windows. Some known bugs with WSL1 can be fixed by upgrading to WSL2:
 
@@ -21,12 +21,12 @@ WSL2 is a new edition of WSL with better compatibility with Windows. Some known 
 
 Prerequisites of WSL2 are detailed in the [official webpage](https://docs.microsoft.com/en-us/windows/wsl/install).
 
-## Manual installation (deprecated)
+### Manual installation (deprecated)
 
 This corresponds to the [manual installation](https://docs.microsoft.com/en-us/windows/wsl/install-manual) of WSL2 for old Windows 10 systems.
 Detailed steps are available via the link above.
 
-## Installation via Windows PowerShell
+### Installation via Windows PowerShell
 
 1. Open the PowerShell as the administrator. Note: Search 'PowerShell' or Win + R, type 'PowerShell', enter.  
 2. Type the command below to check available distributions:  
@@ -45,7 +45,7 @@ Using the following command will download the Ubuntu application from Microsoft 
 If other distributions are preferred, modify the `--Ubuntu` option into other distribution names listed on the screen.
 It will install a new WSL distribution and the corresponding Microsoft application.
 
-# Upgrade to WSL2
+## Upgrade to WSL2
 
 WSL1 is the previous version of WSL, which seems not to be a virtual machine platform of full functionality.
 It is suggested to check the WSL version and to upgrade it to WSL2.
@@ -71,7 +71,8 @@ Alternatively, use the following command to set the default WSL version:
 > wsl --set-default-version 2
 ```
 
-# Migrate WSL to another disk
+## Migrate WSL to another disk
+
 By default, the Linux subsystem is installed in the system disk, with limited memory for WSL.
 It is possible to migrate the WSL to another disk by a third party tool, [LxRunOffline](https://github.com/DDoSolitary/LxRunOffline).
 It can also be used to back up and recover an old WSL. 
@@ -87,7 +88,7 @@ In PowerShell, `cd` to the directory of `LxRunOffline.exe`, and modify `Debian` 
 
 Then a virtual disk is visible in the folder specified. 
 
-# Upgrade and maintenance of Ubuntu WSL
+## Upgrade and maintenance of Ubuntu WSL
 
 Upgrade Linux OS release:
 
