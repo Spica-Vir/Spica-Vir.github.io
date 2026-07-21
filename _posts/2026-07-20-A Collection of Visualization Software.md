@@ -150,9 +150,7 @@ To setup Xming forwarding, check [Cygwin as an Alternative Linux Environment on 
 
 ### Source code compilation
 
-For shared library, download [BWideget 1.9.13](https://sourceforge.net/projects/tcllib/files/BWidget/1.9.13/) and unzip the tarball as `<source code directory>/external/lib/bwidget-1.9.13`.
-
-Then in Ubuntu, install:
+In Ubuntu, install development packages following the second command below:
 
 ``` bash
 $ sudo apt install tk libglu1-mesa libtogl2 libxmu6 libgfortran4 libfftw3-bin \
@@ -164,6 +162,12 @@ $ cp system/Make.sys-shared Make.sys
 ```
 
 In 'Make.sys', insert `-fcommon` before `-pedantic -Wall` for `CPPFLAGS` to address a new default of GCC compiler that may cause error in compilation.
+
+Comment the variable declaration in 'C/xcBz.c:1400', as it conflicts with the latest header file:
+
+``` C
+/* double fabs(); */
+```
 
 Then run *serial* compilation `make -j1 all`.
 
