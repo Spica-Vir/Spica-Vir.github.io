@@ -5,7 +5,7 @@ categories: [Technique, OS]
 tags: [linux, windows, visualization]
 ---
 
-In [Cygwin as an Alternative Linux Environment on Windows]({% link 2023-11-05-Cygwin as an Alternative Linux Environment on Windows.md %}), the drawback of WSL2 in visualization was discussed in detail.
+In [Cygwin as an Alternative Linux Environment on Windows]({% link _posts/2023-11-05-Cygwin as an Alternative Linux Environment on Windows.md %}), the drawback of WSL2 in visualization was discussed in detail.
 An obvious problem with Cygwin is being too old --- a lot of packages are left unmaintained, and it seems that people are gradually embracing WSL instead of Cygwin.
 
 This enables using Nvidia graphic within **WSL2**, so Linux-based visualization software can run smoothly.

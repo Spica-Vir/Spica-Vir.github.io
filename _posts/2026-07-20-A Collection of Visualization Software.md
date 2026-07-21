@@ -11,7 +11,7 @@ The recommended installation method, mainly for Linux and WSL, is documented.
 **Note for WSL**
 
 Rendering can be very sluggish with the CPU graphic card default for WSL.
-Check [Nvidia Graphic Card for WSL2]({% 2026-07-19-Enable Graphic Card for WSL2 %}) to enable GPU rendering.
+Check [Nvidia Graphic Card for WSL2]({% link _posts/2026-07-19-Enable Graphic Card for WSL2.md %}) to enable GPU rendering.
 
 ## VESTA
 
@@ -150,7 +150,7 @@ Prepend `env -u GALLIUM_DRIVER -u MESA_D3D12_DEFAULT_ADAPTER_NAME VMDTITLE=off V
 ### Cygwin
 
 Download the [Cygwin shared version](http://www.xcrysden.org/Download.html) and install the packages specified in the tutorial via installer.
-To setup Xming forwarding, check [Cygwin as an Alternative Linux Environment on Windows]({% link 2023-11-05-Cygwin as an Alternative Linux Environment on Windows.md %}).
+To setup Xming forwarding, check [Cygwin as an Alternative Linux Environment on Windows]({% link _posts/2023-11-05-Cygwin as an Alternative Linux Environment on Windows.md %}).
 
 ### Source code compilation
 
