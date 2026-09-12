@@ -73,6 +73,7 @@ The output of commands can be redirected using the symbols listed below:
 | `command >> file`                    | Redirect the standard output of 'command' to the end of 'file'. If 'file' does not exist, create it |
 | `command >& file`, `command &> file` | Redirect the standard output and standard error of 'command' to a newly created 'file'              |
 | `2>&1`                               | Copy the behavior of standard output and use it for standard error                                  |
+| `: > file`                           | Create an empty file                                                                                |
 
 Analysis: 
 
