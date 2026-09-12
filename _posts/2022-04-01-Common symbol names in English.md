@@ -6,7 +6,7 @@ tags: [academic English]
 math: true
 ---
 
-The biggest difficulty I met when mentoring master students and doing TA is not to actually fix bugs, but to guide the student to enter a specific command - I never learnt the names of common symbols for either programming or writing in any English class, which is a terrible oversight. 
+The biggest difficulty I met when mentoring master students and doing TA is not to actually fix bugs, but to guide the student to enter a specific command --- I never learnt the names of common symbols for either programming or writing in any English class, which is a terrible oversight. 
 
 Here I collected the English name list of common symbols for reference. 
 
@@ -20,11 +20,11 @@ Here I collected the English name list of common symbols for reference.
 | £       | Pound sign, Pound stering symbol          |
 | $       | Dollar sign                               |
 | %       | Percent sign                              |
-| ^       | Caret                                     |
+| ^       | Caret, hat (operators)                    |
 | &       | Ampersand                                 |
 | \*      | Asterisk                                  |
 | ()      | Parenthesis                               |
-| -       | Hyphen                                    |
+| -       | Hyphen, dash                              |
 | \[\]    | Square brackets                           |
 | \{\}    | Curly brackets, Braces, Squiggly brackets |
 | <>      | Angle brackets                            |
@@ -35,7 +35,7 @@ Here I collected the English name list of common symbols for reference.
 | .       | Full stop, Full stop punction             |
 | ,       | Comma                                     |
 | @       | At, At sign                               |
-| #       | Number sign, Hash                         |
+| #       | Number sign, Hashtag                      |
 | ''      | (single) Quotation marks, Quotes          |
 | ""      | (double) Quotation marks, Quotes          |
 | !       | Exclamation mark                          |
@@ -43,6 +43,15 @@ Here I collected the English name list of common symbols for reference.
 | /       | Slash                                     |
 | \       | Backslash                                 |
 | \|      | Viertical bar                             |
+| 'Esc' key | Escape |
+
+In latex:
+
+| SYMBOLS | NAMES                                     |
+|:-------:|:------------------------------------------|
+| -       | Minus sign                                |
+| --      | Hyphen, en dash                           |
+| ---     | em dash                                   |
 
 # Class 2: Escape characters
 
