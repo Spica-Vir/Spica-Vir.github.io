@@ -10,7 +10,7 @@ The biggest difficulty I met when mentoring master students and doing TA is not 
 
 Here I collected the English name list of common symbols for reference. 
 
-# Class 1: Symbols on keyboard
+## Class 1: Symbols on keyboard
 
 | SYMBOLS | NAMES                                     |
 |:-------:|:------------------------------------------|
@@ -49,11 +49,11 @@ In latex:
 
 | SYMBOLS | NAMES                                     |
 |:-------:|:------------------------------------------|
-| -       | Minus sign                                |
-| --      | Hyphen, en dash                           |
-| ---     | em dash                                   |
+| `-`     | Minus sign                                |
+| `--`    | Hyphen, en dash                           |
+| `---`   | em dash                                   |
 
-# Class 2: Escape characters
+## Class 2: Escape characters
 
 | SYMBOLS | NAMES          |
 |:-------:|:---------------|
@@ -67,7 +67,7 @@ In latex:
 | \t      | Tab            |
 | \v      | Vertical tab   |
 
-# Class 3: Greek alphabet
+## Class 3: Greek letters
 
 | UPPER, LOWER CASE    | NAME |
 |:--------------------:|:---------------|
