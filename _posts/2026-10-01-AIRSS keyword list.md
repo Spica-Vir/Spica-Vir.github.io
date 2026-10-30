@@ -3,6 +3,7 @@ title: AIRSS keyword list
 date: 2026-10-01 11:47:00 +0800
 categories: [Research, others]
 tags: [structure search, AIRSS]
+math: true
 ---
 
 The official documentation site of [AIRSS](https://airss-docs.github.io/) only offers an incomplete collection of keywords.
